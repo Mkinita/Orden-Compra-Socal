@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Sidebarimprecion from "../components/Sidebarimprecion";
+import ImpresionSidebar from "../components/ImpresionSidebar";
 import Image from "next/image";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -15,7 +15,7 @@ export default function AdminLayout({ children, pagina }) {
       <div>
             <aside className="mx-1">
 
-                <Sidebarimprecion/>
+                <ImpresionSidebar/>
             </aside>
 
             
