@@ -1,4 +1,4 @@
-export const ImpresionSisebar = () => {
+export const ImpresionSidebar = () => {
     return (
       <div className="px-3 py-4 overflow-y-auto rounded bg-white">
         <ul className="space-y-2">
@@ -11,4 +11,4 @@ export const ImpresionSisebar = () => {
   }
   
   
-  export default ImpresionSisebar
+  export default ImpresionSidebar
