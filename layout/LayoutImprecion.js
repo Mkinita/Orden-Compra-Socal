@@ -16,7 +16,7 @@ export default function LayoutImprecion({ children, pagina }) {
       <div>
             <aside className="mx-1">
 
-                <Sidebar/>
+                <ImpresionSidebar/>
             </aside>
 
             
