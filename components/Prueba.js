@@ -12,7 +12,9 @@ function Example() {
     <div>
       <p>Folio: {folio}</p>
       <button onClick={handleGenerateFolio}>Generate Folio</button>
+      <p>Hola</p>
     </div>
+    
   );
 }
 
