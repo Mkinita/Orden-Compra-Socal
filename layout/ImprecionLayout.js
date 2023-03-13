@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function AdminLayout({ children, pagina }) {
+export default function ImprecionLayout({ children, pagina }) {
   return (
     <>
       <Head>
