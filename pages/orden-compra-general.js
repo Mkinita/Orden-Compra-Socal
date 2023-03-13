@@ -1,4 +1,4 @@
-import ImprecionLayout from "../layout/ImprecionLayout"
+import ImprecionLayout from "../layout/LayoutImprecion"
 import useSWR from 'swr'
 import axios from 'axios'
 import OrdenCompra from '../components/OrdenCompra'

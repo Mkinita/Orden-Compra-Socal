@@ -4,7 +4,7 @@ import Image from "next/image";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-export default function ImprecionLayout({ children, pagina }) {
+export default function LayoutImprecion({ children, pagina }) {
   return (
     <>
       <Head>
