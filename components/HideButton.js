@@ -3,7 +3,7 @@ const [options, setOptions] = useState([]);
 
     useEffect(() => {
         const fetchData = async () => {
-        const response = await fetch('http://localhost:3000/api/detalle');
+        const response = await fetch('https://orden-compra-socal-production.up.railway.app/api/detalle');
         const data = await response.json();
         setOptions(data);
         };

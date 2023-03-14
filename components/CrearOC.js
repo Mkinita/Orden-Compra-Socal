@@ -22,7 +22,7 @@ export default function CrearOC({ onChange }) {
 
 useEffect(() => {
     axios
-      .get("/api/proveedores")
+      .get("https://orden-compra-socal-production.up.railway.app/api/proveedores")
       .then((response) => {
         setProveedores(response.data);
       })

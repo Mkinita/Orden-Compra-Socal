@@ -7,7 +7,7 @@ const SearchComponent = () => {
   const [ search, setSearch ] = useState("")
 
   //función para traer los datos de la API
-  const URL = 'http://localhost:3000/api/equipo'
+  const URL = 'https://orden-compra-socal-production.up.railway.app/api/equipo'
 
   const showData = async () => {
     const response = await fetch(URL)

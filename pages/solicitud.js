@@ -44,7 +44,7 @@ export default function Solicitud() {
 
         useEffect(() => {
         const fetchData = async () => {
-        const response = await fetch('http://localhost:3000/api/detalle');
+        const response = await fetch('https://orden-compra-socal-production.up.railway.app/api/detalle');
         const data = await response.json();
         setOptions(data);
         };
@@ -54,7 +54,7 @@ export default function Solicitud() {
 
     useEffect(() => {
         const fetchFaena = async () => {
-        const response = await fetch('http://localhost:3000/api/faenas');
+        const response = await fetch('https://orden-compra-socal-production.up.railway.app/api/faenas');
         const data = await response.json();
         setOptionsobras(data);
         };

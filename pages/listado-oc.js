@@ -29,7 +29,7 @@ export default function Admin() {
     const [ buscar, setBuscar ] = useState("")
   
     //función para traer los datos de la API
-    const URL = 'http://localhost:3000/api/listado-ordenes'
+    const URL = 'https://orden-compra-socal-production.up.railway.app/api/listado-ordenes'
   
     const showData = async () => {
       const response = await fetch(URL)
