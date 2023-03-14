@@ -1,5 +1,5 @@
 import { Inter } from '@next/font/google'
-import Layout from '../layout/Layout'
+import LayoutCombustible from '../layout/LayoutCombustible'
 import Equipo from '../components/Equipo'
 import useCombustible from '../hooks/useCombustible'
 import {useState, useEffect} from 'react'
@@ -16,7 +16,7 @@ export default function Home() {
   const [ search, setSearch ] = useState("")
 
   //función para traer los datos de la API
-  const URL = 'https://orden-compra-socal-production.up.railway.app/api/equipo'
+  const URL = '/api/equipo'
 
   const showData = async () => {
     const response = await fetch(URL)
@@ -36,7 +36,7 @@ export default function Home() {
   }, [])
 
   return (
-    <Layout pagina={`Inicio -Socal`}>
+    <LayoutCombustible pagina={`Inicio -Socal`}>
     
       {/* <h1 className='text-4xl font-black'>{faenaActual?.nombre}</h1> */}
       <p className='text-2xl mx-5 my-3 font-bold'>
@@ -54,7 +54,7 @@ export default function Home() {
           <Equipo key={equipo.id} equipo={equipo}/>
         ))}
       </div>
-    </Layout>
+    </LayoutCombustible>
   )
 }
 

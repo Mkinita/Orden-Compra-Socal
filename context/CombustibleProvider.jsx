@@ -442,10 +442,10 @@ const CombustibleProvider = ({children}) => {
            await axios.post('/api/generardetalle',{nombre})
             // Resetear la app
             setNombre('')
-            toast.success('Agregando Nueva⏳')
+            toast.success('Agregando Nuevo detalle⏳')
 
             setTimeout(() =>{
-                router.push('/generarordencompra')
+                router.push('/agregardetalle')
             },3000)
 
         } catch (error) {

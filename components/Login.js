@@ -22,7 +22,7 @@ export default function Login() {
 
     if (response.ok) {
         setTimeout(() =>{
-            router.push('/proveedores')
+            router.push('/inicio')
         },1000)
     } else {
         setTimeout(() =>{

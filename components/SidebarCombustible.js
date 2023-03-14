@@ -4,7 +4,7 @@ import Faena from "./Faena";
 import Link from 'next/link';
 
 
-const Sidebar = () => {
+const SidebarCombustible = () => {
     const {faenas} = useCombustible()
 
     
@@ -20,7 +20,7 @@ const Sidebar = () => {
                     
                     </li> 
 
-                     {/* <li>
+                     <li>
                         <Link href="/orden-compra" className="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                             ✔️
                             <span className="ml-3">Ordenes Autorizadas ⛽</span>
@@ -34,7 +34,7 @@ const Sidebar = () => {
                         ⛽
                             <span className="ml-3">Generar Orden De Compra</span>
                         </Link>
-                    </li> */}
+                    </li>
 
 
                     
@@ -42,7 +42,7 @@ const Sidebar = () => {
 
                     
                     
-
+{/* 
                     <li>
                         <Link href="/proveedores" className="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                         📝
@@ -59,7 +59,7 @@ const Sidebar = () => {
                             ✔️
                             <span className="ml-3">Ordenes Autorizadas 📝</span>
                         </Link>
-                    </li>
+                    </li> */}
 
 
                     
@@ -102,4 +102,4 @@ const Sidebar = () => {
 }
 
 
-export default Sidebar
+export default SidebarCombustible
