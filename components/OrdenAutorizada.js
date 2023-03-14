@@ -47,7 +47,7 @@ const OrdenAutorizada = ({orden}) => {
       <div role="status" className="space-y-8 md:space-y-0 md:space-x-8 md:items-center p-2 m-5">
             <div className="flex">
               <div className="flex items-center justify-center w-full h-48">
-              <Image width={280} height={100} src="/assets/img/SOCAL.OC.png" alt="logo" className=""/>
+              <Image width={280} height={100} src="/assets/img/SOCALIPR.png" alt="logo" className=""/>
               {/* <Image width={280} height={100} src="/assets/img/socal.png" alt="logo" className=""/> */}
               </div>
               <div className="w-full m-auto">
