@@ -22,7 +22,7 @@ export default function CrearOC({ onChange }) {
 
 useEffect(() => {
     axios
-      .get("http://localhost:3000/api/proveedores")
+      .get("/api/proveedores")
       .then((response) => {
         setProveedores(response.data);
       })
