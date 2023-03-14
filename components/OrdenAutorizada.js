@@ -48,6 +48,7 @@ const OrdenAutorizada = ({orden}) => {
             <div className="flex">
               <div className="flex items-center justify-center w-full h-48">
               <Image width={280} height={100} src="/assets/img/SOCAL.OC.png" alt="logo" className=""/>
+              {/* <Image width={280} height={100} src="/assets/img/socal.png" alt="logo" className=""/> */}
               </div>
               <div className="w-full m-auto">
               <div className="text-center"><h3 className="text-xl font-bold inline-block align-baseline ">ORDEN DE COMPRA</h3></div>
