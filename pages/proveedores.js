@@ -15,7 +15,7 @@ export default function Solicitud() {
   const [ search, setSearch ] = useState("")
 
   //función para traer los datos de la API
-  const URL = '/api/proveedores'
+  const URL = 'https://orden-compra-socal-production.up.railway.app/api/proveedores'
 
   const showData = async () => {
     const response = await fetch(URL)
