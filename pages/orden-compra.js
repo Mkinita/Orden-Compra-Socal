@@ -1,4 +1,4 @@
-import ImprecionLayout from "../layout/LayoutImprecion"
+import LayoutImprecion from "../layout/LayoutImprecion"
 import useSWR from 'swr'
 import axios from 'axios'
 import OrdenAutorizada from '../components/OrdenAutorizada'
@@ -13,7 +13,7 @@ export default function OrdenCompra() {
 
 
    return (
-        <ImprecionLayout pagina='Orden de Compra'>
+        <LayoutImprecion pagina='Orden de Compra'>
             <h1 className="text-4xl font-black text-center"></h1>
             <p className="text-2xl my-5"></p>
 
@@ -40,6 +40,6 @@ export default function OrdenCompra() {
                 
             
 
-        </ImprecionLayout>
+        </LayoutImprecion>
    )
 }
