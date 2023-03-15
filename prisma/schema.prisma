@@ -76,6 +76,7 @@ model Ocpedidos {
   estado Boolean @default(false)
   anular Boolean @default(false)
   finalizado Boolean @default(false)
+  estado01 Boolean  @default(false)
 }
 
 

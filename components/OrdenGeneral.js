@@ -1,6 +1,7 @@
 import axios  from 'axios'
 import { toast } from "react-toastify"
 import {formatearDinero} from "helpers/index"
+import { useRouter } from 'next/router'
 
 
 
@@ -14,12 +15,18 @@ const OrdenGeneral = ({ocpedidos}) => {
     
     } = ocpedidos
 
+
+    const router = useRouter()
+
     const completarPago = async () => {
 
         try {
 
            await axios.post(`/api/admingeneral/${id}`)
             toast.success('Orden Autorizada 🔓')
+            setTimeout(() =>{
+              router.push('/orden-compra-general-autorizada')
+          },1000)
         } catch (error) {
             toast.error('Hubo un error')
         }

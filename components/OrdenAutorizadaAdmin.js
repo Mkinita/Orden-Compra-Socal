@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 
 
 
-const OrdenAutorizada = ({orden}) => {
+const OrdenAutorizadaAdmin = ({orden}) => {
     const {id, nombre, total, pedido, fecha, folio, descripcion, senores,direccion,rut,fono,comuna,pedido01,valor} = orden
 
 
@@ -22,10 +22,10 @@ const OrdenAutorizada = ({orden}) => {
 
       try {
 
-         await axios.post(`/api/ocfinalizada/${id}`)
+         await axios.post(`/api/ocfinalizadaadmin/${id}`)
           toast.success('🏠')
           setTimeout(() =>{
-            router.push('/inicio')
+            router.push('/autorizar')
         },1000)
       } catch (error) {
           toast.error('Hubo un error')
@@ -222,4 +222,4 @@ const OrdenAutorizada = ({orden}) => {
   )
 }
 
-export default OrdenAutorizada
+export default OrdenAutorizadaAdmin

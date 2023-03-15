@@ -12,8 +12,7 @@ export default async function handler (req,res){
                 id: parseInt(id)
             },
             data:{
-                estado:true,
-                
+                estado01:true
             }
         })
         res.status(200).json(ordenActualizada)

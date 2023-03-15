@@ -1,7 +1,8 @@
 import LayoutImprecion from "../layout/LayoutImprecion"
 import useSWR from 'swr'
 import axios from 'axios'
-import OrdenAutorizada from '../components/OrdenAutorizada'
+import OrdenAutorizadaAdmin from '../components/OrdenAutorizadaAdmin'
+import Link from "next/link"
 
 
 export default function OrdenCompra() {
@@ -21,12 +22,12 @@ export default function OrdenCompra() {
 
             {data && data.length ? data.map(orden =>
                 
-                <OrdenAutorizada
+                <OrdenAutorizadaAdmin
                     key={orden.id}
                     orden={orden}
                 />
 
-                ):<p>No Hay Ordenes Pendientes</p>}
+                ):<Link href="/autorizar" className="text-9xl">🏠</Link>}
 
 
 

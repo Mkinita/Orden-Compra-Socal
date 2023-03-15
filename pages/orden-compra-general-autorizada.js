@@ -1,33 +1,33 @@
-import LayoutImprecion from "../layout/LayoutImprecion"
+import ImprecionLayout from "../layout/LayoutImprecion"
 import useSWR from 'swr'
 import axios from 'axios'
-import OrdenAutorizada from '../components/OrdenAutorizada'
+import OrdenCompraAutorizada from '../components/OrdenCompraAutorizada'
 import Link from "next/link"
 
 
-export default function OrdenCompra() {
+export default function OrdenCompras() {
 
 
 
-    const fetcher = () => axios('/api/ordenes-autorizadas').then(datos => datos.data)
-    const { data, error, isLoading } = useSWR('/api/ordenes',fetcher,{refreshInterval: 100} )
+    const fetcher = () => axios('/api/ordenes-generales-admin').then(datos => datos.data)
+    const { data, error, isLoading } = useSWR('/api/ordenes-generales',fetcher,{refreshInterval: 100} )
 
 
    return (
-        <LayoutImprecion pagina='Orden de Compra'>
+        <ImprecionLayout pagina='Orden de Compra'>
             <h1 className="text-4xl font-black text-center"></h1>
             <p className="text-2xl my-5"></p>
 
 
 
-            {data && data.length ? data.map(orden =>
+            {data && data.length ? data.map(ocpedidos =>
                 
-                <OrdenAutorizada
-                    key={orden.id}
-                    orden={orden}
+                <OrdenCompraAutorizada
+                    key={ocpedidos.id}
+                    ocpedidos={ocpedidos}
                 />
 
-                ):<Link href="/inicio" className="text-9xl">🏠</Link>}
+                ):<Link href="/autorizarordengeneral" className="text-9xl">🏠</Link>}
 
 
 
@@ -41,6 +41,6 @@ export default function OrdenCompra() {
                 
             
 
-        </LayoutImprecion>
+        </ImprecionLayout>
    )
 }

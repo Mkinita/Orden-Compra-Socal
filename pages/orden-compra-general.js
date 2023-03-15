@@ -2,6 +2,7 @@ import ImprecionLayout from "../layout/LayoutImprecion"
 import useSWR from 'swr'
 import axios from 'axios'
 import OrdenCompra from '../components/OrdenCompra'
+import Link from "next/link"
 
 
 export default function OrdenCompras() {
@@ -26,7 +27,7 @@ export default function OrdenCompras() {
                     ocpedidos={ocpedidos}
                 />
 
-                ):<p>No Hay Ordenes Pendientes</p>}
+                ):<Link href="/inicio" className="text-9xl">🏠</Link>}
 
 
 
