@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import axios from 'axios'
-import LayoutInicioAdminGeneral from "../layout/LayoutInicioAdminGeneral"
-import ListadoOcGeneral from '../components/ListadoOcGeneral'
+import AdminLayout from "../layout/AdminLayout"
+import ListadoOcGeneralCombustible from '../components/ListadoOcGeneralCombustible'
 import TablaGeneral from '@/components/TablaGeneral'
 import * as XLSX from 'xlsx';
 import {useState, useEffect} from 'react'
@@ -13,8 +13,8 @@ import {useState, useEffect} from 'react'
 
 export default function Admin() {
 
-    const fetcher = () => axios('/api/listado-ordenes-generales').then(datos => datos.data)
-    const { data, error, isLoading } = useSWR('/api/listado-ordenes-generales',fetcher,{refreshInterval: 100} )
+    const fetcher = () => axios('/api/listado-ordenes').then(datos => datos.data)
+    const { data, error, isLoading } = useSWR('/api/listado-ordenes',fetcher,{refreshInterval: 100} )
 
 
 
@@ -29,7 +29,7 @@ export default function Admin() {
     const [ buscar, setBuscar ] = useState("")
   
     //función para traer los datos de la API
-    const URL = '/api/listado-ordenes-generales'
+    const URL = '/api/listado-ordenes'
   
     const showData = async () => {
       const response = await fetch(URL)
@@ -77,7 +77,7 @@ export default function Admin() {
      
 
     return(
-        <LayoutInicioAdminGeneral pagina={'Listado-OC'}>
+        <AdminLayout pagina={'Listado-OC'}>
 
             <h1 className="text-2xl font-black text-center"> Listado Ordenes De Compra Combustible</h1>
             <p className="text-2xl my-10"></p>
@@ -85,11 +85,11 @@ export default function Admin() {
                 <input value={buscar} onChange={buscador} type="text" placeholder='Buscar Por Nº O.C.' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
             </div>
             <TablaGeneral/>
-            {data && data.length ? results.map(ocpedidos =>
+            {data && data.length ? results.map(orden =>
                 
-                <ListadoOcGeneral
-                    key={ocpedidos.id}
-                    ocpedidos={ocpedidos}
+                <ListadoOcGeneralCombustible
+                    key={orden.id}
+                    orden={orden}
                 />
 
                 ):
@@ -100,7 +100,7 @@ export default function Admin() {
                 <button onClick={() => exportTo(data)}>📥 Exportar a Excel</button>
             </div>
 
-        </LayoutInicioAdminGeneral>
+        </AdminLayout>
 
         
     )

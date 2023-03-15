@@ -35,7 +35,7 @@ export const SidebarAdmin = () => {
            </li>
 
            <li>
-              <Link href="/listado-oc-general" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+              <Link href="/listado-oc-general-combustible" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                   ⛽🔍
                   <span className="ml-3">Ordenes de Compra Por Obra</span>
               </Link>
@@ -50,7 +50,7 @@ export const SidebarAdmin = () => {
            </li>
 
            <li>
-              <Link href="/listado-oc-general" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+              <Link href="/listado-oc-general-combustible-anulado" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                   ⛽🔍
                   <span className="ml-3">Ordenes de Compra Anuladas</span>
               </Link>
@@ -148,11 +148,15 @@ export const SidebarAdmin = () => {
 
 
             <li>
-               <Link href="/" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+               <Link href="https://socal-production.up.railway.app/auth/login" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                   ⚠️
                <  span className="ml-3">Cerrar Sesion</span>
                </Link>
             </li>
+
+
+            
+
 
 
 

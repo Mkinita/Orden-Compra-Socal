@@ -7,11 +7,13 @@ const Tabla = ({orden}) => {
     <table className="table-auto w-full text-center bg-white text-gray-700">
             <thead>
                 <tr>
-                    <th className="px-2 py-2">N° OC </th>
-                    <th className="px-2 py-2">Fecha </th>
-                    <th className="px-16 py-2">Solicitante</th>
-                    <th className="px-8 py-2">Detalle</th>
-                    <th className="px-2 py-2">Patente</th>
+                    <th className="px-4 py-2 hidden md:table-cell w-1/12">N°</th>
+                    <th className="px-4 py-2 hidden md:table-cell w-1/12">Fecha </th>
+                    <th className="px-4 py-2 hidden md:table-cell w-1/6">Emisor</th>
+                    <th className="px-4 py-2 hidden md:table-cell w-1/6">Solicitante</th>
+                    <th className="px-4 py-2 hidden md:table-cell w-1/6">Obra</th>
+                    <th className="px-4 py-2 hidden md:table-cell w-1/6">Patente</th>
+                    <th className="px-4 py-2 hidden md:table-cell w-1/6">Proveedor</th>
                 </tr>
             </thead>
         </table>

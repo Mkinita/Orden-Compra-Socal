@@ -6,7 +6,8 @@ export default async function handler(req, res) {
   const ordenes = await prisma.orden.findMany({
    where:  {
       estado:true,
-      finalizado:false
+      anular:false
+      // finalizado:false
     }
   })
 

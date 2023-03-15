@@ -87,6 +87,14 @@ const SidebarCombustible = () => {
                         </Link>
                     </li>
 
+
+                    <li>
+                        <Link href="https://socal-production.up.railway.app/auth/login" className="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+                                👨‍💻
+                            <span className="ml-3">Admin</span>
+                        </Link>
+                    </li>
+
                     
                 </ul>
 
