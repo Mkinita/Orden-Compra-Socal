@@ -1,14 +1,14 @@
 import Link from "next/link"
 import Pasos from "./Pasos"
 
-export const SidebarAdmin = () => {
+export const SidebarAdminGeneral = () => {
     return (
       <div className="px-3 py-4 overflow-y-auto rounded bg-white">
         <ul className="space-y-2">
 
 
          
-           <li>
+           {/* <li>
               <Link href="/autorizar" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                   ⛽
                   <span className="ml-3">Autorizar Las Ordenes De Compras 🔑</span>
@@ -54,10 +54,10 @@ export const SidebarAdmin = () => {
                   ⛽🔍
                   <span className="ml-3">Ordenes de Compra Anuladas</span>
               </Link>
-           </li>
+           </li> */}
 
 
-           {/* <li>
+           <li>
               <Link href="/autorizarordengeneral" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                   📃
                   <span className="ml-3">Autorizar Las Ordenes De Compras 🔑</span>
@@ -99,7 +99,7 @@ export const SidebarAdmin = () => {
                   <span className="ml-3">Ordenes de Compra Anuladas</span>
               </Link>
            </li>
- */}
+
 
            
 
@@ -148,7 +148,7 @@ export const SidebarAdmin = () => {
 
 
             <li>
-               <Link href="/" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+               <Link href="/https://socal-production.up.railway.app/auth/login" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                   ⚠️
                <  span className="ml-3">Cerrar Sesion</span>
                </Link>
@@ -176,4 +176,4 @@ export const SidebarAdmin = () => {
   }
   
   
-  export default SidebarAdmin
+  export default SidebarAdminGeneral
