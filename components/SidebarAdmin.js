@@ -126,7 +126,7 @@ export const SidebarAdmin = () => {
 
 
             <li>
-               <Link href="/agregarobra" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+               <Link href="/agregarusuario" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                ➕
                   <span className="ml-3">Agregar Usuarios</span>
                </Link>

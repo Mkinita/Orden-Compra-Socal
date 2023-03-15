@@ -61,6 +61,10 @@ const CombustibleProvider = ({children}) => {
     const [proveedorId, setProveedorId] = useState(null)
 
 
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+
+
 
     const {patente} = equipo
     const [nuevapatente, setNuevapatente] = useState({patente})
@@ -483,6 +487,31 @@ const CombustibleProvider = ({children}) => {
 
 
 
+    const agregarUsuario = async (e) => {
+        e.preventDefault()
+
+        try {
+           await axios.post('/api/generarusuario',{email,password})
+            // Resetear la app
+            setEmail('')
+            setPassword('')
+            toast.success('Agregando Nuevo Usuario⏳')
+
+            setTimeout(() =>{
+                router.push('/listadoproveedores')
+            },3000)
+
+        } catch (error) {
+            console.log(error)
+        }
+
+
+        console.log('agregando orden')
+    }
+
+
+
+
     
 
 
@@ -568,7 +597,13 @@ const CombustibleProvider = ({children}) => {
             pedido01,
             setPedido01,
             handleElimanarSolicitudProveedor,
-            handleElimanarSolicitudGeneral
+            handleElimanarSolicitudGeneral,
+            agregarUsuario,
+            email,
+            setEmail,
+            password,
+            setPassword
+
             
             
             // total,

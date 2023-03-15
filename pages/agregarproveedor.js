@@ -1,4 +1,4 @@
-import AdminLayout from "../layout/AdminLayout"
+import LayoutAgregar from "../layout/LayoutAgregar"
 import { useEffect, useCallback, useState } from "react"
 import useCombustible from "../hooks/useCombustible"
 import { v4 as uuidv4 } from 'uuid';
@@ -41,7 +41,7 @@ export default function Solicitud() {
 
     
     return (
-        <AdminLayout pagina='Proveedores'>
+        <LayoutAgregar pagina='Proveedores'>
             {/* <p>{patente}</p> */}
             <h1 className="text-2xl font-black lg:w-3/4">Ingrese Nuevo Proveedor</h1>
             <p className="text-2xl my-10"></p>
@@ -160,6 +160,6 @@ export default function Solicitud() {
 
                 
             </form>
-        </AdminLayout>
+        </LayoutAgregar>
    )
 }

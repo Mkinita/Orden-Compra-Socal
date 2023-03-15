@@ -1,4 +1,4 @@
-import AdminLayout from "../layout/AdminLayout"
+import LayoutAgregar from "../layout/LayoutAgregar"
 import { useEffect, useCallback, useState } from "react"
 import useCombustible from "../hooks/useCombustible"
 import Faena from "@/components/Faena"
@@ -37,7 +37,7 @@ export default function DetalleObra() {
 
     
     return (
-        <AdminLayout pagina='Proveedores'>
+        <LayoutAgregar pagina='Proveedores'>
             {/* <p>{patente}</p> */}
             <h1 className="text-2xl font-black  lg:w-3/4">Ingrese Nueva Obra</h1>
             <p className="text-2xl my-10"></p>
@@ -82,6 +82,6 @@ export default function DetalleObra() {
 </div>
 
 
-        </AdminLayout>
+        </LayoutAgregar>
    )
 }
