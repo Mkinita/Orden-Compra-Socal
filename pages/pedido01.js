@@ -1,5 +1,5 @@
 import { Inter } from '@next/font/google'
-import LayoutPedido01 from '../layout/LayoutPedido01'
+import AdminLayout from '../layout/AdminLayout'
 import Proveedor from '../components/Proveedor'
 import useCombustible from '../hooks/useCombustible'
 import {useState, useEffect} from 'react'
@@ -35,7 +35,7 @@ export default function Solicitud() {
   }, [])
 
   return (
-    <LayoutPedido01 pagina={`Proveedores`}>
+    <AdminLayout pagina={`Proveedores`}>
     
       {/* <h1 className='text-4xl font-black'>{faenaActual?.nombre}</h1> */}
       <p className='text-2xl mx-5 my-3 font-bold'>
@@ -49,6 +49,6 @@ export default function Solicitud() {
           <Proveedor key={proveedor.id} proveedor={proveedor}/>
         ))}
       </div>
-    </LayoutPedido01>
+    </AdminLayout>
   )
 }
