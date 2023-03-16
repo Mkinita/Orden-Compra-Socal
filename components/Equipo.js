@@ -13,7 +13,7 @@ const Equipo = ({equipo}) => {
     <div className="border p-3 w-full h-full">
       
       <Image
-      className='w-32 h-32 m-auto'
+      className='w-40 h-32 m-auto'
         src={`/assets/img/${imagen}.jpg`}
         alt={`Imagen${nombre}`}
         width={250}
