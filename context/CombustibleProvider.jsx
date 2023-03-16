@@ -449,7 +449,7 @@ const CombustibleProvider = ({children}) => {
             toast.success('Agregando Nuevo detalle⏳')
 
             setTimeout(() =>{
-                router.push('/agregardetalle')
+                router.push('/listadodetalle')
             },3000)
 
         } catch (error) {

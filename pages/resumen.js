@@ -1,4 +1,4 @@
-import AdminLayout from "../layout/AdminLayout"
+import LayoutCombustible from "../layout/LayoutCombustible"
 import useCombustible from "../hooks/useCombustible"
 import ResumenSolicitud from "../components/ResumenSolicitud"
 import ResumenSolicitud01 from "../components/ResumenSolicitud01"
@@ -9,7 +9,7 @@ export default function Resumen() {
     const { pedido, pedido01 } = useCombustible()
 
    return (
-        <AdminLayout pagina='Resumen'>
+        <LayoutCombustible pagina='Resumen'>
             <h1 className="text-2xl font-black">Resumen Solicitud</h1>
             <p className="text-lg my-8">Revisa Tu Solicitud</p>
 
@@ -41,6 +41,6 @@ export default function Resumen() {
                 </Link>
             </div>
             
-        </AdminLayout>
+        </LayoutCombustible>
    )
 }

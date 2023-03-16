@@ -64,7 +64,7 @@ export default function DetalleObra() {
                     <input
                         type="submit"
                         className= {`${comprobarDetalleFaena() ? 'bg-indigo-100' : 'bg-indigo-600 hover:bg-indigo-800'} w-full  px-5 py-2 rounded uppercase font-bold text-white  text-center lg:w-3/4 text-sm`}
-                        value="Agregar Detalle"
+                        value="Agregar"
                         disabled={comprobarDetalleFaena()}
                     />
                 </div>

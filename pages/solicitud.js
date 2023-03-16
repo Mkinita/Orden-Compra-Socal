@@ -1,4 +1,4 @@
-import Layout from "../layout/Layout"
+import LayoutCombustible from "../layout/LayoutCombustible"
 import { useEffect, useCallback, useState } from "react"
 import useCombustible from "../hooks/useCombustible"
 import { v4 as uuidv4 } from 'uuid';
@@ -109,7 +109,7 @@ export default function Solicitud() {
       
     
     return (
-        <Layout pagina='Solicitud O.C.'>
+        <LayoutCombustible pagina='Solicitud O.C.'>
             {/* <p>{patente}</p> */}
             <h1 className="text-2xl font-black">Generar Orden De Compra Combustible</h1>
             <p className="text-2xl my-10"></p>
@@ -291,6 +291,6 @@ export default function Solicitud() {
                     />
                 </div>
             </form>
-        </Layout>
+        </LayoutCombustible>
    )
 }
