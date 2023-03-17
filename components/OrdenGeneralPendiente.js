@@ -49,7 +49,7 @@ const OrdenGeneral = ({ocpedidos}) => {
 
     
   return (
-    <>
+   
     <>
     
     <div className=''>
@@ -63,7 +63,7 @@ const OrdenGeneral = ({ocpedidos}) => {
         </div>
       </div>
     </div>
-  </>
+  
     </>
   )
 }
