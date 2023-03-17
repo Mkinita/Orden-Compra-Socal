@@ -181,7 +181,7 @@ const OrdenAutorizada = ({orden}) => {
           
       
   </div>
-              <div className="py-32">
+              <div className="py-28">
                 <div className="text-xs grid grid-cols-2 text-left">
 
           <div class="p-4">
