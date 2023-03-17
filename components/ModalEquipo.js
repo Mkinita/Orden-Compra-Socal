@@ -47,9 +47,9 @@ const ModalEquipo = () => {
             </svg>
           </button>
         </div>
-        <h1 className="text-lg font-bold mt-1">{equipo.nombre}</h1>
+        <h1 className="text-lg font-bold mt-1">{equipo.titulo}</h1>
         <p className="mt-1 font-black text-lg text-amber-500">{equipo.patente}</p>
-        <p className="text-lg font-bold mt-1">{equipo.chofer}</p>
+        <p className="text-lg font-bold mt-1">{equipo.operador}</p>
         
         
         <di className="text-center">

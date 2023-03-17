@@ -78,7 +78,7 @@ const Orden = ({orden}) => {
                         <Image
                             width={400}
                             height={500}
-                            src={`/assets/img/${oc.imagen}.jpg`}
+                            src={`/assets/img/${oc.imagen}`}
                             alt={`imagen oc${oc.nombre}`}
                             
                         />

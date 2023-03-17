@@ -11,14 +11,14 @@ const ResumenSolicitud = ({equipo}) => {
             <Image
                 width={300}
                 height={400}
-                alt={`Imagen equipo${equipo.nombre}`}
-                src={`/assets/img/${equipo.imagen}.jpg`}
+                alt={`Imagen equipo${equipo.titulo}`}
+                src={`/assets/img/${equipo.imagen}`}
             />
         </div>
         <div className="md:w-4/6">
-            <p className="text-lg font-bold">{equipo.nombre}</p>
+            <p className="text-lg font-bold">{equipo.titulo}</p>
             <p className="text-lg font-bold mt-2">{equipo.patente}</p>
-            <p className="text-lg font-bold mt-2">{equipo.chofer}</p>
+            <p className="text-lg font-bold mt-2">{equipo.operador}</p>
 
         </div>
         
