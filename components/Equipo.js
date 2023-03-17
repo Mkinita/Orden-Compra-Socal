@@ -8,20 +8,22 @@ const Equipo = ({equipo}) => {
   
 
     const {handlesetEquipo, handleChangeModal} =useCombustible()
-    const { nombre, imagen, patente } = equipo;
+    const { titulo, imagen, patente } = equipo;
   return (
     <div className="border p-3 w-full h-full">
       
       <Image
       className='w-40 h-32 m-auto'
-        src={`/assets/img/${imagen}.jpg`}
-        alt={`Imagen${nombre}`}
+        src={`/assets/img/${imagen}`}
+        alt={`Imagen${titulo}`}
         width={250}
         height={100}
         
+        
       />
+      
       <div className='p-5 text-center'>
-        {/* <h3 className='text-lg font-bold'>{nombre}</h3> */}
+        {/* <h3 className='text-lg font-bold'>{titulo}</h3> */}
         <p className='mt-1 font-black text-lg text-black'>
             {patente}
         </p>

@@ -24,7 +24,7 @@ const ModalEquipo = () => {
           width={150}
           height={200}
           alt={`imagen equipo ${equipo.nombre}`}
-          src={`/assets/img/${equipo.imagen}.jpg`}
+          src={`/assets/img/${equipo.imagen}`}
         />
       </div>
 
