@@ -4,6 +4,7 @@ import Equipo from '../components/Equipo'
 import useCombustible from '../hooks/useCombustible'
 import {useState, useEffect} from 'react'
 import Pasos from "../components/Pasos";
+import axios from 'axios';
 
 
 
@@ -16,7 +17,8 @@ export default function Home() {
   const [ search, setSearch ] = useState("")
 
   //función para traer los datos de la API
-  const URL = '/api/equipo'
+  
+  const URL = 'https://socal-production.up.railway.app/equipos'
 
   const showData = async () => {
     const response = await fetch(URL)
