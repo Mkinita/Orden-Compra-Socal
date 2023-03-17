@@ -24,6 +24,8 @@ export default function Home() {
     //console.log(data)
     setUsers(data)
   }   
+
+  
    //función de búsqueda
   const searcher = (e) => {
       setSearch(e.target.value)   

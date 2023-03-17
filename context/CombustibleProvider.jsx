@@ -498,7 +498,7 @@ const CombustibleProvider = ({children}) => {
             toast.success('Agregando Nuevo Usuario⏳')
 
             setTimeout(() =>{
-                router.push('/listadoproveedores')
+                router.push('/listadousuarios')
             },3000)
 
         } catch (error) {
