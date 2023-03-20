@@ -9,9 +9,9 @@ export default async function handler(req, res) {
         // fecha: {
         //   gte: fechaActual // Usar "gte" (mayor o igual que) en lugar de "gt"
         // }
-        where:  {
+        
           finalizado:false,
-        }
+        
       }
   })
 
