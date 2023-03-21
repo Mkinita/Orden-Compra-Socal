@@ -1,4 +1,4 @@
-import Layout from "../layout/Layout"
+import LayoutAgregar from "../layout/LayoutAgregar"
 import { useEffect, useCallback, useState } from "react"
 import useCombustible from "../hooks/useCombustible"
 
@@ -31,7 +31,7 @@ export default function Detalle() {
 
     
     return (
-        <Layout pagina='Proveedores'>
+        <LayoutAgregar pagina='Proveedores'>
             {/* <p>{patente}</p> */}
             <h1 className="text-2xl font-black  lg:w-3/4">Ingrese Nueva Descripcion</h1>
             <p className="text-2xl my-10"></p>
@@ -63,6 +63,6 @@ export default function Detalle() {
                     />
                 </div>
             </form>
-        </Layout>
+        </LayoutAgregar>
    )
 }

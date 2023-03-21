@@ -30,6 +30,9 @@ export default function Solicitud() {
             proveedor,
             emisor,setEmisor,
             valor,setValor,
+            propietario,
+            setPropietario,
+            Kilometraje,setKilometraje,
 
             colocarOrden } = useCombustible()
 
@@ -272,6 +275,45 @@ export default function Solicitud() {
                         />
                     
                     </div>
+
+                    
+                </div>
+
+
+
+                <div className="flex gap-1 p-2" >
+                    <div className="flex-1 w-16">
+
+                        <label 
+                            htmlFor="Kilometraje"
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Kilometraje</label>
+                        <input
+                            id="Kilometraje"
+                            type="number"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={Kilometraje}
+                            onChange={e => setKilometraje(e.target.value)}
+                        />
+                    
+                    </div>
+
+                    <div className="flex-1 w-16">
+                        <label 
+                            htmlFor="propietario"
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Propietario</label>
+                        <select
+                            id="propietario"
+                            className="bg-gray-200 w-full p-2 rounded-md"
+                            value={propietario}
+                            onChange={e => setPropietario(e.target.value)}
+                        >
+                            <option value="opcion0">-</option>
+                            <option value="opcion1">Socal</option>
+                            <option value="opcion2">Arrendado</option>
+                        </select>
+                    </div>
+
+                    
                 </div>
 
                 <div className="mt-10 col-span-2 ">

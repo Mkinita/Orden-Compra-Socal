@@ -29,7 +29,9 @@ export default async function handler(req, res) {
         obra: req.body.obra,
         pedido01: req.body.pedido01,
         emisor: req.body.emisor,
-        valor: req.body.valor
+        valor: req.body.valor,
+        propietario: req.body.propietario,
+        Kilometraje: req.body.Kilometraje
       },
     });
     res.json(orden);

@@ -23,9 +23,12 @@ const CombustibleProvider = ({children}) => {
     const [modal, setModal] = useState(false)
     const [pedido, setPedido] = useState([])
     const [pedido01, setPedido01] = useState([])
+    const [pedido02, setPedido02] = useState([])
+    const [pedido03, setPedido03] = useState([])
     const [orden, setOrden] = useState([])
     const [folio, setFolio] = useState('')
     const [obra, setObra] = useState('')
+    const [obras, setObras] = useState({})
     const [nombre, setNombre] = useState('')
     const [emisor, setEmisor] = useState('')
 
@@ -56,6 +59,9 @@ const CombustibleProvider = ({children}) => {
     const [rut, setRut] = useState('')
     const [fono, setFono] = useState('')
     const [comuna, setComuna] = useState('')
+
+    const [propietario, setPropietario] = useState('')
+    const [Kilometraje, setKilometraje] = useState('')
     // const [total, setTotal] = useState(0)
     // const [currentDate, setCurrentDate] = useState(new Date())
     const [proveedorId, setProveedorId] = useState(null)
@@ -196,6 +202,12 @@ const CombustibleProvider = ({children}) => {
         setProveedor(proveedor)
     }
 
+    
+
+    const handlesetObra = obras => {
+        setObras(obras)
+    }
+
 
     const handleChangeModal = () => {
         setModal(!modal)
@@ -217,6 +229,31 @@ const CombustibleProvider = ({children}) => {
             toast.success('Agregado Solicitud')
             setTimeout(() =>{
                 router.push('/pedido01')
+            },2000)
+            
+        }
+
+        setModal(false)
+        
+    }
+
+
+
+    const handleAgregarPedidoObra = ({faenaId, ...equipo}) => {
+        if(pedido.some(equipoState => equipoState.id === equipo.id)) {
+           // Actualizar la cantidad
+           const pedidoActualizado = pedido.map(equipoState => equipoState.id === equipo.id ? equipo : equipoState)
+           setPedido(pedidoActualizado)
+
+           toast.success('Guardado Correctamente')
+           setTimeout(() =>{
+            router.push('/pedidoobra')
+        },2000)
+        } else {
+            setPedido([...pedido, equipo])
+            toast.success('Agregado Solicitud')
+            setTimeout(() =>{
+                router.push('/pedidoobra')
             },2000)
             
         }
@@ -251,6 +288,30 @@ const CombustibleProvider = ({children}) => {
     }
 
 
+    const handleAgregarPedido03 = ({...obras}) => {
+        if(pedido03.some(proveedorState => proveedorState.id === obras.id)) {
+            // Actualizar la cantidad
+            const pedidoActualizado = pedido03.map(proveedorState => proveedorState.id === obras.id ? obras : proveedorState)
+            setPedido03(pedidoActualizado)
+ 
+            toast.success('Agregado Proveedor')
+            setTimeout(() =>{
+             router.push('/generarordencompraobra')
+         },2000)
+            
+         } else {
+             setPedido03([...pedido03, obras])
+             toast.success('Agregado Proveedor')
+             setTimeout(() =>{
+                 router.push('/generarordencompraobra')
+             },2000)
+         }
+ 
+         setModal(false)
+        
+    }
+
+
 
 
 
@@ -270,6 +331,30 @@ const CombustibleProvider = ({children}) => {
             toast.success('Agregado Proveedor')
             setTimeout(() =>{
                 router.push('/generarordencompra')
+            },2000)
+        }
+
+        setModal(false)
+        
+    }
+
+
+    const handleAgregarOrdenObra = ({...obras}) => {
+        if(pedido.some(obraState => obraState.id === obras.id)) {
+           // Actualizar la cantidad
+           const pedidoActualizado = pedido.map(obraState => obraState.id === obras.id ? obras : obraState)
+           setOrden(pedidoActualizado)
+
+           toast.success('Agregado Proveedor')
+           setTimeout(() =>{
+            router.push('/generarordencompraobra')
+        },2000)
+           
+        } else {
+            setOrden([...pedido, obras])
+            toast.success('Agregado Proveedor')
+            setTimeout(() =>{
+                router.push('/generarordencompraobra')
             },2000)
         }
 
@@ -324,7 +409,7 @@ const CombustibleProvider = ({children}) => {
         e.preventDefault()
 
         try {
-           await axios.post('/api/ordenes',{pedido,nombre,cantidad,descripcion,folio, obra, valor,pedido01,emisor,patente,valor, fecha: new Date()})
+           await axios.post('/api/ordenes',{pedido,nombre,cantidad,descripcion,folio, obra, valor,pedido01,emisor,patente,valor,propietario,Kilometraje, fecha: new Date()})
             // Resetear la app
             setFaenaActual(faenas[0])
             setPedido([])
@@ -340,6 +425,8 @@ const CombustibleProvider = ({children}) => {
             setNuevapatente('')
             setObra('')
             setValor('')
+            setPropietario('')
+            setKilometraje('')
             setPedido01([])
 
             toast.success('Generando Orden De Compra ⏳')
@@ -372,6 +459,49 @@ const CombustibleProvider = ({children}) => {
             cantidad03,descripcion03,valor03,
             cantidad04,descripcion04,valor04
             ,folio, fecha: new Date()})
+            // Resetear la app
+            setFolio('')
+            setOrden([])
+            setObra('')
+            setNombre('')
+            setCantidad(0)
+            setCantidad01('')
+            setCantidad02('')
+            setCantidad03('')
+            setCantidad04('')
+            setDescripcion('')
+            setDescripcion01('')
+            setDescripcion02('')
+            setDescripcion03('')
+            setDescripcion04('')
+            setValor('')
+            setValor01('')
+            setValor02('')
+            setValor03('')
+            setValor04('')
+            toast.success('Generando Orden De Compra ⏳')
+
+            setTimeout(() =>{
+                router.push('/orden-compra-general')
+            },3000)
+
+        } catch (error) {
+            console.log(error)
+        }
+
+
+        console.log('agregando orden')
+    }
+
+
+
+
+    const agregarOCObra= async (e) => {
+        e.preventDefault()
+
+        try {
+           await axios.post('/api/generarocobra',{pedido03,pedido,nombre,obra,emisor,
+            cantidad,descripcion,fecha: new Date()})
             // Resetear la app
             setFolio('')
             setOrden([])
@@ -602,8 +732,22 @@ const CombustibleProvider = ({children}) => {
             email,
             setEmail,
             password,
-            setPassword
-
+            setPassword,
+            propietario,
+            Kilometraje,
+            setKilometraje,
+            setPropietario,
+            handleAgregarPedidoObra,
+            handlesetObra,
+            obras,
+            setObras,
+            pedido02,
+            setPedido02,
+            pedido03,
+            setPedido03,
+            handleAgregarOrdenObra,
+            agregarOCObra,
+            handleAgregarPedido03
             
             
             // total,

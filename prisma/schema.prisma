@@ -42,6 +42,8 @@ model Orden {
   valor String
   pedido01 Json
   emisor String
+  Kilometraje String
+  propietario String
   estado Boolean  @default(false)
   finalizado Boolean  @default(false)
   anular Boolean @default(false)
@@ -102,6 +104,42 @@ model Descripcion {
   id Int @id @default(autoincrement())
   nombre String
 }
+
+
+
+model Obra {
+  id Int @id @default(autoincrement())
+  nombre String
+  cantidad String
+  estado  Boolean  @default(false)
+}
+
+
+
+model OrdenObra {
+  id Int @id @default(autoincrement())
+  nombre String
+  cantidad String
+  obra String
+  descripcion String
+  fecha DateTime
+  patente String
+  pedido Json
+  pedido03 Json
+  emisor String
+  Kilometraje String
+  propietario String
+  estado Boolean  @default(false)
+  finalizado Boolean  @default(false)
+  anular Boolean @default(false)
+  estado01 Boolean  @default(false)
+}
+
+
+
+
+
+
 
 
 

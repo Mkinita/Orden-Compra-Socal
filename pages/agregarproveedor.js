@@ -29,7 +29,7 @@ export default function Solicitud() {
 
 
     const comprobarProvedor = useCallback(() => {
-        return comuna.length === 0 || comuna === "" || comuna.length <2;
+        return comuna.length === 0 || comuna === "" || comuna.length <1;
         
     },[comuna, comuna])
 
@@ -131,11 +131,11 @@ export default function Solicitud() {
                 <div>
                     <label 
                         htmlFor="comuna"
-                        className="block text-center lg:w-3/4 uppercase text-slate-800 font-bold text-sm">Comuna</label>
+                        className="hidden text-center lg:w-3/4 uppercase text-slate-800 font-bold text-sm">Comuna</label>
                     <input
                         id="comuna"
                         type="text"
-                        className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md text-sm"  
+                        className="bg-gray-200 w-full lg:w-3/4 p-2 rounded-md text-sm hidden"  
                         value={comuna}
                         onChange={e => setComuna(e.target.value)}
                     />

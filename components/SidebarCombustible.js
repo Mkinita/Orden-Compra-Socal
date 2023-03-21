@@ -61,6 +61,12 @@ const SidebarCombustible = () => {
                         </Link>
                     </li> */}
 
+                    <li>
+                        <Link href="/agregarproveedor" className="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+                            ➕
+                            <span className="ml-3">Agregar Proveedores</span>
+                        </Link>
+                    </li> 
 
                     
 
