@@ -60,7 +60,7 @@ export default function Admin() {
     return(
         <LayoutDetalle pagina={'Listado-OC'}>
 
-            <h1 className="text-2xl font-black text-center"> Listado OC Combustible</h1>
+            <h1 className="text-2xl font-black text-center">Listado</h1>
             <p className="text-2xl my-10"></p>
             <div className='mt-auto'>
                 <input value={buscar} onChange={buscador} type="text" placeholder='Buscar' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
