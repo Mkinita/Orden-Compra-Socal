@@ -5,6 +5,7 @@ import OrdenGeneralPendienteCombustible from '../components/OrdenGeneralPendient
 
 
 
+
 export default function Admin() {
 
     const fetcher = () => axios('/api/ordenes-pendientes-combustible').then(datos => datos.data)
@@ -22,11 +23,11 @@ export default function Admin() {
 
             
 
-            {data && data.length ? data.map(ordenobra =>
+            {data && data.length ? data.map(orden =>
                 <div className=''>
                 <OrdenGeneralPendienteCombustible
-                    key={ordenobra.id}
-                    ordenobra={ordenobra}
+                    key={orden.id}
+                    orden={orden}
                 />
                 </div>
                 

@@ -1,13 +1,14 @@
+import React from 'react'
+import Image from "next/image";
+import useCombustible from '../hooks/useCombustible';
 
-import { useRouter } from 'next/router'
 
 
 
-
-const OrdenGeneralPendienteCombustible = ({ordenobra}) => {
+const OrdenGeneralPendienteCombustible = ({orden}) => {
     const {id,emisor, obra,estado,
     
-    } = ordenobra
+    } = orden
   return (
    
     <>
