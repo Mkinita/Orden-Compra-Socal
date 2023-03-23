@@ -16,6 +16,7 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
       valor02,cantidad02,descripcion02,
       valor03,cantidad03,descripcion03,
       valor04,cantidad04,descripcion04,
+      nombre01,rut01
     
     }  
     = ocpedidos
@@ -116,13 +117,13 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
             <div className=" border border-slate-800 rounded-xl p-2">
                 <div className="flex ">
                     <div className="flex-1">
-                    <p className="">SEÑOR (ES): {oc.nombre}</p>
+                    <p className="">SEÑOR (ES): {oc.nombre}{nombre01}</p>
                 </div>
 
   
 
                 <div className="flex-1">
-                <p className="">RUT: {oc.rut}</p>
+                <p className="">RUT: {oc.rut}{rut01}</p>
                 </div>
             </div>
 

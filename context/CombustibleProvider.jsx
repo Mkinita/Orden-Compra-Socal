@@ -32,6 +32,9 @@ const CombustibleProvider = ({children}) => {
     const [nombre, setNombre] = useState('')
     const [emisor, setEmisor] = useState('')
 
+    const [nombre01, setNombre01] = useState('')
+    const [rut01, setRut01] = useState('')
+
     const [cantidad, setCantidad] = useState(0)
     const [descripcion, setDescripcion] = useState('')
     const [valor, setValor] = useState(0)

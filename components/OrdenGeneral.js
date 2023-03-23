@@ -4,6 +4,7 @@ import {formatearDinero} from "helpers/index"
 import { useRouter } from 'next/router'
 import EditarOrdenGeneral from "./EditarOrdenGeneral"
 import React, { useState } from 'react';
+import EditUserFormGeneralProveedor from './EditUserFormGeneralProveedor'
 
 
 
@@ -14,6 +15,7 @@ const OrdenGeneral = ({ocpedidos}) => {
         valor02,cantidad02,descripcion02,
         valor03,cantidad03,descripcion03,
         valor04,cantidad04,descripcion04,
+        nombre01,rut01
     
     } = ocpedidos
 
@@ -57,6 +59,21 @@ const OrdenGeneral = ({ocpedidos}) => {
         };
 
 
+        const [isVisibles, setIsVisibles] = useState(true);
+
+        const toggleVisibilitys = () => {
+          setIsVisibles(!isVisibles);
+        };
+
+
+        const [isVisibleproveedor, setIsVisibleproveedor] = useState(false);
+      
+        const toggleVisibilityproveedor = () => {
+          setIsVisibleproveedor(!isVisibleproveedor);
+        };
+
+
+
 
     const cantidad1 =cantidad;
     const valor1 = valor;
@@ -95,7 +112,7 @@ const OrdenGeneral = ({ocpedidos}) => {
     
   return (
     <>
-    <div className=''>
+    <div>
     <div className="border p-10 space-y-2 ">
       <div className=''></div>
         <div className='py-3 border-b last-of-type:border-0 items-center'>
@@ -105,24 +122,51 @@ const OrdenGeneral = ({ocpedidos}) => {
             <p className="text-sm font-bold ">Obra: {obra}</p>
             </div>
         <div>
+          
             {orden.map(oc => (
                 <div key={oc.id}
-                className="py-3 flex border-b last-of-type:border-0 items-center"
+                className=""
                 >
-                    
+                  <div className="py-4  space-y-2">
+            <div className="grid md:grid-cols-2 gap-4 border-b">
+                <div className="">
+                <header>
                     <div className="space-y-2">
                         <h3 className="text-xl font-bold">Proveedor</h3>
-                        <p className="text-xs font-bold">Nombre: {oc.nombre}</p>
-                        <p className="text-xs font-bold">Rut: {oc.rut}</p>
+                        <p className="text-xs font-bold">Nombre: {oc.nombre} {nombre01}</p>
+                        <p className="text-xs font-bold">Rut: {oc.rut} {rut01}</p>
                         <p className="text-xs font-bold">{oc.chofer}</p>
                         
                     </div>
-
-
-                    
+                    <button
+                            className="font-bold text-sm"
+                            onClick={toggleVisibilityproveedor}
+                            
+                        >
+                            {isVisibleproveedor ? '➖' : 'Editar ✏️'}
+                        </button>
+                        </header>
+                        </div>
+            <div>
+                        <div className="">
+            
+                {isVisibleproveedor && (
+            <div className="">
+                <EditUserFormGeneralProveedor key={ocpedidos.id} ocpedidos={ocpedidos} />
+            </div>
+                )}
+            </div>
                 </div>
+                </div>
+                </div>
+                </div>
+                ))}
 
-            ))}
+                
+
+            
+
+
 
 
                 
@@ -130,12 +174,13 @@ const OrdenGeneral = ({ocpedidos}) => {
                     
 
 
-
-                    <div className="flex flex-col">
+                    <div className={isVisibles ? 'block' : 'hidden'}>
+                    <div className="flex flex-col ">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-            <table className="min-w-full divide-y divide-gray-200">
+            <table  className="min-w-full divide-y divide-gray-200">
+           
               <thead className="bg-gray-50">
                 <tr>
                   <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -206,14 +251,17 @@ const OrdenGeneral = ({ocpedidos}) => {
             </table>
             <button
               className="font-bold text-sm w-full py-5 pb-0 hover:scale-110"
-              onClick={toggleVisibility}
+              onClick={() => {
+                toggleVisibility();
+                // toggleVisibilitys();
+              }}
                             
             >
               {isVisible ? '➖' : 'Editar ✏️'}
             </button>
                         
                         
-                    
+            </div>        
             </div>
             <div>
             <div className="">
