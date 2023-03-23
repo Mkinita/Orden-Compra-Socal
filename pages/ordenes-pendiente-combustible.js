@@ -23,7 +23,7 @@ export default function Admin() {
 
             
 
-            {data && data.length ? data.map(orden =>
+            {/* {data && data.length ? data.map(orden =>
                 <div className=''>
                 <OrdenGeneralPendienteCombustible
                     key={orden.id}
@@ -32,7 +32,7 @@ export default function Admin() {
                 </div>
                 
 
-                ):<p>No Hay Ordenes Pendientes</p>}
+                ):<p>No Hay Ordenes Pendientes</p>} */}
 
         </LayoutCombustible>
     )

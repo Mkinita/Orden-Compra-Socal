@@ -3,8 +3,6 @@ import Image from "next/image";
 import useCombustible from '../hooks/useCombustible';
 
 
-
-
 const OrdenGeneralPendienteCombustible = ({orden}) => {
     const {id,emisor, obra,estado,
     
