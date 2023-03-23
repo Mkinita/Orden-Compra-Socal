@@ -7,9 +7,6 @@ export default async function handler (req,res){
         const { id }  = req.query
         const 
             {
-                emisor, 
-                nombre,
-                obra,
                 cantidad,descripcion,valor,
                 cantidad01,descripcion01,valor01,
                 cantidad02,descripcion02,valor02,
@@ -22,14 +19,11 @@ export default async function handler (req,res){
             where: { id: parseInt(id) },
             data: 
             { 
-                nombre: nombre, 
-                emisor: emisor, 
-                obra: obra, 
                 cantidad: cantidad, descripcion: descripcion, valor: valor,
-                cantidad01: cantidad01, descripcion01: descripcion01, valor: valor01,
-                cantidad02: cantidad02, descripcion02: descripcion02, valor: valor02,
-                cantidad03: cantidad03, descripcion03: descripcion03, valor: valor03,
-                cantidad04: cantidad04, descripcion04: descripcion04, valor: valor04,
+                cantidad01: cantidad01, descripcion01: descripcion01, valor01: valor01,
+                cantidad02: cantidad02, descripcion02: descripcion02, valor02: valor02,
+                cantidad03: cantidad03, descripcion03: descripcion03, valor03: valor03,
+                cantidad04: cantidad04, descripcion04: descripcion04, valor04: valor04,
             },
           })
 

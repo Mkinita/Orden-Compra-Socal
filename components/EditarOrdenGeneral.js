@@ -6,23 +6,23 @@ import Obra from './Obra';
 export default function EditarOrdenGeneral({ocpedidos}) {
   const [newcantidad, setNewCantidad] = useState('');
   const [newdescripcion, setNewDescripcion] = useState('');
-  const [newValor, setNewValor] = useState('');
+  const [newvalor, setNewValor] = useState('');
 
   const [newcantidad01, setNewCantidad01] = useState('');
   const [newdescripcion01, setNewDescripcion01] = useState('');
-  const [newValor01, setNewValor01] = useState('');
+  const [newvalor01, setNewValor01] = useState('');
 
   const [newcantidad02, setNewCantidad02] = useState('');
   const [newdescripcion02, setNewDescripcion02] = useState('');
-  const [newValor02, setNewValor02] = useState('');
+  const [newvalor02, setNewValor02] = useState('');
 
   const [newcantidad03, setNewCantidad03] = useState('');
   const [newdescripcion03, setNewDescripcion03] = useState('');
-  const [newValor03, setNewValor03] = useState('');
+  const [newvalor03, setNewValor03] = useState('');
 
   const [newcantidad04, setNewCantidad04] = useState('');
   const [newdescripcion04, setNewDescripcion04] = useState('');
-  const [newValor04, setNewValor04] = useState('');
+  const [newvalor04, setNewValor04] = useState('');
 
 
   const 
@@ -61,31 +61,31 @@ export default function EditarOrdenGeneral({ocpedidos}) {
 
     try {
       await axios.post(`/api/editarordengeneral/${id}`, 
-      { cantidad: newcantidad , descripcion: newdescripcion, valor:newValor,
-        cantidad01: newcantidad01 , descripcion01: newdescripcion01, valor:newValor01,
-        cantidad02: newcantidad02 , descripcion02: newdescripcion02, valor:newValor02,
-        cantidad03: newcantidad03 , descripcion03: newdescripcion03, valor:newValor03,
-        cantidad04: newcantidad04 , descripcion04: newdescripcion04, valor:newValor04
+      { cantidad: newcantidad , descripcion: newdescripcion, valor:newvalor,
+        cantidad01: newcantidad01 , descripcion01: newdescripcion01, valor01:newvalor01,
+        cantidad02: newcantidad02 , descripcion02: newdescripcion02, valor02:newvalor02,
+        cantidad03: newcantidad03 , descripcion03: newdescripcion03, valor03:newvalor03,
+        cantidad04: newcantidad04 , descripcion04: newdescripcion04, valor04:newvalor04
         });
       setCantidad(newcantidad);
       setDescripcion(newdescripcion);
-      setValor(newValor);
+      setValor(newvalor);
 
       setCantidad01(newcantidad01);
       setDescripcion01(newdescripcion01);
-      setValor01(newValor01);
+      setValor01(newvalor01);
 
       setCantidad02(newcantidad02);
       setDescripcion02(newdescripcion02);
-      setValor02(newValor02);
+      setValor02(newvalor02);
 
       setCantidad03(newcantidad03);
       setDescripcion03(newdescripcion03);
-      setValor03(newValor03);
+      setValor03(newvalor03);
 
       setCantidad04(newcantidad04);
       setDescripcion04(newdescripcion04);
-      setValor04(newValor04);
+      setValor04(newvalor04);
 
     } catch (error) {
       console.log(error);
@@ -158,7 +158,7 @@ export default function EditarOrdenGeneral({ocpedidos}) {
                 </th>
                 <th>
                     <label>
-                        <input className='text-center' type="text" value={newValor} onChange={(event) => setNewValor(event.target.value)} />
+                        <input className='text-center' type="text" value={newvalor} onChange={(event) => setNewValor(event.target.value)} />
                     </label>
                 </th>
                 </tr>
@@ -176,7 +176,7 @@ export default function EditarOrdenGeneral({ocpedidos}) {
                 </th>
                 <th>
                     <label>
-                        <input className='text-center' type="text" value={newValor01} onChange={(event) => setNewValor01(event.target.value)} />
+                        <input className='text-center' type="text" value={newvalor01} onChange={(event) => setNewValor01(event.target.value)} />
                     </label>
                 </th>
                 </tr>
@@ -193,7 +193,7 @@ export default function EditarOrdenGeneral({ocpedidos}) {
                 </th>
                 <th>
                     <label>
-                        <input className='text-center' type="text" value={newValor02} onChange={(event) => setNewValor02(event.target.value)} />
+                        <input className='text-center' type="text" value={newvalor02} onChange={(event) => setNewValor02(event.target.value)} />
                     </label>
                 </th>
                 </tr>
@@ -210,7 +210,7 @@ export default function EditarOrdenGeneral({ocpedidos}) {
                 </th>
                 <th>
                     <label>
-                        <input className='text-center' type="text" value={newValor03} onChange={(event) => setNewValor03(event.target.value)} />
+                        <input className='text-center' type="text" value={newvalor03} onChange={(event) => setNewValor03(event.target.value)} />
                     </label>
                 </th>
                 </tr>
@@ -227,7 +227,7 @@ export default function EditarOrdenGeneral({ocpedidos}) {
                 </th>
                 <th>
                     <label>
-                        <input className='text-center' type="text" value={newValor04} onChange={(event) => setNewValor04(event.target.value)} />
+                        <input className='text-center' type="text" value={newvalor04} onChange={(event) => setNewValor04(event.target.value)} />
                     </label>
                 </th>
                 </tr>
@@ -236,7 +236,7 @@ export default function EditarOrdenGeneral({ocpedidos}) {
             </table>
       
 
-      <button type="submit" className='text-center m-auto w-full py-10 pb-0'>♻️</button>
+      <button type="submit" className='text-center m-auto w-full py-10 pb-0 hover:scale-110'>Guardar ♻️</button>
     </form>
   );
 }
