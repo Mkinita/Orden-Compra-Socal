@@ -16,7 +16,7 @@ export default function Admin() {
     return(
         <LayoutCombustible pagina={'Autorizar'}>
 
-            <h1 className="text-2xl font-black text-center">Estado De Ordenes Combustible</h1>
+            <h1 className="text-2xl font-black text-center">Estado De O.C Combustible</h1>
             <p className="text-2xl my-5"></p>
             
 
