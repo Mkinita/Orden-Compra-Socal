@@ -2,6 +2,8 @@ import axios  from 'axios'
 import { toast } from "react-toastify"
 import {formatearDinero} from "helpers/index"
 import { useRouter } from 'next/router'
+import EditarOrdenGeneral from "./EditarOrdenGeneral"
+import React, { useState } from 'react';
 
 
 
@@ -33,6 +35,8 @@ const OrdenGeneral = ({ocpedidos}) => {
     }
 
 
+
+
     const anularordendecompra = async () => {
 
       try {
@@ -43,6 +47,14 @@ const OrdenGeneral = ({ocpedidos}) => {
           toast.error('Hubo un error')
       }
   }
+
+
+
+  const [isVisible, setIsVisible] = useState(false);
+      
+        const toggleVisibility = () => {
+          setIsVisible(!isVisible);
+        };
 
 
 
@@ -192,9 +204,29 @@ const OrdenGeneral = ({ocpedidos}) => {
                 
               </tbody>
             </table>
+            <button
+              className="font-bold text-sm w-full py-5 pb-0 hover:scale-110"
+              onClick={toggleVisibility}
+                            
+            >
+              {isVisible ? '➖' : 'Editar ✏️'}
+            </button>
+                        
+                        
+                    
+            </div>
+            <div>
+            <div className="">
+            
+                {isVisible && (
+            <div className="p-4">
+                <EditarOrdenGeneral key={ocpedidos.id} ocpedidos={ocpedidos} />
+            </div>
+                )}
           </div>
         </div>
       </div>
+    </div>
     </div>
             
         </div>

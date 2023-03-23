@@ -2,13 +2,11 @@ import Image from "next/image"
 import axios  from 'axios'
 import { toast } from "react-toastify"
 import { useRouter } from 'next/router'
-import EditUserForm from "./EditUserForm"
-import React, { useState } from 'react';
 
 
 
 const Orden = ({orden}) => {
-    const {id, nombre, total, emisor,pedido,pedido01,obra, fecha, folio, descripcion} = orden
+    const {id, nombre, total, emisor,pedido,pedido03,obra,descripcion,cantidad} = orden
     const router = useRouter()
 
     const completarPago = async () => {
@@ -38,56 +36,20 @@ const Orden = ({orden}) => {
 
 
     
-        const [isVisible, setIsVisible] = useState(false);
-      
-        const toggleVisibility = () => {
-          setIsVisible(!isVisible);
-        };
-
-
-    
 
     
   return (
     <>
-        <div className="border p-4 md:p-10 space-y-2">
-            <div className="grid md:grid-cols-2 gap-4 border-b">
-                <div className="p-4">
-                    <header>
-                        <h3 className="text-xl font-bold">Nº O.C: {id}</h3>
-                        <p className="text-sm font-bold">Emisor: {emisor}</p>
-                        <p className="text-sm font-bold">Solicitante: {nombre}</p>
-                        <p className="text-sm font-bold">Obra: {obra}</p>
-                        <button
-                            className="font-bold text-sm"
-                            onClick={toggleVisibility}
-                            
-                        >
-                            {isVisible ? '➖' : 'Editar ✏️'}
-                        </button>
-                        
-                        
-                    </header>
-                </div>
-            <div>
-            <div className="">
-            
-                {isVisible && (
-            <div className="p-4">
-                <EditUserForm key={orden.id} orden={orden} />
-            </div>
-                )}
-            </div>
-            </div>
+    <div className="border p-10 space-y-2 ">
+      <div className=''></div>
+        <div className='py-3 border-b last-of-type:border-0 items-center'>
+            <h3 className="text-xl font-bold">Nº O.C: {id}</h3>
+            <p className="text-sm font-bold">Emisor: {emisor}</p>
+            <p className="text-sm font-bold">Solicitante: {nombre}</p>
+            <p className="text-sm font-bold ">Obra: {obra}</p>
             </div>
 
-
-      
-      
-        
-            
-
-            {pedido01.map(oc => (
+            {pedido03.map(oc => (
                 <div key={oc.id}
                 className="py-3 flex border-b last-of-type:border-0 items-center"
                 >
@@ -95,7 +57,7 @@ const Orden = ({orden}) => {
                     <div className="space-y-2">
                         <h3 className="text-xl font-bold">Proveedor</h3>
                         <p className="text-xs font-bold">Nombre: {oc.nombre}</p>
-                        <p className="text-xs font-bold">Rut: {oc.rut}</p>
+                        <p className="text-xs font-bold">Cantidad: {oc.cantidad} Litros</p>
                     </div>
 
 
@@ -104,7 +66,17 @@ const Orden = ({orden}) => {
 
             ))}
         <div>
-            {pedido.map(oc => (
+            
+
+
+
+<div class="grid grid-cols-2">
+        <div class="col-span-1">
+          <div className="p-1 w-full h-full">
+            <div className='p-2 text-center'>                      
+                <p className='p-5'></p>
+                <h3 className='text-sm font-bold'>
+                {pedido.map(oc => (
                 <div key={oc.id}
                 className="py-3 flex border-b last-of-type:border-0 items-center"
                 >
@@ -123,6 +95,43 @@ const Orden = ({orden}) => {
                     </div> 
                 </div>
             ))}
+                </h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1">
+          <div className="p-1 w-full h-full">
+            <div className='p-2 text-center'>                      
+                <p className='p-5'></p>
+                <h3 className='text-sm font-bold'>
+                {pedido.map(oc => (
+                <div key={oc.id}
+                className="py-3 flex border-b last-of-type:border-0 items-center"
+                >
+                    
+                    
+
+                    <div className="xl:w-48 md:w-14 space-y-2">
+                    {/* <h3 className="text-xl font-bold">Datos Del Equipo</h3>
+                    
+                    <p className="font-bold text-sm">Patente: {oc.patente}</p>
+                    <p className="font-bold text-sm">Chofer: {oc.operador}</p>
+
+
+                    <p className="py-10"></p> */}
+                    <h3 className="text-xl font-bold">Solicitud</h3>
+                    
+                    <p className="font-bold text-sm">Carga: {cantidad} {descripcion}</p>
+                    </div>
+                    
+                     
+                </div>
+            ))}
+                </h3>
+            </div>
+          </div>
+        </div>
+        </div>
         </div>
 
 

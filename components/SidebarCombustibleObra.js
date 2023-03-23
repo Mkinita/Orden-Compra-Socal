@@ -20,17 +20,8 @@ const SidebarCombustible = () => {
                     
                     </li> 
 
-                     <li>
-                        <Link href="/orden-compra" className="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
-                            ✔️
-                            <span className="ml-3">Ordenes Autorizadas ⛽</span>
-                        </Link>
-                    </li>
-
-
-
                     <li>
-                        <Link href="/ordenes-pendiente-combustible" className="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+                        <Link href="/ordenes-pendiente-combustible-obra" className="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                             ⏳
                             <span className="ml-3">Estado De Ordenes ⏱</span>
                         </Link>
@@ -39,14 +30,11 @@ const SidebarCombustible = () => {
 
 
                     <li>
-                        <Link href="/combustible" className="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+                        <Link href="/combustible-obra" className="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                         ⛽
                             <span className="ml-3">Generar Orden De Compra</span>
                         </Link>
                     </li>
-
-
-
 
 
                     

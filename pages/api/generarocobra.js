@@ -24,6 +24,10 @@ export default async function handler(req, res) {
         descripcion: req.body.descripcion,   
         pedido: req.body.pedido,
         pedido03: req.body.pedido03,
+        propietario: req.body.propietario,
+        Kilometraje: req.body.Kilometraje,
+        patente :req.body.patente,
+        fecha: req.body.fecha,
       },
     });
     res.json(OrdenObra);

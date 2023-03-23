@@ -11,7 +11,9 @@ import ResumenSolicitudObra from "../components/ResumenSolicitudObra"
 
 export default function GenerarOrdenDeCompraObra() {
     const { pedido,pedido03, nombre,setObra,cantidad, obra,descripcion, setNombre, setDescripcion, setCantidad, agregarOCObra ,
-    emisor,setEmisor,pedido01
+    emisor,setEmisor,pedido01,nuevapatente,setNuevapatente,propietario,
+    setPropietario,
+    Kilometraje,setKilometraje
 
     
     } = useCombustible()
@@ -38,14 +40,13 @@ export default function GenerarOrdenDeCompraObra() {
 
     
 
-    function handleGenerateFolio() {
-        setFolio(uuidv4());
-    }
+
 
 
     const [optionsonbras, setOptionsobras] = useState([]);
     const [options, setOptions] = useState([]);
     const [selectedValue, setSelectedValue] = useState('');
+    const [selectedValueObras, setSelectedValueObras] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -158,7 +159,7 @@ export default function GenerarOrdenDeCompraObra() {
                         </div>
 
 
-                        {/* <div>
+                        <div>
                         <label 
                             htmlFor="obra"
                             className=""></label>
@@ -178,7 +179,7 @@ export default function GenerarOrdenDeCompraObra() {
                             onChange={e => setObra(e.target.value)}
                         />
                     
-                    </div> */}
+                    </div>
                     </div>
                 </div>
 
@@ -238,6 +239,57 @@ export default function GenerarOrdenDeCompraObra() {
                     
                 </div>
 
+
+                <div>
+                    <label 
+                        htmlFor="nuevapatente"
+                        className="uppercase text-slate-800 font-bold text-xl hidden">Patente</label>
+                    <input
+                        id="nuevapatente"
+                        type="text"
+                        className="bg-gray-200 w-full p-2 rounded-md hidden"  
+                        value={nuevapatente}
+                        onChange={e => setNuevapatente(e.target.value)}
+                    />
+                
+                </div>
+
+
+                <div className="flex gap-1 p-2" >
+                    <div className="flex-1 w-16">
+
+                        <label 
+                            htmlFor="Kilometraje"
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Kilometraje</label>
+                        <input
+                            id="Kilometraje"
+                            type="number"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={Kilometraje}
+                            onChange={e => setKilometraje(e.target.value)}
+                        />
+                    
+                    </div>
+
+                    <div className="flex-1 w-16">
+                        <label 
+                            htmlFor="propietario"
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Propietario</label>
+                        <select
+                            id="propietario"
+                            className="bg-gray-200 w-full p-2 rounded-md"
+                            value={propietario}
+                            onChange={e => setPropietario(e.target.value)}
+                        >
+                            <option value="opcion0">-</option>
+                            <option value="opcion1">Socal</option>
+                            <option value="opcion2">Arrendado</option>
+                        </select>
+                    </div>
+
+                    
+                </div>
+
                 
 
                 
@@ -254,11 +306,6 @@ export default function GenerarOrdenDeCompraObra() {
                     />
                 </div>
 
-
-
-
-                
-                
             </form>
 
 

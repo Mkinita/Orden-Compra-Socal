@@ -15,6 +15,14 @@ export const SidebarAdmin = () => {
               </Link>
            </li>
 
+
+           <li>
+              <Link href="/combustible-obra" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+                  ⛽
+                  <span className="ml-3">Orden De Compra Obra ⛽</span>
+              </Link>
+           </li>
+
            <li>
               <Link href="/proveedores" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                     📃

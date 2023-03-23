@@ -21,14 +21,31 @@ export default function Solicitud() {
 
 
 
-      <div className="border p-1 w-full h-full hover:scale-110">
-      <div className='p-2 text-center'>
-        
-            <Link href="/autorizar" className="w-full mt-5 p-3 text-9xl ">⛽</Link>
-            
-            <p className='p-5'></p>
-            <h3 className='text-lg font-bold'>Orden De Compra Combustible</h3>
-      </div>
+      
+
+      <div class="grid grid-cols-2">
+        <div class="col-span-1">
+          <div className="p-1 w-full h-full hover:scale-110">
+            <div className='p-2 text-center'>
+                  
+                <Link href="/autorizar" className="w-full mt-5 p-3 text-9xl ">⛽</Link>
+                      
+                <p className='p-5'></p>
+                <h3 className='text-sm font-bold'>O.C. Combustible</h3>
+            </div>
+          </div>
+        </div>
+        <div class="col-span-1">
+          <div className="p-1 w-full h-full hover:scale-110">
+            <div className='p-2 text-center'>
+                  
+                <Link href="/autorizar-obra" className="w-full mt-5 p-3 text-9xl ">⛽</Link>
+                      
+                <p className='p-5'></p>
+                <h3 className='text-sm font-bold'>O.C. Por Obra</h3>
+            </div>
+          </div>
+        </div>
       </div>
 
 
@@ -38,7 +55,7 @@ export default function Solicitud() {
             <Link href="/autorizarordengeneral" className="w-full mt-5 p-3 text-9xl ">📝</Link>
             
             <p className='p-5'></p>
-            <h3 className='text-lg font-bold'>Orden De Compra</h3>
+            <h3 className='text-sm font-bold'>Orden De Compra</h3>
       </div>
       </div>
                 

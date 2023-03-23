@@ -500,32 +500,21 @@ const CombustibleProvider = ({children}) => {
         e.preventDefault()
 
         try {
-           await axios.post('/api/generarocobra',{pedido03,pedido,nombre,obra,emisor,
+           await axios.post('/api/generarocobra',{pedido03,pedido,nombre,obra,emisor,patente,propietario,Kilometraje,
             cantidad,descripcion,fecha: new Date()})
             // Resetear la app
-            setFolio('')
-            setOrden([])
+            setPedido03([])
+            setPedido([])
             setObra('')
             setNombre('')
-            setCantidad(0)
-            setCantidad01('')
-            setCantidad02('')
-            setCantidad03('')
-            setCantidad04('')
+            setKilometraje(0)
+            setPropietario('')
             setDescripcion('')
-            setDescripcion01('')
-            setDescripcion02('')
-            setDescripcion03('')
-            setDescripcion04('')
-            setValor('')
-            setValor01('')
-            setValor02('')
-            setValor03('')
-            setValor04('')
+            setCantidad(0)
             toast.success('Generando Orden De Compra ⏳')
 
             setTimeout(() =>{
-                router.push('/orden-compra-general')
+                router.push('/ordenes-pendiente-combustible-obra')
             },3000)
 
         } catch (error) {
