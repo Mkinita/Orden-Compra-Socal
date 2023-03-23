@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import axios from 'axios'
 import LayoutCombustible from "../layout/LayoutCombustible"
-import OrdenGeneralPendienteCombustible from '../components/OrdenGeneralPendienteCombustible'
+// import OrdenGeneralPendienteCombustible from '../components/OrdenGeneralPendienteCombustible'
 
 
 
