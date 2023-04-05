@@ -56,58 +56,7 @@ export const SidebarAdmin = () => {
               </Link>
            </li>
 
-
-           {/* <li>
-              <Link href="/autorizarordengeneraladmin" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
-                  📃
-                  <span className="ml-3">Autorizar Las Ordenes De Compras 🔑</span>
-              </Link>
-           </li>
-
-
-           <li>
-              <Link href="/proveedores" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
-                  📃
-                  <span className="ml-3">Generar Orden De Compra</span>
-              </Link>
-           </li>
-
            
-
-
-           
-
-           <li>
-              <Link href="/listado-oc-general" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
-                   📃🔍
-                  <span className="ml-3">Ordenes de Compra Por Obra</span>
-              </Link>
-           </li>
-
-
-           <li>
-              <Link href="/listado-oc-general-ocgeneral" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
-                   📃🔍
-                  <span className="ml-3">Ordenes de Compra Por Nº O.C</span>
-              </Link>
-           </li>
-
-
-           <li>
-              <Link href="/listado-oc-general" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
-                   📃🔍
-                  <span className="ml-3">Ordenes de Compra Anuladas</span>
-              </Link>
-           </li>
- */}
-
-           
-
-
-
-           
-
-
 
             <li>
                <Link href="/agregarproveedor" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
