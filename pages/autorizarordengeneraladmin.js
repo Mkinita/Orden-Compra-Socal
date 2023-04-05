@@ -14,7 +14,7 @@ export default function Admin() {
      
 
     return(
-        <LayoutInicioAdminGeneral pagina={'Autorizar'}>
+        <LayoutInicioAdminGeneral pagina={'Autorizar '}>
 
             <h1 className="text-2xl font-black text-center"> Autorizar Orden De Compra</h1>
             <p className="text-2xl my-5"></p>
