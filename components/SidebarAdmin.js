@@ -58,7 +58,7 @@ export const SidebarAdmin = () => {
 
 
            {/* <li>
-              <Link href="/autorizarordengeneral" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+              <Link href="/autorizarordengeneraladmin" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                   📃
                   <span className="ml-3">Autorizar Las Ordenes De Compras 🔑</span>
               </Link>
