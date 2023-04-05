@@ -4,7 +4,7 @@ import Faena from "./Faena";
 import Link from 'next/link';
 
 
-const SidebarInicioAdmin = () => {
+const Sidebarinicioadmin = () => {
     
 
     
@@ -81,4 +81,4 @@ const SidebarInicioAdmin = () => {
 }
 
 
-export default SidebarInicioAdmin
+export default Sidebarinicioadmin

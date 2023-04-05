@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import axios from 'axios'
-import LayoutInicioAdminGeneral from "../layout/LayoutInicioAdminGeneral"
+import LayoutinicioadminGeneral from "../layout/LayoutinicioadminGeneral"
 import ListadoOcGeneral from '../components/ListadoOcGeneral'
 import TablaGeneral from '@/components/TablaGeneral'
 import * as XLSX from 'xlsx';
@@ -77,7 +77,7 @@ export default function Admin() {
      
 
     return(
-        <LayoutInicioAdminGeneral pagina={'Listado-OC'}>
+        <LayoutinicioadminGeneral pagina={'Listado-OC'}>
 
             <h1 className="text-2xl font-black text-center"> Listado Ordenes De Compra</h1>
             <p className="text-2xl my-10"></p>
@@ -100,7 +100,7 @@ export default function Admin() {
                 <button onClick={() => exportTo(data)}>📥 Exportar a Excel</button>
             </div>
 
-        </LayoutInicioAdminGeneral>
+        </LayoutinicioadminGeneral>
 
         
     )
