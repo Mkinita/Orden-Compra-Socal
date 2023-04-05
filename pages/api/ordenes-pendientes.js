@@ -6,10 +6,8 @@ export default async function handler(req, res) {
   //Obtener Ordenes
   const ordenes = await prisma.ocpedidos.findMany ({
     where: {
-        // fecha: {
-        //   gte: fechaActual // Usar "gte" (mayor o igual que) en lugar de "gt"
-        // }
         
+          anular:false,
           finalizado:false,
         
       }

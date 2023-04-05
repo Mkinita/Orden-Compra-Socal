@@ -49,7 +49,7 @@ export default function Solicitud() {
       </div>
 
 
-      <div className="border p-1 w-full h-full hover:scale-110">
+      <div className="p-1 w-full h-full hover:scale-110">
       <div className='p-2 text-center'>
         
             <Link href="/autorizarordengeneral" className="w-full mt-5 p-3 text-9xl ">📝</Link>

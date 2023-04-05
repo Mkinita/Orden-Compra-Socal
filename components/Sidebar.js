@@ -54,12 +54,12 @@ const Sidebar = () => {
 
                     
 
-                    <li>
+                    {/* <li>
                         <Link href="/orden-compra-general" className="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                             ✔️
                             <span className="ml-3">Ordenes Autorizadas 📝</span>
                         </Link>
-                    </li>
+                    </li> */}
 
                     <li>
                         <Link href="/ordenes-pendientes" className="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">

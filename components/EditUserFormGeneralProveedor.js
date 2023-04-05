@@ -29,27 +29,24 @@ export default function EditUserFormGeneralProveedor({ ocpedidos }) {
 
   return (
     <>
-    <div className="space-y-2">
-                        <h3 className="text-xl font-bold">Editar Datos</h3>
-                    
-    <form onSubmit={handleSubmit} className='font-bold text-sm'>
+      <div className="space-y-1">
+        <h3 className="text-lg font-bold">Editar Datos</h3>
+                      
+        <form onSubmit={handleSubmit} className='font-bold text-sm'>
 
-      <label>
-        Nombre: {}
-        <input type="text" value={newName} onChange={(event) => setNewName(event.target.value)} />
-      </label>
-      <br />
-      <label>
-        Rut: {}
-        <input type="text" value={newRut} onChange={(event) => setNewRut(event.target.value)} />
-      </label>
-      <br />
-      
-      
-
-      <button type="submit">♻️</button>
-    </form>
-    </div>
+          <label>
+            Nombre: {}
+            <input type="text" value={newName} onChange={(event) => setNewName(event.target.value)} />
+          </label>
+          <br />
+          <label>
+            Rut: {}
+            <input type="text" value={newRut} onChange={(event) => setNewRut(event.target.value)} />
+          </label>
+          <br/>
+          <button type="submit">♻️</button>
+        </form>
+      </div>
     </>
   );
 }

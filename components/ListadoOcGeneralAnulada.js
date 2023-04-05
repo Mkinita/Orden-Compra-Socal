@@ -23,8 +23,6 @@ const ListadoOc = ({ocpedidos}) => {
                         <td className="border px-4 py-2 w-1/12">{formatiarFecha(fecha)}</td>
                         <td className="border px-4 py-2 w-1/6">{emisor}</td>
                         <td className="border px-4 py-2 w-1/6">{nombre}</td>
-                        <td className="border px-4 py-2 w-1/6">{obra}</td>
-                        <td className="border px-4 py-2 w-1/6">{oc.nombre}</td>
                     </tr>
                 ))}
             </tbody>

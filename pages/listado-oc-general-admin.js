@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import axios from 'axios'
 import LayoutInicioAdminGeneral from "../layout/LayoutInicioAdminGeneral"
-import ListadoOcGeneral from '../components/ListadoOcGeneral'
+import ListadoOcGeneralAnulada from '../components/ListadoOcGeneralAnulada'
 import TablaGeneral from '@/components/TablaGeneral'
 import * as XLSX from 'xlsx';
 import {useState, useEffect} from 'react'
@@ -65,10 +65,21 @@ export default function Admin() {
             <div className='mt-auto'>
                 <input value={buscar} onChange={buscador} type="text" placeholder='Buscar Por Nº O.C.' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
             </div>
-            <TablaGeneral/>
+            {/* <TablaGeneral/> */}
+            <table class="table-auto w-full text-center">
+    <thead>
+      <tr class="bg-white text-gray-700 uppercase text-sm leading-normal">
+        <th class=" px-4 py-2 hidden md:table-cell w-1/12">N° OC</th>
+        <th class=" px-4 py-2 hidden md:table-cell w-1/12">Fecha</th>
+        <th class=" px-4 py-2 hidden md:table-cell w-1/6">Emisor</th>
+        <th class=" px-4 py-2 hidden md:table-cell w-1/6">Solicitante</th>
+      </tr>
+    </thead>
+    
+  </table>
             {data && data.length ? results.map(ocpedidos =>
                 
-                <ListadoOcGeneral
+                <ListadoOcGeneralAnulada
                     key={ocpedidos.id}
                     ocpedidos={ocpedidos}
                 />

@@ -1,6 +1,7 @@
 import axios  from 'axios'
 import { toast } from "react-toastify"
 import {formatearDinero} from "helpers/index"
+import {formatiarFecha} from "helpers/fecha"
 import { useRouter } from 'next/router'
 import EditarOrdenGeneral from "./EditarOrdenGeneral"
 import React, { useState } from 'react';
@@ -15,7 +16,7 @@ const OrdenGeneral = ({ocpedidos}) => {
         valor02,cantidad02,descripcion02,
         valor03,cantidad03,descripcion03,
         valor04,cantidad04,descripcion04,
-        nombre01,rut01
+        nombre01,rut01,fecha
     
     } = ocpedidos
 
@@ -113,28 +114,33 @@ const OrdenGeneral = ({ocpedidos}) => {
   return (
     <>
     <div>
-    <div className="border p-10 space-y-2 ">
+    <div className="border p-10 space-y-2">
       <div className=''></div>
-        <div className='py-3 border-b last-of-type:border-0 items-center'>
-            <h3 className="text-xl font-bold">Nº O.C: {id}</h3>
-            <p className="text-sm font-bold">Emisor: {emisor}</p>
-            <p className="text-sm font-bold">Solicitante: {nombre}</p>
-            <p className="text-sm font-bold ">Obra: {obra}</p>
-            </div>
+        
         <div>
           
             {orden.map(oc => (
                 <div key={oc.id}
                 className=""
                 >
-                  <div className="py-4  space-y-2">
-            <div className="grid md:grid-cols-2 gap-4 border-b">
+                  <div className="py-2  space-y-1">
+            <div className="grid md:grid-cols-3 gap-4 border-b">
+            <div className='py-1 border-b last-of-type:border-0 items-center'>
+            <h3 className="text-lg font-bold">Nº O.C: {id}</h3>
+            <p className="text-sm font-bold">Fecha: {formatiarFecha(fecha)}</p>
+            <p className="text-sm font-bold">Emisor: {emisor}</p>
+            <p className="text-sm font-bold">Solicitante: {nombre}</p>
+            <p className="text-sm font-bold ">Obra: {obra}</p>
+            </div>
                 <div className="">
+                  
                 <header>
-                    <div className="space-y-2">
-                        <h3 className="text-xl font-bold">Proveedor</h3>
+                  
+                    <div className="space-y-1">
+                        <h3 className="text-lg font-bold">Proveedor</h3>
                         <p className="text-xs font-bold">Nombre: {oc.nombre} {nombre01}</p>
                         <p className="text-xs font-bold">Rut: {oc.rut} {rut01}</p>
+                        <p className="text-xs font-bold">-</p>
                         <p className="text-xs font-bold">{oc.chofer}</p>
                         
                     </div>

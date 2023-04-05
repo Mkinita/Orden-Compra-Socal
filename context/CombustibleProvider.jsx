@@ -485,7 +485,7 @@ const CombustibleProvider = ({children}) => {
             toast.success('Generando Orden De Compra ⏳')
 
             setTimeout(() =>{
-                router.push('/orden-compra-general')
+                router.push('/ordenes-pendientes')
             },3000)
 
         } catch (error) {
