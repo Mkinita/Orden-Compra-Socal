@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import axios from 'axios'
-import LayoutinicioadminGeneral from "../layout/LayoutinicioadminGeneral"
+import LayoutinicioadminGeneral from "../layout/LayoutInicioAdminGeneral"
 import ListadoOcGeneral from '../components/ListadoOcGeneral'
 import TablaGeneral from '@/components/TablaGeneral'
 import * as XLSX from 'xlsx';
