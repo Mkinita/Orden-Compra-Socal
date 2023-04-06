@@ -131,7 +131,7 @@ const GenerarOc = ({orden}) => {
       <div className="text-center p-5">
 
         <div className="m-auto">
-          <Image width={100} height={50} src="/assets/img/firma.png" alt="logo" className=" m-auto"/>
+          <Image width={200} height={50} src="/assets/img/imaofi.png" alt="logo" className=" m-auto"/>
         </div>
 
         <p>Firma Solicitante</p>

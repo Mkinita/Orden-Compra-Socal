@@ -19,6 +19,7 @@ const CombustibleProvider = ({children}) => {
     const [equipo, setEquipo] = useState({})
     const [faena, setFaena] = useState({})
     const [proveedor, setProveedor] = useState({})
+    const [ocpedidos, setOcpedidos] = useState({})
     
     const [modal, setModal] = useState(false)
     const [pedido, setPedido] = useState([])
@@ -203,6 +204,11 @@ const CombustibleProvider = ({children}) => {
 
     const handlesetProveedor = proveedor => {
         setProveedor(proveedor)
+    }
+
+
+    const handlesetOcpedidos = ocpedidos => {
+        setOcpedidos(ocpedidos)
     }
 
     
@@ -739,7 +745,9 @@ const CombustibleProvider = ({children}) => {
             setPedido03,
             handleAgregarOrdenObra,
             agregarOCObra,
-            handleAgregarPedido03
+            handleAgregarPedido03,
+            handlesetOcpedidos ,
+            ocpedidos
             
             
             // total,

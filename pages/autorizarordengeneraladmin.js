@@ -19,6 +19,9 @@ export default function Admin() {
             <h1 className="text-2xl font-black text-center"> Autorizar Orden De Compra</h1>
             <p className="text-2xl my-5"></p>
 
+
+            <div className='grid gap-4 grid-cols-1 md:grid-cols-1 2xl:grid-cols-4'>
+
             {data && data.length ? data.map(ocpedidos =>
                 
                 <OrdenGeneral
@@ -27,6 +30,7 @@ export default function Admin() {
                 />
 
                 ):<p>No Hay Ordenes Pendientes</p>}
+                </div>
 
         </LayoutInicioAdminGeneral>
     )

@@ -313,7 +313,7 @@ const OrdenCompra = ({ocpedidos}) => {
 
   <div class="p-4">
   <div class="m-auto">
-  <Image width={100} height={50} src="/assets/img/firma.png" alt="logo" className="m-auto"/>
+  <Image width={200} height={50} src="/assets/img/imaofi.png" alt="logo" className="m-auto"/>
             <p className="text-center text-sm">Firma Solicitante</p>
   </div>
   </div>

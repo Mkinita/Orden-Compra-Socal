@@ -2,9 +2,35 @@ import Head from "next/head";
 import SidebarAdminGeneral from "../components/SidebarAdminGeneral";
 import Image from "next/image";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Modal from "react-modal"
+import ModalOrdenGeneral  from "../components/ModalOrdenGeneral";
+
+import useCombustible from "../hooks/useCombustible";
+import 'react-toastify/dist/ReactToastify.css'
+
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    width: '800px',
+    height: '400px',
+    maxWidth: '100%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
+
+
+Modal.setAppElement('#__next');
 
 export default function AdminLayout({ children, pagina }) {
+
+
+  const {modal} = useCombustible()
+  
   return (
     <>
       <Head>
@@ -33,6 +59,13 @@ export default function AdminLayout({ children, pagina }) {
                 </div>
             </main>
       </div>
+
+
+      {modal && (
+        <Modal isOpen={modal} style={customStyles}>
+          <ModalOrdenGeneral />
+        </Modal>
+      )}
       <ToastContainer />
 
       
