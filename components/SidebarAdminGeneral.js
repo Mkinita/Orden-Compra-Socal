@@ -62,7 +62,7 @@ export const SidebarAdminGeneral = () => {
 
            <li>
               <Link href="/listado-oc-general" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
-                   📃🔍
+                   🔍
                   <span className="ml-3">Ordenes de Compra Por Obra</span>
               </Link>
            </li>
@@ -70,7 +70,7 @@ export const SidebarAdminGeneral = () => {
 
            <li>
               <Link href="/listado-oc-general-ocgeneral" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
-                   📃🔍
+                   🔍
                   <span className="ml-3">Ordenes de Compra Por Nº O.C</span>
               </Link>
            </li>
@@ -78,10 +78,52 @@ export const SidebarAdminGeneral = () => {
 
            <li>
               <Link href="/listado-oc-general-admin" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
-                   📃🔍
+                   🔍
                   <span className="ml-3">Ordenes de Compra Anuladas</span>
               </Link>
            </li>
+
+
+           <button
+            className="w-full flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase"
+            onClick={toggleVisibility2}
+                            
+            >
+               {isVisible2 ? '➖ Ordenes De Compra 2023' : '🔍 Ordenes De Compra 2023'}
+            </button>
+                        
+                  
+            <div className="">
+            
+                {isVisible2 && (
+            <div className="p-2 space-y-1">
+                 <li>
+               <Link href="/listado-oc-abril" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+                   📅
+                  <span className="ml-3">Abril</span>
+               </Link>
+            </li>
+
+
+            <li>
+               <Link href="/listado-oc-mayo" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+                  📅
+                  <span className="ml-3">Mayo</span>
+               </Link>
+            </li>
+
+
+            <li>
+               <Link href="/listado-oc-junio" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+                  📅
+                  <span className="ml-3">Junio</span>
+               </Link>
+            </li>
+            </div>
+            
+                )}
+
+               </div>
 
 
 
@@ -96,11 +138,26 @@ export const SidebarAdminGeneral = () => {
                 )}
 
                </div>
+               
 
                
             </li>
 
-            <li>
+
+            <button
+            className="w-full flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase"
+            onClick={toggleVisibility}
+                            
+            >
+               {isVisible ? '➖ Agregar' : '➕ Agregar'}
+            </button>
+                        
+                  
+            <div className="">
+            
+                {isVisible && (
+            <div className="p-2 space-y-1">
+                 <li>
                <Link href="/agregarproveedor" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                   ➕
                   <span className="ml-3">Agregar Proveedores</span>
@@ -122,6 +179,13 @@ export const SidebarAdminGeneral = () => {
                   <span className="ml-3">Agregar Usuarios</span>
                </Link>
             </li>
+            </div>
+            
+                )}
+
+               </div>
+
+           
 
 
 

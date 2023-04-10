@@ -13,8 +13,8 @@ import {useState, useEffect} from 'react'
 
 export default function Admin() {
 
-    const fetcher = () => axios('/api/listado-ordenes-generales').then(datos => datos.data)
-    const { data, error, isLoading } = useSWR('/api/listado-ordenes-generales',fetcher,{refreshInterval: 100} )
+    const fetcher = () => axios('/api/listado-ordenes-junio').then(datos => datos.data)
+    const { data, error, isLoading } = useSWR('/api/listado-ordenes-junio',fetcher,{refreshInterval: 100} )
 
 
 
@@ -29,7 +29,7 @@ export default function Admin() {
     const [ buscar, setBuscar ] = useState("")
   
     //función para traer los datos de la API
-    const URL = '/api/listado-ordenes-generales'
+    const URL = '/api/listado-ordenes-junio'
   
     const showData = async () => {
       const response = await fetch(URL)
@@ -41,20 +41,8 @@ export default function Admin() {
     const buscador = (e) => {
         setBuscar(e.target.value)   
     }
-    //  metodo de filtrado 2   
-    //  const results = !buscar ? datos : datos.filter((dato) => dato.pedido.some((pedido) => pedido.patente.toLowerCase().includes(buscar.toLowerCase())))
      const results = !buscar ? datos : datos.filter((dato)=> dato.obra.toLowerCase().includes(buscar.toLocaleLowerCase()))
 
-
-    // const results = !buscar ? datos : datos.filter((dato) => {
-    //     const id = typeof dato.id === 'string' ? dato.id : String(dato.id);
-    //     return id.toLowerCase().includes(buscar.toLowerCase());
-    //   });
-      
-      
-
-
-     
     
      useEffect( ()=> {
       showData()
@@ -79,7 +67,7 @@ export default function Admin() {
     return(
         <LayoutInicioAdminGeneral pagina={'Listado-OC'}>
 
-            <h1 className="text-2xl font-black text-center"> Listado Ordenes De Compra</h1>
+            <h1 className="text-2xl font-black text-center"> Ordenes De Compra Junio</h1>
             <p className="text-2xl my-10"></p>
             <div className='mt-auto'>
                 <input value={buscar} onChange={buscador} type="text" placeholder='Buscar Por Nº O.C.' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
