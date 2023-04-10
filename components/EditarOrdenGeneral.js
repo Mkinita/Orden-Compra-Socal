@@ -117,6 +117,44 @@ export default function EditarOrdenGeneral({ocpedidos}) {
       cantidad04,descripcion04,valor04,
   ]);
 
+
+    
+
+
+    const cantidad1 =newcantidad;
+    const valor1 =newvalor;
+    const cantidadxvalor = (cantidad1) * (valor1);
+
+
+    const cantidad2 =newcantidad01;
+    const valor2 =newvalor01;
+    const cantidadxvalor2 = (cantidad2) * (valor2);
+
+
+    const cantidad3 =newcantidad02;
+    const valor3 =newvalor02;
+    const cantidadxvalor3 = (cantidad3) * (valor3);
+
+
+    const cantidad4 =newcantidad03;
+    const valor4 =newvalor03;
+    const cantidadxvalor4 = (cantidad4) * (valor4);
+
+
+    const cantidad5 =newcantidad04;
+    const valor5 =newvalor04;
+    const cantidadxvalor5 = (cantidad5) * (valor5);
+
+  
+  
+
+
+
+  //   const subtotal = cantidadxvalor + cantidadxvalor01 + cantidadxvalor03 + cantidadxvalor04
+  // const iva = subtotal * 0.19 
+  // const totaldubiva = subtotal + iva
+
+
   return (
     <form onSubmit={handleSubmit} className='font-bold text-sm'>
       <br/>
@@ -132,7 +170,7 @@ export default function EditarOrdenGeneral({ocpedidos}) {
             <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
               Valor
             </th>
-            <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-white uppercase tracking-wider">
+            <th scope="col" className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Total
             </th>
           </tr>
@@ -154,6 +192,12 @@ export default function EditarOrdenGeneral({ocpedidos}) {
                   <input className='text-center' type="text" value={newvalor} onChange={(event) => setNewValor(event.target.value)} />
               </label>
             </th>
+
+            <th>
+              <label>
+                  <input className='text-center' type="text" value={cantidadxvalor} onChange={(event) => setNewValor(event.target.value)} />
+              </label>
+            </th>
           </tr>
           <tr>
             <th>
@@ -169,6 +213,12 @@ export default function EditarOrdenGeneral({ocpedidos}) {
             <th>
               <label>
                 <input className='text-center' type="text" value={newvalor01} onChange={(event) => setNewValor01(event.target.value)} />
+              </label>
+            </th>
+
+            <th>
+              <label>
+                  <input className='text-center' type="text" value={cantidadxvalor2} onChange={(event) => setNewValor(event.target.value)} />
               </label>
             </th>
           </tr>
@@ -188,6 +238,11 @@ export default function EditarOrdenGeneral({ocpedidos}) {
                 <input className='text-center' type="text" value={newvalor02} onChange={(event) => setNewValor02(event.target.value)} />
               </label>
             </th>
+            <th>
+              <label>
+                  <input className='text-center' type="text" value={cantidadxvalor3} onChange={(event) => setNewValor(event.target.value)} />
+              </label>
+            </th>
           </tr>
           <tr>
             <th>
@@ -203,6 +258,11 @@ export default function EditarOrdenGeneral({ocpedidos}) {
             <th>
               <label>
                 <input className='text-center' type="text" value={newvalor03} onChange={(event) => setNewValor03(event.target.value)} />
+              </label>
+            </th>
+            <th>
+              <label>
+                  <input className='text-center' type="text" value={cantidadxvalor4} onChange={(event) => setNewValor(event.target.value)} />
               </label>
             </th>
           </tr>
@@ -221,6 +281,11 @@ export default function EditarOrdenGeneral({ocpedidos}) {
               <label>
                  <input className='text-center' type="text" value={newvalor04} onChange={(event) => setNewValor04(event.target.value)} />
                </label>
+            </th>
+            <th>
+              <label>
+                  <input className='text-center' type="text" value={cantidadxvalor5} onChange={(event) => setNewValor(event.target.value)} />
+              </label>
             </th>
           </tr>
 

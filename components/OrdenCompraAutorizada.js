@@ -36,7 +36,7 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
          await axios.post(`/api/ocgeneraladmin/${id}`)
           toast.success('🏠')
           setTimeout(() =>{
-            router.push('/autorizarordengeneraladmin')
+            router.push('/autorizarordengeneraladminprueba')
         },1000)
       } catch (error) {
           toast.error('Hubo un error')

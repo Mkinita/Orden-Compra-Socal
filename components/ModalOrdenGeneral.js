@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import useCombustible from "../hooks/useCombustible";
 import {formatearDinero} from "helpers/index"
 import { useRouter } from 'next/router'
+import EditarOrdenGeneral from "./EditarOrdenGeneral"
 
 
 const ModalProveedor = () => {
@@ -55,6 +56,14 @@ const ModalProveedor = () => {
 
 
 
+    const [isVisibleproveedor, setIsVisibleproveedor] = useState(false);
+      
+        const toggleVisibilityproveedor = () => {
+          setIsVisibleproveedor(!isVisibleproveedor);
+        };
+
+
+
 
 
   return (
@@ -82,11 +91,12 @@ const ModalProveedor = () => {
 
 
             
-            <div className="border p-5 py-2 space-y-2">              
+            <div className={`flex flex-col ${isVisibleproveedor ? 'hidden' : ''}`}>              
                 <div className="flex flex-col ">
                     <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
                         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
                             <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                                
                                 <table  className="min-w-full divide-y divide-gray-200">
                             
                                     <thead className="bg-gray-50">
@@ -162,6 +172,26 @@ const ModalProveedor = () => {
                     </div>
                 </div>
             </div>
+
+            <button
+                            className="font-bold text-sm"
+                            onClick={toggleVisibilityproveedor}
+                            
+                        >
+                            {isVisibleproveedor ? '➖' : 'Editar ✏️'}
+                        </button>
+                        
+            
+                        <div className="">
+            
+                {isVisibleproveedor && (
+            <div className="">
+                <EditarOrdenGeneral key={ocpedidos.id} ocpedidos={ocpedidos} />
+            </div>
+                )}
+            </div>
+               
+                
         </div>
   );
 };

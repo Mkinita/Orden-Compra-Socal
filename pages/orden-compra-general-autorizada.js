@@ -27,7 +27,7 @@ export default function OrdenCompras() {
                     ocpedidos={ocpedidos}
                 />
 
-                ):<Link href="/autorizarordengeneraladmin" className="text-9xl">🏠</Link>}
+                ):<Link href="/autorizarordengeneraladminprueba" className="text-9xl">🏠</Link>}
 
 
 
