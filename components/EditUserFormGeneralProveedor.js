@@ -30,7 +30,7 @@ export default function EditUserFormGeneralProveedor({ ocpedidos }) {
   return (
     <>
       <div className="space-y-1">
-        <h3 className="text-lg font-bold">Editar Datos</h3>
+        <h3 className="text-lg font-bold">Editar Proveedor</h3>
                       
         <form onSubmit={handleSubmit} className='font-bold text-sm'>
 

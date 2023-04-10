@@ -29,7 +29,7 @@ export default function Solicitud() {
       {/* <div className='mt-auto'>
       <input value={buscar} onChange={buscador} type="text" placeholder='Buscar Por Nº O.C.' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
       </div> */}
-      <div className='grid gap-4 grid-cols-1 md:grid-cols-1 2xl:grid-cols-4'>  
+      <div className='grid gap-4 grid-cols-1 md:grid-cols-2 2xl:grid-cols-4'>  
         {/* {results.map(ocpedidos=>(
           <OrdenGeneralPrueba key={ocpedidos.id} ocpedidos={ocpedidos}/>
         ))} */}

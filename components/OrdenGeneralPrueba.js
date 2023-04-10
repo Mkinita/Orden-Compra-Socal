@@ -112,6 +112,7 @@ const Proveedor = ({ocpedidos}) => {
 
 
   return (
+    
     <div className="border p-1 w-full h-full rounded-3xl">
       
       
@@ -127,13 +128,51 @@ const Proveedor = ({ocpedidos}) => {
                     </div>
                 </div>
             </div>
+
+            {orden.map(oc => (
+            <div key={oc.id} className="mi-clase">
+              <div className='p-1 text-center'>
+              <h3 className="text-lg font-bold">Proveedor</h3>
+                        <p className="text-xs font-bold">Nombre: {oc.nombre} {nombre01}</p>
+                        <p className="text-xs font-bold">Rut: {oc.rut} {rut01}</p>
+                        <p className="text-xs font-bold">-</p>
+                        <p className="text-xs font-bold">{oc.chofer}</p>
+
+
+                        <button
+                            className="font-bold text-sm"
+                            onClick={toggleVisibilityproveedor}
+                            
+                        >
+                            {isVisibleproveedor ? '➖' : 'Editar ✏️'}
+                        </button>
+
+                        {isVisibleproveedor && (
+            <div className="">
+                <EditUserFormGeneralProveedor key={ocpedidos.id} ocpedidos={ocpedidos} />
+            </div>
+                )}
+          
+        
+                    </div>
+                  </div>
+                ))}
+
             
 
 
 
+            
+
+
+
+
+            <div className="flex py-2 text-sm">
+
+
             <button
                 type='button'
-                className='bg-indigo-600 hover:bg-indigo-800 text-white w-full mt-2 p-3 uppercase font bold text-sm  rounded-3xl'
+                className='flex-1 bg-indigo-600 hover:bg-indigo-700 text-white mt-1 md:mt-0 py-3 px-5  font-bold ml-1 rounded-3xl'
                 onClick={()=> {
                 handleChangeModal();
                 handlesetOcpedidos(ocpedidos)
@@ -141,11 +180,28 @@ const Proveedor = ({ocpedidos}) => {
             >
                 Detalle
             </button>
+            
+              <button className="flex-1 bg-lime-600 hover:bg-lime-700 text-white mt-1 md:mt-0 py-3 px-5  font-bold ml-1 rounded-3xl" type="button" onClick={completarPago}>
+                Autorizar
+              </button>
+              <button className="flex-1 bg-red-600 hover:bg-red-700 text-white mt-1 md:mt-0 py-3 px-5  font-bold ml-1 rounded-3xl" type="button" onClick={anularordendecompra}>
+                Anular
+              </button>
+
+
+              
+            </div>
+
+    
 
 
             
+
       </div>
+      
     </div>
+
+    
   )
 }
 
