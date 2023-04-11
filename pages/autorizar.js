@@ -16,18 +16,20 @@ export default function Admin() {
     return(
         <AdminLayout pagina={'Autorizar'}>
 
-            <h1 className="text-3xl font-black text-center"> Autorizar</h1>
+            <h1 className="text-2xl font-black text-center p-5"> Autorizar Orden De Compra</h1>
             <p className="text-2xl my-5"></p>
 
-            {data && data.length ? data.map(orden =>
-                
-                <Orden
-                    key={orden.id}
-                    orden={orden}
-                />
+
+            <div className='grid gap-4 grid-cols-1 md:grid-cols-2 2xl:grid-cols-4'>
+                {data && data.length ? data.map(orden =>
+                    
+                    <Orden
+                        key={orden.id}
+                        orden={orden}
+                    />
 
                 ):<p>No Hay Ordenes Pendientes</p>}
-
+            </div>
         </AdminLayout>
     )
 }

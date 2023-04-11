@@ -32,21 +32,21 @@ export default function EditUserForm({ orden }) {
   }, [nombre,emisor]);
 
   return (
-    <form onSubmit={handleSubmit} className='font-bold text-sm'>
+    <form onSubmit={handleSubmit} className='font-bold text-sm text-center'>
       
       
       <label>
-        Nuevo Solicitante: {}
+        Datos Solicitante
         <input type="text" value={newEmisor} onChange={(event) => setNewEmisor(event.target.value)} />
       </label>
       <br/>
       <label>
-        Nuevo Emisor: {}
+        
         <input type="text" value={newName} onChange={(event) => setNewName(event.target.value)} />
       </label>
       <br />
       <label>
-        Nueva Obra: {}
+        
         <input type="text" value={newObra} onChange={(event) => setNewObra(event.target.value)} />
       </label>
       <br />

@@ -211,6 +211,12 @@ const CombustibleProvider = ({children}) => {
         setOcpedidos(ocpedidos)
     }
 
+
+
+    const handlesetOrden = orden => {
+        setOrden(orden)
+    }
+
     
 
     const handlesetObra = obras => {
@@ -747,7 +753,8 @@ const CombustibleProvider = ({children}) => {
             agregarOCObra,
             handleAgregarPedido03,
             handlesetOcpedidos ,
-            ocpedidos
+            ocpedidos,
+            handlesetOrden
             
             
             // total,

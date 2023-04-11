@@ -12,7 +12,7 @@ export default function Solicitud() {
   
 
   return (
-    <LayoutInicioAdmin pagina={`Inicio`}>
+    <LayoutInicioAdmin pagina={`Inicio_Admin`}>
       <p className='text-2xl mx-5 my-3 font-bold text-center'>
         Administra Tus Ordenes De Compra
       </p>

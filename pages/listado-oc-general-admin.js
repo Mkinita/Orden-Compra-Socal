@@ -60,10 +60,10 @@ export default function Admin() {
     return(
         <LayoutInicioAdminGeneral pagina={'Listado-OC'}>
 
-            <h1 className="text-2xl font-black text-center"> Listado Ordenes De Compra Combustible</h1>
+            <h1 className="text-2xl font-black text-center"> Listado Ordenes De Compra Anuladas</h1>
             <p className="text-2xl my-10"></p>
             <div className='mt-auto'>
-                <input value={buscar} onChange={buscador} type="text" placeholder='Buscar Por Nº O.C.' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
+                <input value={buscar} onChange={buscador} type="text" placeholder='Filtra Por Nº O.C.' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
             </div>
             {/* <TablaGeneral/> */}
             <table class="table-auto w-full text-center">
