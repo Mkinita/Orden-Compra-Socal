@@ -62,7 +62,7 @@ export default function Admin() {
             </div>
             {/* <TablaGeneral/> */}
 
-            <div className='grid gap-4 grid-cols-1 md:grid-cols-7 2xl:grid-cols-4'>
+            <div className='grid gap-4 grid-cols-1 md:grid-cols-6 2xl:grid-cols-4'>
             
                 {data && data.length ? results.map(ocpedidos =>
                     
