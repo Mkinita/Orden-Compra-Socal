@@ -1,4 +1,5 @@
 import {formatiarFecha} from "helpers/fecha"
+import Link from "next/link"
 
 
 const ListadoOc = ({ocpedidos}) => {
@@ -6,9 +7,7 @@ const ListadoOc = ({ocpedidos}) => {
 
 
 
-    const formatoNumero = (num) => {
-        return num.toString().slice(-4);
-      }
+    
 
   return (
     
@@ -25,6 +24,7 @@ const ListadoOc = ({ocpedidos}) => {
                         <td className="border px-4 py-2 w-1/6">{nombre}</td>
                         <td className="border px-4 py-2 w-1/6">{obra}</td>
                         <td className="border px-4 py-2 w-1/6">{oc.nombre}</td>
+                        
                     </tr>
                 ))}
             </tbody>
