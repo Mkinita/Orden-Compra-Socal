@@ -6,7 +6,10 @@ export default async function handler(req, res) {
   const ordenesGenerales = await prisma.ocpedidos.findMany({
    where:  {
     anular:true
-    }
+    },
+    orderBy: {
+      id: "desc",
+    },
   })
 
   res.status(200).json(ordenesGenerales);

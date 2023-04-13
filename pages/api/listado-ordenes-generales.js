@@ -7,7 +7,10 @@ export default async function handler(req, res) {
    where:  {
     estado:true,
     anular:false
-    }
+    },
+    orderBy: {
+      id: "desc",
+    },
   })
 
   res.status(200).json(ordenesGenerales);
