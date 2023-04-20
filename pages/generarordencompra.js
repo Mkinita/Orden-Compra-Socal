@@ -16,10 +16,14 @@ export default function GenerarOrdenDeCompra() {
     cantidad02, setCantidad02, descripcion02, setDescripcion02, valor02, setValor02,
     cantidad03, setCantidad03, descripcion03, setDescripcion03, valor03, setValor03,
     cantidad04, setCantidad04, descripcion04, setDescripcion04, valor04, setValor04,
-    emisor,setEmisor,pedido01
+    emisor,setEmisor,pedido01,fechasolicitud, setFechasolicitud
 
     
     } = useCombustible()
+
+    
+
+    
 
 
     
@@ -140,17 +144,13 @@ export default function GenerarOrdenDeCompra() {
     return (
         <Layout pagina='GenerarOrdenDeCompra O.C.'>
             {/* <p>{patente}</p> */}
-            <h1 className="text-2xl font-black ">Generar Orden De Compra</h1>
+            <h1 className="text-lg font-black text-center">Generar Orden De Compra</h1>
             <p className="text-2xl my-10"></p>
 
 
-            {/* <button onClick={handleReloadClick}>Recargar página</button> */}
 
 
            
-      
-      
-    
 
             <form 
                 onSubmit={agregarOC}
@@ -187,7 +187,22 @@ export default function GenerarOrdenDeCompra() {
 
 
                 <div className=" p-2">
-                    <div className="grid grid-cols-3 gap-1" >
+                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4 2xl:grid-cols-4" >
+
+
+                    <div>
+                            <label 
+                                htmlFor="fechasolicitud"
+                                className="block uppercase text-slate-800 font-bold text-sm">Fecha</label>
+                            <input
+                                id="fechasolicitud"
+                                type="date"
+                                className="bg-gray-200 w-full p-2 rounded-md"  
+                                value={fechasolicitud}
+                                onChange={e => setFechasolicitud(e.target.value)}
+                            />
+                        
+                        </div>
 
                         <div>
                             <label 
@@ -202,6 +217,9 @@ export default function GenerarOrdenDeCompra() {
                             />
                         
                         </div>
+
+
+                        
                         <div>
                             <label 
                                 htmlFor="nombre"
@@ -220,9 +238,9 @@ export default function GenerarOrdenDeCompra() {
                         <div>
                         <label 
                             htmlFor="obra"
-                            className=""></label>
-                            <select value={selectedValueObras} onChange={handleChangeObras} className="block uppercase text-slate-800 font-bold text-sm text-center">
-                                    <option value="">Obra</option>
+                            className="block uppercase text-slate-800 font-bold text-sm text-center">Obra</label>
+                            <select value={selectedValueObras} onChange={handleChangeObras} className="bg-gray-200 w-full p-2 rounded-md">
+                                    <option value="">{obra}</option>
                                     {optionsonbras.map((option) => (
                                         <option key={option.id} value={option.value}>
                                         {option.nombre}
@@ -232,7 +250,7 @@ export default function GenerarOrdenDeCompra() {
                         <input
                             id="obra"
                             type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            className="bg-gray-200 w-full p-2 rounded-md hidden"  
                             value={obra}
                             onChange={e => setObra(e.target.value)}
                         />
@@ -274,9 +292,9 @@ export default function GenerarOrdenDeCompra() {
                     <div className="flex-1 w-16">
                         <label 
                             htmlFor="descripcion"
-                            className=""></label>
-                            <select value={selectedValue} onChange={handleChange} className="block uppercase text-slate-800 font-bold text-sm py-5">
-                                    <option value="">Detalle</option>
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Detalle</label>
+                            <select value={selectedValue} onChange={handleChange} className="bg-gray-200 w-full p-2 rounded-md">
+                                    <option value="">{descripcion}</option>
                                     {options.map((option) => (
                                         <option key={option.id} value={option.value}>
                                         {option.nombre}
@@ -286,7 +304,7 @@ export default function GenerarOrdenDeCompra() {
                         <input
                             id="descripcion"
                             type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            className="bg-gray-200 w-full p-2 rounded-md hidden"  
                             value={descripcion}
                             onChange={e => setDescripcion(e.target.value )}
                         />

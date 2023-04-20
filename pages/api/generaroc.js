@@ -1,5 +1,6 @@
 import { PrismaClient } from "@prisma/client";
 
+
 export default async function handler(req, res) {
   const prisma = new PrismaClient();
   //Obtener OC
@@ -17,6 +18,7 @@ export default async function handler(req, res) {
 
   //Crear OC
   if (req.method === "POST") {
+    
     const ocpedidos = await prisma.ocpedidos.create({
       data: {
         folio: req.body.folio,
@@ -49,6 +51,7 @@ export default async function handler(req, res) {
 
 
         fecha: req.body.fecha,
+        fechasolicitud: req.body.fechasolicitud,
         orden: req.body.orden,
       },
     });

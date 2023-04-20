@@ -10,7 +10,7 @@ export default function OrdenCompra() {
 
 
     const fetcher = () => axios('/api/ordenes-autorizadas').then(datos => datos.data)
-    const { data, error, isLoading } = useSWR('/api/ordenes',fetcher,{refreshInterval: 100} )
+    const { data, error, isLoading } = useSWR('/api/ordenes-autorizadas',fetcher,{refreshInterval: 100} )
 
 
    return (

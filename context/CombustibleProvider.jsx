@@ -74,6 +74,9 @@ const CombustibleProvider = ({children}) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
+    const [fechasolicitud, setFechasolicitud] = useState('');
+    
+
 
 
     const {patente} = equipo
@@ -459,11 +462,14 @@ const CombustibleProvider = ({children}) => {
     }
 
 
+    
+
 
     
 
 
     const agregarOC = async (e) => {
+        
         e.preventDefault()
 
         try {
@@ -473,7 +479,7 @@ const CombustibleProvider = ({children}) => {
             cantidad02,descripcion02,valor02,
             cantidad03,descripcion03,valor03,
             cantidad04,descripcion04,valor04
-            ,folio, fecha: new Date()})
+            ,folio, fechasolicitud,fecha: new Date()})
             // Resetear la app
             setFolio('')
             setOrden([])
@@ -754,7 +760,9 @@ const CombustibleProvider = ({children}) => {
             handleAgregarPedido03,
             handlesetOcpedidos ,
             ocpedidos,
-            handlesetOrden
+            handlesetOrden,
+            fechasolicitud, setFechasolicitud
+
             
             
             // total,

@@ -11,7 +11,7 @@ const ResumenSolicitudGeneral = ({proveedor}) => {
 
 
     
-    <div className="shadow p-5 mb-3 flex gap-10 items-center">
+    <div className="shadow p-5 mb-3 flex gap-2 items-center text-center">
 
     <button
             type="button"
@@ -23,13 +23,10 @@ const ResumenSolicitudGeneral = ({proveedor}) => {
             </svg>
             
           </button>
-        <div className="md:w-1/6">
         
-        
-        </div>
-        <div className="md:w-4/6">
-        <p className="text-lg font-bold">PROVEEDOR:</p>
-            <p className="text-lg font-bold">{proveedor.nombre} ✔️</p>
+        <div className="md:w-full">
+        <p className="text-sm font-bold">PROVEEDOR:</p>
+            <p className="text-sm font-bold">{proveedor.nombre} ✔️</p>
             
 
             

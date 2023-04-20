@@ -308,8 +308,8 @@ export default function Solicitud() {
                             onChange={e => setPropietario(e.target.value)}
                         >
                             <option value="opcion0">-</option>
-                            <option value="opcion1">Socal</option>
-                            <option value="opcion2">Arrendado</option>
+                            <option value="Socal">Socal</option>
+                            <option value="Arrendado">Arrendado</option>
                         </select>
                     </div>
 

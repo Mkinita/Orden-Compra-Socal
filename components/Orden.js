@@ -55,7 +55,7 @@ const Orden = ({orden}) => {
   return (
     <>
         <div className="border p-1 w-full h-full rounded-3xl text-center">
-            <div className="py-1 border-b last-of-type:border-0 items-center">
+            <div className="py-1  last-of-type:border-0 items-center">
                 <div className="p-4">
                     <header>
                         <h3 className="text-xl font-bold">Nº O.C: {id}</h3>

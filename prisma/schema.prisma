@@ -77,6 +77,7 @@ model Ocpedidos {
   valor04 String?
   orden Json
   fecha DateTime
+  fechasolicitud String
   estado Boolean @default(false)
   anular Boolean @default(false)
   finalizado Boolean @default(false)
