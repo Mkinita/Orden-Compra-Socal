@@ -292,9 +292,9 @@ export default function GenerarOrdenDeCompra() {
                     <div className="flex-1 w-16">
                         <label 
                             htmlFor="descripcion"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Detalle</label>
-                            <select value={selectedValue} onChange={handleChange} className="bg-gray-200 w-full p-2 rounded-md">
-                                    <option value="">{descripcion}</option>
+                            className=""></label>
+                            <select value={selectedValue} onChange={handleChange} className="block uppercase text-slate-800 font-bold text-sm py-5">
+                                    <option value="">Detalle</option>
                                     {options.map((option) => (
                                         <option key={option.id} value={option.value}>
                                         {option.nombre}
@@ -304,9 +304,9 @@ export default function GenerarOrdenDeCompra() {
                         <input
                             id="descripcion"
                             type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md hidden"  
-                            value={descripcion}
-                            onChange={e => setDescripcion(e.target.value )}
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={descripcion01}
+                            onChange={e => setDescripcion01(e.target.value )}
                         />
                         
                     </div>
