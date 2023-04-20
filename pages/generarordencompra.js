@@ -305,8 +305,8 @@ export default function GenerarOrdenDeCompra() {
                             id="descripcion"
                             type="text"
                             className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={descripcion01}
-                            onChange={e => setDescripcion01(e.target.value )}
+                            value={descripcion}
+                            onChange={e => setDescripcion(e.target.value )}
                         />
                         
                     </div>
