@@ -122,7 +122,7 @@ const Proveedor = ({ocpedidos}) => {
                     <div className='py-1 border-b last-of-type:border-0 items-center'>
                         <h3 className="text-lg font-bold">Nº O.C: {id}</h3>
                         {/* <p className="text-sm font-bold">Fecha Solicitud: {formatiarFecha(fecha)}</p> */}
-                        <p className="text-sm font-bold">Fecha: {formatiarFecha(fechasolicitud)}</p>
+                        <p className="text-sm font-bold">Fecha: {fechasolicitud}</p>
                         <p className="text-sm font-bold">Emisor: {emisor}</p>
                         <p className="text-sm font-bold">Solicitante: {nombre}</p>
                         <p className="text-sm font-bold ">Obra: {obra}</p>

@@ -19,7 +19,7 @@ const ListadoPdfOcGeneral = ({ocpedidos}) => {
                     <div key={oc.id}>
                         <div className="m-auto">
                             <h1 className="text-sm font-bold pb-1">Nº O.C: {id}</h1>
-                            <p className="text-xs font-bold pb-1">Fecha: {formatiarFecha(fechasolicitud)}</p>
+                            <p className="text-xs font-bold pb-1">Fecha: {fechasolicitud}</p>
                             <p className="text-xs font-bold">Emisor</p>
                             <p className="text-xs font-bold pb-2">{emisor}</p>
                             <div className="flex justify-center">

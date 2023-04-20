@@ -104,7 +104,7 @@ const OrdenCompra = ({ocpedidos}) => {
       </div>
 
 
-        <div><p className="text-sm font-bold text-right">Fecha: {formatiarFecha(fechasolicitud)}</p></div>
+        <div><p className="text-sm font-bold text-right">Fecha: {fechasolicitud}</p></div>
 
 
 
