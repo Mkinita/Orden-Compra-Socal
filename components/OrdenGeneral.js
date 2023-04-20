@@ -16,7 +16,7 @@ const OrdenGeneral = ({ocpedidos}) => {
         valor02,cantidad02,descripcion02,
         valor03,cantidad03,descripcion03,
         valor04,cantidad04,descripcion04,
-        nombre01,rut01,fecha
+        nombre01,rut01,fechasolicitud
     
     } = ocpedidos
 
@@ -127,7 +127,7 @@ const OrdenGeneral = ({ocpedidos}) => {
             <div className="grid md:grid-cols-3 gap-4 border-b">
             <div className='py-1 border-b last-of-type:border-0 items-center'>
             <h3 className="text-lg font-bold">Nº O.C: {id}</h3>
-            <p className="text-sm font-bold">Fecha: {formatiarFecha(fecha)}</p>
+            <p className="text-sm font-bold">Fecha: {formatiarFecha(fechasolicitud)}</p>
             <p className="text-sm font-bold">Emisor: {emisor}</p>
             <p className="text-sm font-bold">Solicitante: {nombre}</p>
             <p className="text-sm font-bold ">Obra: {obra}</p>

@@ -4,7 +4,7 @@ import Link from "next/link"
 
 
 const ListadoPdfOcGeneral = ({ocpedidos}) => {
-    const {id, nombre, total, orden, fecha, folio, descripcion,obra,emisor} = ocpedidos
+    const {id, nombre, total, orden, fechasolicitud, folio, descripcion,obra,emisor} = ocpedidos
 
 
 
@@ -19,7 +19,7 @@ const ListadoPdfOcGeneral = ({ocpedidos}) => {
                     <div key={oc.id}>
                         <div className="m-auto">
                             <h1 className="text-sm font-bold pb-1">Nº O.C: {id}</h1>
-                            <p className="text-xs font-bold pb-1">Fecha: {formatiarFecha(fecha)}</p>
+                            <p className="text-xs font-bold pb-1">Fecha: {formatiarFecha(fechasolicitud)}</p>
                             <p className="text-xs font-bold">Emisor</p>
                             <p className="text-xs font-bold pb-2">{emisor}</p>
                             <div className="flex justify-center">

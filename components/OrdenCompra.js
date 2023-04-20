@@ -10,7 +10,7 @@ import {formatoNumero} from "helpers/formato"
 
 
 const OrdenCompra = ({ocpedidos}) => {
-    const {id, nombre, total, pedido, fecha, folio, descripcion, senores,direccion,rut,fono,comuna,orden,cantidad,valor,
+    const {id, nombre, total, pedido, fechasolicitud, folio, descripcion, senores,direccion,rut,fono,comuna,orden,cantidad,valor,
     
       valor01,cantidad01,descripcion01,
       valor02,cantidad02,descripcion02,
@@ -104,7 +104,7 @@ const OrdenCompra = ({ocpedidos}) => {
       </div>
 
 
-        <div><p className="text-sm font-bold text-right">Fecha: {formatiarFecha(fecha)}</p></div>
+        <div><p className="text-sm font-bold text-right">Fecha: {formatiarFecha(fechasolicitud)}</p></div>
 
 
 

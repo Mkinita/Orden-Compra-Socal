@@ -2,7 +2,7 @@ import {formatiarFecha} from "helpers/fecha"
 
 
 const ListadoOc = ({ocpedidos}) => {
-    const {id, nombre, total, orden, fecha, folio, descripcion,obra,emisor} = ocpedidos
+    const {id, nombre, total, orden, fechasolicitud, folio, descripcion,obra,emisor} = ocpedidos
 
 
 
@@ -20,7 +20,7 @@ const ListadoOc = ({ocpedidos}) => {
                     <tr key={oc.id}>
                         
                         <td className="border px-4 py-2 w-1/12">{id}</td>
-                        <td className="border px-4 py-2 w-1/12">{formatiarFecha(fecha)}</td>
+                        <td className="border px-4 py-2 w-1/12">{formatiarFecha(fechasolicitud)}</td>
                         <td className="border px-4 py-2 w-1/6">{emisor}</td>
                         <td className="border px-4 py-2 w-1/6">{nombre}</td>
                     </tr>
