@@ -79,7 +79,7 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
 
 
 
-  const subtotal = cantidadxvalor + cantidadxvalor01 + cantidadxvalor03 + cantidadxvalor04
+  const subtotal = cantidadxvalor + cantidadxvalor01 + cantidadxvalor02+ cantidadxvalor03 + cantidadxvalor04
   const iva = subtotal * 0.19 
   const totaldubiva = subtotal + iva
 
