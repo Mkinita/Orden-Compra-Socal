@@ -16,6 +16,11 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
       valor02,cantidad02,descripcion02,
       valor03,cantidad03,descripcion03,
       valor04,cantidad04,descripcion04,
+      valor05,cantidad05,descripcion05,
+      valor06,cantidad06,descripcion06,
+      valor07,cantidad07,descripcion07,
+      valor08,cantidad08,descripcion08,
+      valor09,cantidad09,descripcion09,
       nombre01,rut01
     
     }  
@@ -78,8 +83,44 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
   const resultado04 = cantidadxvalor04 === 0 ? '' : cantidadxvalor04;
 
 
+  const cantidad5 = cantidad05;
+  const valor5 = valor05;
+  const cantidadxvalor05 = (cantidad5) * (valor5);
+  const resultado05 = cantidadxvalor05 === 0 ? '' : cantidadxvalor05;
 
-  const subtotal = cantidadxvalor + cantidadxvalor01 + cantidadxvalor03 + cantidadxvalor04
+
+
+  const cantidad6 = cantidad06;
+  const valor6 = valor06;
+  const cantidadxvalor06 = (cantidad6) * (valor6);
+  const resultado06 = cantidadxvalor06 === 0 ? '' : cantidadxvalor06;
+
+
+
+  const cantidad7 = cantidad07;
+  const valor7 = valor07;
+  const cantidadxvalor07 = (cantidad7) * (valor7);
+  const resultado07 = cantidadxvalor07 === 0 ? '' : cantidadxvalor07;
+
+
+  const cantidad8 = cantidad08;
+  const valor8 = valor08;
+  const cantidadxvalor08 = (cantidad8) * (valor8);
+  const resultado08 = cantidadxvalor08 === 0 ? '' : cantidadxvalor08;
+
+  const cantidad9 = cantidad09;
+  const valor9 = valor09;
+  const cantidadxvalor09 = (cantidad9) * (valor9);
+  const resultado09 = cantidadxvalor09 === 0 ? '' : cantidadxvalor09;
+
+
+
+
+
+
+
+
+  const subtotal = cantidadxvalor + cantidadxvalor01 + cantidadxvalor02 + cantidadxvalor03 + cantidadxvalor04 + cantidadxvalor05 + cantidadxvalor06 + cantidadxvalor07 + cantidadxvalor08 + cantidadxvalor09
   const iva = subtotal * 0.19 
   const totaldubiva = subtotal + iva
 
@@ -98,7 +139,7 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
         
 
     
-      <div role="status" className="space-y-8 md:space-y-0 md:space-x-8 md:items-center p-2 m-5">
+      <div role="status" className="space-y-8 md:space-y-0 md:space-x-8 md:items-center  m-5">
             <div className="flex">
               <div className="flex items-center justify-center w-full h-48">
               <Image width={200} height={100} src="/assets/img/SOCALIPR.png" alt="logo" className=""/>
@@ -134,7 +175,7 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
             </div>
 
 
-            <div className="flex ">
+            {/* <div className="flex ">
                 <div className="flex-1">
                     <p className="">DIRECCION: {oc.direccion}</p>
                 </div>
@@ -157,7 +198,7 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
               <div className="flex-1">
                 <p className="">COMUNA: {oc.comuna}</p>
               </div>
-            </div>
+            </div> */}
 
 
 
@@ -240,6 +281,47 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
                   <div className="h-5.0  w-full">{descripcion04}</div>
                   <div className="h-2.0  w-full">{formatearDinero(valor04)}</div>
                   <div className="h-2.0  w-full">{formatearDinero (resultado04)}</div>
+              </div>
+
+              <div className="flex items-center w-full space-x-2 text-center">
+              <div className="h-1.5  w-full">{cantidad05}</div>
+                  <div className="h-5.0  w-full">{descripcion05}</div>
+                  <div className="h-2.0  w-full">{formatearDinero(valor05)}</div>
+                  <div className="h-2.0  w-full">{formatearDinero (resultado05)}</div>
+              </div>
+
+
+
+              <div className="flex items-center w-full space-x-2 text-center">
+              <div className="h-1.5  w-full">{cantidad06}</div>
+                  <div className="h-5.0  w-full">{descripcion06}</div>
+                  <div className="h-2.0  w-full">{formatearDinero(valor06)}</div>
+                  <div className="h-2.0  w-full">{formatearDinero (resultado06)}</div>
+              </div>
+
+
+              <div className="flex items-center w-full space-x-2 text-center">
+              <div className="h-1.5  w-full">{cantidad07}</div>
+                  <div className="h-5.0  w-full">{descripcion07}</div>
+                  <div className="h-2.0  w-full">{formatearDinero(valor07)}</div>
+                  <div className="h-2.0  w-full">{formatearDinero (resultado07)}</div>
+              </div>
+
+
+              <div className="flex items-center w-full space-x-2 text-center">
+              <div className="h-1.5  w-full">{cantidad08}</div>
+                  <div className="h-5.0  w-full">{descripcion08}</div>
+                  <div className="h-2.0  w-full">{formatearDinero(valor08)}</div>
+                  <div className="h-2.0  w-full">{formatearDinero (resultado08)}</div>
+              </div>
+
+
+
+              <div className="flex items-center w-full space-x-2 text-center">
+              <div className="h-1.5  w-full">{cantidad09}</div>
+                  <div className="h-5.0  w-full">{descripcion09}</div>
+                  <div className="h-2.0  w-full">{formatearDinero(valor09)}</div>
+                  <div className="h-2.0  w-full">{formatearDinero (resultado09)}</div>
               </div>
 
 

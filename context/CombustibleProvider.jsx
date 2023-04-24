@@ -44,11 +44,9 @@ const CombustibleProvider = ({children}) => {
     const [descripcion01, setDescripcion01] = useState('')
     const [valor01, setValor01] = useState('')
 
-
     const [cantidad02, setCantidad02] = useState('')
     const [descripcion02, setDescripcion02] = useState('')
     const [valor02, setValor02] = useState('')
-
 
     const [cantidad03, setCantidad03] = useState('')
     const [descripcion03, setDescripcion03] = useState('')
@@ -57,6 +55,28 @@ const CombustibleProvider = ({children}) => {
     const [cantidad04, setCantidad04] = useState('')
     const [descripcion04, setDescripcion04] = useState('')
     const [valor04, setValor04] = useState('')
+
+    const [cantidad05, setCantidad05] = useState('')
+    const [descripcion05, setDescripcion05] = useState('')
+    const [valor05, setValor05] = useState('')
+
+    const [cantidad06, setCantidad06] = useState('')
+    const [descripcion06, setDescripcion06] = useState('')
+    const [valor06, setValor06] = useState('')
+
+    const [cantidad07, setCantidad07] = useState('')
+    const [descripcion07, setDescripcion07] = useState('')
+    const [valor07, setValor07] = useState('')
+
+    const [cantidad08, setCantidad08] = useState('')
+    const [descripcion08, setDescripcion08] = useState('')
+    const [valor08, setValor08] = useState('')
+
+    const [cantidad09, setCantidad09] = useState('')
+    const [descripcion09, setDescripcion09] = useState('')
+    const [valor09, setValor09] = useState('')
+
+
 
     const [senores, setSenores] = useState('')
     const [direccion, setDireccion] = useState('')
@@ -478,7 +498,12 @@ const CombustibleProvider = ({children}) => {
             cantidad01,descripcion01,valor01,
             cantidad02,descripcion02,valor02,
             cantidad03,descripcion03,valor03,
-            cantidad04,descripcion04,valor04
+            cantidad04,descripcion04,valor04,
+            cantidad05,descripcion05,valor05,
+            cantidad06,descripcion06,valor06,
+            cantidad07,descripcion07,valor07,
+            cantidad08,descripcion08,valor08,
+            cantidad09,descripcion09,valor09
             ,folio, fechasolicitud,fecha: new Date()})
             // Resetear la app
             setFolio('')
@@ -490,18 +515,32 @@ const CombustibleProvider = ({children}) => {
             setCantidad02('')
             setCantidad03('')
             setCantidad04('')
+            setCantidad05('')
+            setCantidad06('')
+            setCantidad07('')
+            setCantidad08('')
+            setCantidad09('')
             setDescripcion('')
             setDescripcion01('')
             setDescripcion02('')
             setDescripcion03('')
             setDescripcion04('')
+            setDescripcion05('')
+            setDescripcion06('')
+            setDescripcion07('')
+            setDescripcion08('')
+            setDescripcion09('')
             setValor('')
             setValor01('')
             setValor02('')
             setValor03('')
             setValor04('')
+            setValor05('')
+            setValor06('')
+            setValor07('')
+            setValor08('')
+            setValor09('')
             toast.success('Generando Orden De Compra ⏳')
-
             setTimeout(() =>{
                 router.push('/ordenes-pendientes')
             },3000)
@@ -704,6 +743,26 @@ const CombustibleProvider = ({children}) => {
             valor04,setValor04,
             cantidad04,setCantidad04,
             descripcion04,setDescripcion04,
+
+            valor05,setValor05,
+            cantidad05,setCantidad05,
+            descripcion05,setDescripcion05,
+
+            valor06,setValor06,
+            cantidad06,setCantidad06,
+            descripcion06,setDescripcion06,
+
+            valor07,setValor07,
+            cantidad07,setCantidad07,
+            descripcion07,setDescripcion07,
+
+            valor08,setValor08,
+            cantidad08,setCantidad08,
+            descripcion08,setDescripcion08,
+
+            valor09,setValor09,
+            cantidad09,setCantidad09,
+            descripcion09,setDescripcion09,
             
             senores,
             direccion,

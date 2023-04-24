@@ -16,6 +16,11 @@ export default function GenerarOrdenDeCompra() {
     cantidad02, setCantidad02, descripcion02, setDescripcion02, valor02, setValor02,
     cantidad03, setCantidad03, descripcion03, setDescripcion03, valor03, setValor03,
     cantidad04, setCantidad04, descripcion04, setDescripcion04, valor04, setValor04,
+    cantidad05, setCantidad05, descripcion05, setDescripcion05, valor05, setValor05,
+    cantidad06, setCantidad06, descripcion06, setDescripcion06, valor06, setValor06,
+    cantidad07, setCantidad07, descripcion07, setDescripcion07, valor07, setValor07,
+    cantidad08, setCantidad08, descripcion08, setDescripcion08, valor08, setValor08,
+    cantidad09, setCantidad09, descripcion09, setDescripcion09, valor09, setValor09,
     emisor,setEmisor,pedido01,fechasolicitud, setFechasolicitud
 
     
@@ -58,12 +63,22 @@ export default function GenerarOrdenDeCompra() {
     const [options02, setOptions02] = useState([]);
     const [options03, setOptions03] = useState([]);
     const [options04, setOptions04] = useState([]);
+    const [options05, setOptions05] = useState([]);
+    const [options06, setOptions06] = useState([]);
+    const [options07, setOptions07] = useState([]);
+    const [options08, setOptions08] = useState([]);
+    const [options09, setOptions09] = useState([]);
     const [selectedValueObras, setSelectedValueObras] = useState('');
     const [selectedValue, setSelectedValue] = useState('');
     const [selectedValue01, setSelectedValue01] = useState('');
     const [selectedValue02, setSelectedValue02] = useState('');
     const [selectedValue03, setSelectedValue03] = useState('');
     const [selectedValue04, setSelectedValue04] = useState('');
+    const [selectedValue05, setSelectedValue05] = useState('');
+    const [selectedValue06, setSelectedValue06] = useState('');
+    const [selectedValue07, setSelectedValue07] = useState('');
+    const [selectedValue08, setSelectedValue08] = useState('');
+    const [selectedValue09, setSelectedValue09] = useState('');
 
     useEffect(() => {
         const fetchData = async () => {
@@ -74,6 +89,11 @@ export default function GenerarOrdenDeCompra() {
         setOptions02(data);
         setOptions03(data);
         setOptions04(data);
+        setOptions05(data);
+        setOptions06(data);
+        setOptions07(data);
+        setOptions08(data);
+        setOptions09(data);
         };
         fetchData();
     }, []);
@@ -120,11 +140,26 @@ export default function GenerarOrdenDeCompra() {
     };
 
 
+    const handleChange05 = (event) => {
+        setDescripcion05(event.target.value);
+    };
 
 
+    const handleChange06 = (event) => {
+        setDescripcion06(event.target.value);
+    };
 
+    const handleChange07 = (event) => {
+        setDescripcion07(event.target.value);
+    };
 
+    const handleChange08 = (event) => {
+        setDescripcion08(event.target.value);
+    };
 
+    const handleChange09 = (event) => {
+        setDescripcion09(event.target.value);
+    };
 
 
   const router = useRouter();
@@ -146,28 +181,14 @@ export default function GenerarOrdenDeCompra() {
             {/* <p>{patente}</p> */}
             <h1 className="text-lg font-black text-center">Generar Orden De Compra</h1>
             <p className="text-2xl my-10"></p>
-
-
-
-
-           
-
             <form 
                 onSubmit={agregarOC}
                 className="text-center"
-                
             >
-
-
-{orden.map(proveedor=>(
-          <ResumenSolicitusGeneral key={proveedor.id} proveedor={proveedor}/>
-        ))}
-
-
-
-
-    
-
+                {orden.map(proveedor=>(
+                    <ResumenSolicitusGeneral key={proveedor.id} proveedor={proveedor}/>      
+                ))}
+                
                 <div className="grid grid-cols-1 gap-1" >
                     <div>
                         <label 
@@ -270,6 +291,8 @@ export default function GenerarOrdenDeCompra() {
 
 
                 <div className="p-2"></div>
+
+                
                 
 
                 <div className="flex gap-1 p-2" >
@@ -293,14 +316,20 @@ export default function GenerarOrdenDeCompra() {
                         <label 
                             htmlFor="descripcion"
                             className=""></label>
-                            <select value={selectedValue} onChange={handleChange} className="block uppercase text-slate-800 font-bold text-sm py-5">
-                                    <option value="">Detalle</option>
-                                    {options.map((option) => (
-                                        <option key={option.id} value={option.value}>
-                                        {option.nombre}
-                                        </option>
-                                    ))}
-                                </select>
+                            <select
+                                value={selectedValue}
+                                onChange={handleChange}
+                                className="block uppercase text-slate-800 font-bold text-sm py-5"
+                                style={{ width: '100px' 
+                                }} // Agrega un ancho de 200px
+                                >
+                                <option value="">Detalle</option>
+                                {options.map((option) => (
+                                    <option key={option.id} value={option.value}>
+                                    {option.nombre}
+                                    </option>
+                                ))}
+                            </select>
                         <input
                             id="descripcion"
                             type="text"
@@ -329,8 +358,9 @@ export default function GenerarOrdenDeCompra() {
 
 
 
-                <div className={`${isHidden ? "hidden" : "block"}`}>
+                
                 <div className="p-2"></div>
+                
                 
 
                 <div className="flex gap-1 p-2" >
@@ -354,7 +384,7 @@ export default function GenerarOrdenDeCompra() {
                         <label 
                             htmlFor="descripcion"
                             className=""></label>
-                            <select value={selectedValue01} onChange={handleChange01} className="block uppercase text-slate-800 font-bold text-sm py-5">
+                            <select value={selectedValue01} onChange={handleChange01} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px'}}>
                                     <option value="">Detalle</option>
                                     {options01.map((option) => (
                                         <option key={option.id} value={option.value}>
@@ -388,6 +418,8 @@ export default function GenerarOrdenDeCompra() {
                     </div>
                 </div>
 
+                
+
                 <div className="flex gap-1 p-2" >
                     <div className="flex-1 w-16">
 
@@ -409,7 +441,7 @@ export default function GenerarOrdenDeCompra() {
                         <label 
                             htmlFor="descripcion"
                             className=""></label>
-                            <select value={selectedValue02} onChange={handleChange02} className="block uppercase text-slate-800 font-bold text-sm py-5">
+                            <select value={selectedValue02} onChange={handleChange02} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
                                     <option value="">Detalle</option>
                                     {options02.map((option) => (
                                         <option key={option.id} value={option.value}>
@@ -469,7 +501,7 @@ export default function GenerarOrdenDeCompra() {
                         <label 
                             htmlFor="descripcion"
                             className=""></label>
-                            <select value={selectedValue03} onChange={handleChange03} className="block uppercase text-slate-800 font-bold text-sm py-5">
+                            <select value={selectedValue03} onChange={handleChange03} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
                                     <option value="">Detalle</option>
                                     {options03.map((option) => (
                                         <option key={option.id} value={option.value}>
@@ -505,7 +537,7 @@ export default function GenerarOrdenDeCompra() {
 
                     
                 </div>
-
+                <div className={`${isHidden ? "hidden" : "block"}`}>
 
 
 
@@ -531,7 +563,7 @@ export default function GenerarOrdenDeCompra() {
                         <label 
                             htmlFor="descripcion"
                             className=""></label>
-                            <select value={selectedValue04} onChange={handleChange04} className="block uppercase text-slate-800 font-bold text-sm py-5">
+                            <select value={selectedValue04} onChange={handleChange04} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
                                     <option value="">Detalle</option>
                                     {options04.map((option) => (
                                         <option key={option.id} value={option.value}>
@@ -567,6 +599,313 @@ export default function GenerarOrdenDeCompra() {
 
                     
                 </div>
+
+            
+                <div className="flex gap-1 p-2" >
+                    <div className="flex-1 w-16">
+
+                        <label 
+                            htmlFor="cantidad"
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
+                        <input
+                            id="cantidad"
+                            type="number"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={cantidad05}
+                            onChange={e => setCantidad05(e.target.value)}
+                        />
+                    
+                    </div>
+
+
+                    <div className="flex-1 w-16">
+                        <label 
+                            htmlFor="descripcion"
+                            className=""></label>
+                            <select value={selectedValue05} onChange={handleChange05} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
+                                    <option value="">Detalle</option>
+                                    {options05.map((option) => (
+                                        <option key={option.id} value={option.value}>
+                                        {option.nombre}
+                                        </option>
+                                    ))}
+                                </select>
+                        <input
+                            id="descripcion"
+                            type="text"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={descripcion05}
+                            onChange={e => setDescripcion05(e.target.value )}
+                        />
+                        
+                    </div>
+
+
+                    <div className="flex-1 w-16">
+                        <label 
+                            htmlFor="valor"
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
+                        <input
+                            id="valor"
+                            type="text"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={valor05}
+                            onChange={e => setValor05(e.target.value)}
+                        />
+                    
+                    </div>
+
+
+                    
+                </div>
+
+              
+
+
+                <div className="flex gap-1 p-2" >
+                    <div className="flex-1 w-16">
+
+                        <label 
+                            htmlFor="cantidad"
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
+                        <input
+                            id="cantidad"
+                            type="number"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={cantidad06}
+                            onChange={e => setCantidad06(e.target.value)}
+                        />
+                    
+                    </div>
+
+
+                    <div className="flex-1 w-16">
+                        <label 
+                            htmlFor="descripcion"
+                            className=""></label>
+                            <select value={selectedValue06} onChange={handleChange06} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
+                                    <option value="">Detalle</option>
+                                    {options06.map((option) => (
+                                        <option key={option.id} value={option.value}>
+                                        {option.nombre}
+                                        </option>
+                                    ))}
+                                </select>
+                        <input
+                            id="descripcion"
+                            type="text"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={descripcion06}
+                            onChange={e => setDescripcion06(e.target.value )}
+                        />
+                        
+                    </div>
+
+
+                    <div className="flex-1 w-16">
+                        <label 
+                            htmlFor="valor"
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
+                        <input
+                            id="valor"
+                            type="text"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={valor06}
+                            onChange={e => setValor06(e.target.value)}
+                        />
+                    
+                    </div>
+
+
+                    
+                </div>
+
+                
+
+                <div className="flex gap-1 p-2" >
+                    <div className="flex-1 w-16">
+
+                        <label 
+                            htmlFor="cantidad"
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
+                        <input
+                            id="cantidad"
+                            type="number"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={cantidad07}
+                            onChange={e => setCantidad07(e.target.value)}
+                        />
+                    
+                    </div>
+
+
+                    <div className="flex-1 w-16">
+                        <label 
+                            htmlFor="descripcion"
+                            className=""></label>
+                            <select value={selectedValue07} onChange={handleChange07} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
+                                    <option value="">Detalle</option>
+                                    {options07.map((option) => (
+                                        <option key={option.id} value={option.value}>
+                                        {option.nombre}
+                                        </option>
+                                    ))}
+                                </select>
+                        <input
+                            id="descripcion"
+                            type="text"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={descripcion07}
+                            onChange={e => setDescripcion07(e.target.value )}
+                        />
+                        
+                    </div>
+
+
+                    <div className="flex-1 w-16">
+                        <label 
+                            htmlFor="valor"
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
+                        <input
+                            id="valor"
+                            type="text"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={valor07}
+                            onChange={e => setValor07(e.target.value)}
+                        />
+                    
+                    </div>
+
+
+                    
+                </div>
+
+
+                
+
+                <div className="flex gap-1 p-2" >
+                    <div className="flex-1 w-16">
+
+                        <label 
+                            htmlFor="cantidad"
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
+                        <input
+                            id="cantidad"
+                            type="number"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={cantidad08}
+                            onChange={e => setCantidad08(e.target.value)}
+                        />
+                    
+                    </div>
+
+
+                    <div className="flex-1 w-16">
+                        <label 
+                            htmlFor="descripcion"
+                            className=""></label>
+                            <select value={selectedValue08} onChange={handleChange08} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
+                                    <option value="">Detalle</option>
+                                    {options08.map((option) => (
+                                        <option key={option.id} value={option.value}>
+                                        {option.nombre}
+                                        </option>
+                                    ))}
+                                </select>
+                        <input
+                            id="descripcion"
+                            type="text"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={descripcion08}
+                            onChange={e => setDescripcion08(e.target.value )}
+                        />
+                        
+                    </div>
+
+
+                    <div className="flex-1 w-16">
+                        <label 
+                            htmlFor="valor"
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
+                        <input
+                            id="valor"
+                            type="text"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={valor08}
+                            onChange={e => setValor08(e.target.value)}
+                        />
+                    
+                    </div>
+
+
+                    
+                </div>
+
+                
+
+                <div className="flex gap-1 p-2" >
+                    <div className="flex-1 w-16">
+
+                        <label 
+                            htmlFor="cantidad"
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
+                        <input
+                            id="cantidad"
+                            type="number"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={cantidad09}
+                            onChange={e => setCantidad09(e.target.value)}
+                        />
+                    
+                    </div>
+
+
+                    <div className="flex-1 w-16">
+                        <label 
+                            htmlFor="descripcion"
+                            className=""></label>
+                            <select value={selectedValue09} onChange={handleChange09} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
+                                    <option value="">Detalle</option>
+                                    {options09.map((option) => (
+                                        <option key={option.id} value={option.value}>
+                                        {option.nombre}
+                                        </option>
+                                    ))}
+                                </select>
+                        <input
+                            id="descripcion"
+                            type="text"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={descripcion09}
+                            onChange={e => setDescripcion09(e.target.value )}
+                        />
+                        
+                    </div>
+
+
+                    <div className="flex-1 w-16">
+                        <label 
+                            htmlFor="valor"
+                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
+                        <input
+                            id="valor"
+                            type="text"
+                            className="bg-gray-200 w-full p-2 rounded-md"  
+                            value={valor09}
+                            onChange={e => setValor09(e.target.value)}
+                        />
+                    
+                    </div>
+
+
+                    
+                </div>
+
+
+
+                
+
+                
             </div>
 
 
