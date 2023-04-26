@@ -319,7 +319,7 @@ export default function GenerarOrdenDeCompra() {
                             <select
                                 value={selectedValue}
                                 onChange={handleChange}
-                                className="block uppercase text-slate-800 font-bold text-sm py-5"
+                                className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white"
                                 style={{ width: '100px' 
                                 }} // Agrega un ancho de 200px
                                 >

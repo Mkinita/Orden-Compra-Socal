@@ -19,17 +19,26 @@ const ModalProveedor = () => {
         valor02,cantidad02,descripcion02,
         valor03,cantidad03,descripcion03,
         valor04,cantidad04,descripcion04,
-        nombre01,rut01,fecha
+
+        valor05,cantidad05,descripcion05,
+        valor06,cantidad06,descripcion06,
+        valor07,cantidad07,descripcion07,
+        valor08,cantidad08,descripcion08,
+        valor09,cantidad09,descripcion09,
+       
     } = ocpedidos
+
 
 
     const cantidad1 =cantidad;
     const valor1 = valor;
-    const cantidadxvalor = (cantidad1) * (valor1);
+    const cantidadxvalor = (cantidad1) * (valor1)
+    const resultado = cantidadxvalor === 0 ? '' : cantidadxvalor;
   
     const cantidad0 = cantidad01;
     const valor0 = valor01;
     const cantidadxvalor01 = (cantidad0) * (valor0);
+    const resultado01 = cantidadxvalor01 === 0 ? '' : cantidadxvalor01;
     
   
     
@@ -37,22 +46,55 @@ const ModalProveedor = () => {
     const cantidad2 = cantidad02;
     const valor2 = valor02;
     const cantidadxvalor02 = (cantidad2) * (valor2);
+    const resultado02 = cantidadxvalor02 === 0 ? '' : cantidadxvalor02;
   
   
     const cantidad3 = cantidad03;
     const valor3 =  valor03;
     const cantidadxvalor03 = (cantidad3) * (valor3);
+    const resultado03 = cantidadxvalor03 === 0 ? '' : cantidadxvalor03;
   
   
     const cantidad4 = cantidad04;
     const valor4 = valor04;
     const cantidadxvalor04 = (cantidad4) * (valor4);
+    const resultado04 = cantidadxvalor04 === 0 ? '' : cantidadxvalor04;
+  
+  
+    const cantidad5 = cantidad05;
+    const valor5 = valor05;
+    const cantidadxvalor05 = (cantidad5) * (valor5);
+    const resultado05 = cantidadxvalor05 === 0 ? '' : cantidadxvalor05;
+  
+  
+  
+    const cantidad6 = cantidad06;
+    const valor6 = valor06;
+    const cantidadxvalor06 = (cantidad6) * (valor6);
+    const resultado06 = cantidadxvalor06 === 0 ? '' : cantidadxvalor06;
+  
+  
+  
+    const cantidad7 = cantidad07;
+    const valor7 = valor07;
+    const cantidadxvalor07 = (cantidad7) * (valor7);
+    const resultado07 = cantidadxvalor07 === 0 ? '' : cantidadxvalor07;
+  
+  
+    const cantidad8 = cantidad08;
+    const valor8 = valor08;
+    const cantidadxvalor08 = (cantidad8) * (valor8);
+    const resultado08 = cantidadxvalor08 === 0 ? '' : cantidadxvalor08;
+  
+    const cantidad9 = cantidad09;
+    const valor9 = valor09;
+    const cantidadxvalor09 = (cantidad9) * (valor9);
+    const resultado09 = cantidadxvalor09 === 0 ? '' : cantidadxvalor09;
 
 
-
-    const subtotal = cantidadxvalor + cantidadxvalor01 + cantidadxvalor03 + cantidadxvalor04
-    const iva = subtotal * 0.19 
-    const totaldubiva = subtotal + iva
+    const subtotal = cantidadxvalor + cantidadxvalor01 + cantidadxvalor02 + cantidadxvalor03 + cantidadxvalor04 + cantidadxvalor05 + cantidadxvalor06 + cantidadxvalor07 + cantidadxvalor08 + cantidadxvalor09
+  const iva = subtotal * 0.19 
+  const totaldubiva = subtotal + iva
 
 
 
@@ -120,31 +162,61 @@ const ModalProveedor = () => {
                                         <th>{cantidad}</th>
                                         <th>{descripcion}</th>
                                         <th>{valor}</th>
-                                        <th>{formatearDinero(cantidadxvalor)}</th>
+                                        <th>{formatearDinero(resultado)}</th>
                                         </tr>
                                         <tr>
                                         <th>{cantidad01}</th>
                                         <th>{descripcion01}</th>
                                         <th>{valor01}</th>
-                                        <th>{formatearDinero(cantidadxvalor01)}</th>
+                                        <th>{formatearDinero(resultado01)}</th>
                                         </tr>
                                         <tr>
                                         <th>{cantidad02}</th>
                                         <th>{descripcion02}</th>
                                         <th>{valor02}</th>
-                                        <th>{formatearDinero(cantidadxvalor02)}</th>
+                                        <th>{formatearDinero(resultado02)}</th>
                                         </tr>
                                         <tr>
                                         <th>{cantidad03}</th>
                                         <th>{descripcion03}</th>
                                         <th>{valor03}</th>
-                                        <th>{formatearDinero(cantidadxvalor03)}</th>
+                                        <th>{formatearDinero(resultado03)}</th>
                                         </tr>
                                         <tr>
                                         <th>{cantidad04}</th>
                                         <th>{descripcion04}</th>
                                         <th>{valor04}</th>
-                                        <th>{formatearDinero(cantidadxvalor04)}</th>
+                                        <th>{formatearDinero(resultado04)}</th>
+                                        </tr>
+                                        <tr>
+                                        <th>{cantidad05}</th>
+                                        <th>{descripcion05}</th>
+                                        <th>{valor05}</th>
+                                        <th>{formatearDinero(resultado05)}</th>
+                                        </tr>
+                                        <tr>
+                                        <th>{cantidad06}</th>
+                                        <th>{descripcion06}</th>
+                                        <th>{valor06}</th>
+                                        <th>{formatearDinero(resultado06)}</th>
+                                        </tr>
+                                        <tr>
+                                        <th>{cantidad07}</th>
+                                        <th>{descripcion07}</th>
+                                        <th>{valor07}</th>
+                                        <th>{formatearDinero(resultado07)}</th>
+                                        </tr>
+                                        <tr>
+                                        <th>{cantidad08}</th>
+                                        <th>{descripcion08}</th>
+                                        <th>{valor08}</th>
+                                        <th>{formatearDinero(resultado08)}</th>
+                                        </tr>
+                                        <tr>
+                                        <th>{cantidad09}</th>
+                                        <th>{descripcion09}</th>
+                                        <th>{valor09}</th>
+                                        <th>{formatearDinero(resultado09)}</th>
                                         </tr>
                                         <tr>
                                         <th></th>
