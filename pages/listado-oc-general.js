@@ -178,16 +178,18 @@ export default function Admin() {
                 <p>No Hay Ordenes Pendientes</p>
             }
 
-            <div  className="text-center m-10">
+            <div className='flex justify-center items-center gap-2'>
+              <button className="my-4 py-2 px-4 text-black border hover:scale-110" onClick={calcularVolumen}>Calcular Total</button>
+              <p className="border my-4 py-2 px-4">{formatearDinero(totalVolumen)}</p>
+              
+            </div>
+
+            <div  className="text-center m-2">
                 <button onClick={() => exportTo(data)}>📥 Exportar a Excel</button>
             </div>
 
 
-            <div className='flex justify-center items-center gap-2'>
-              <button className="my-4 py-2 px-4 text-black " onClick={calcularVolumen}>Calcular Volumen</button>
-              <p className="">{formatearDinero(totalVolumen)}</p>
-              
-            </div>
+            
 
         </LayoutInicioAdminGeneral>
 
