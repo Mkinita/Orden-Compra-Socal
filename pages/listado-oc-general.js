@@ -27,7 +27,7 @@ export default function Admin() {
     }
 
     const [ datos, setDatos ] = useState([])
-    const [ buscar, setBuscar ] = useState("")
+    const [ buscar, setBuscar ] = useState('')
   
     //función para traer los datos de la API
     const URL = '/api/listado-ordenes-generales'
@@ -185,7 +185,7 @@ export default function Admin() {
             </div>
 
             <div  className="text-center m-2">
-                <button onClick={() => exportTo(data)}>📥 Exportar a Excel</button>
+                <button onClick={() => exportTo(results)}>📥 Exportar a Excel</button>
             </div>
 
 

@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { useEffect, useCallback, useState } from "react"
+import Image from "next/image";
 
 export const SidebarAdminGeneral = () => {
 
@@ -22,6 +23,8 @@ export const SidebarAdminGeneral = () => {
 
 
     return (
+      <>
+      
       <div className="px-3 py-4 overflow-y-auto rounded bg-white">
         <ul className="space-y-2">
 
@@ -59,7 +62,7 @@ export const SidebarAdminGeneral = () => {
 
 
            <li>
-              <Link href="/proveedores" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+              <Link href="/proveedores-admin" className="flex items-center p-2 text-xs font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                   📃
                   <span className="ml-3">Generar Orden De Compra</span>
               </Link>
@@ -237,6 +240,7 @@ export const SidebarAdminGeneral = () => {
 
 
         </div>
+        </>
     )
   }
   

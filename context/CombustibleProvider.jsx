@@ -377,6 +377,30 @@ const CombustibleProvider = ({children}) => {
     }
 
 
+    const handleAgregarOrdenAdmin = ({...proveedor}) => {
+        if(orden.some(proveedorState => proveedorState.id === proveedor.id)) {
+           // Actualizar la cantidad
+           const pedidoActualizado = orden.map(proveedorState => proveedorState.id === proveedor.id ? proveedor : proveedorState)
+           setOrden(pedidoActualizado)
+
+           toast.success('Agregado Proveedor')
+           setTimeout(() =>{
+            router.push('/generarordencompra')
+        },2000)
+           
+        } else {
+            setOrden([...orden, proveedor])
+            toast.success('Agregado Proveedor')
+            setTimeout(() =>{
+                router.push('/generarordencompraadmin')
+            },2000)
+        }
+
+        setModal(false)
+        
+    }
+
+
     const handleAgregarOrdenObra = ({...obras}) => {
         if(pedido.some(obraState => obraState.id === obras.id)) {
            // Actualizar la cantidad
@@ -543,6 +567,71 @@ const CombustibleProvider = ({children}) => {
             toast.success('Generando Orden De Compra ⏳')
             setTimeout(() =>{
                 router.push('/ordenes-pendientes')
+            },3000)
+
+        } catch (error) {
+            console.log(error)
+        }
+
+
+        console.log('agregando orden')
+    }
+
+    const agregarOCAdmin = async (e) => {
+        
+        e.preventDefault()
+
+        try {
+           await axios.post('/api/generaroc',{orden,nombre,obra,emisor,
+            cantidad,descripcion,valor,
+            cantidad01,descripcion01,valor01,
+            cantidad02,descripcion02,valor02,
+            cantidad03,descripcion03,valor03,
+            cantidad04,descripcion04,valor04,
+            cantidad05,descripcion05,valor05,
+            cantidad06,descripcion06,valor06,
+            cantidad07,descripcion07,valor07,
+            cantidad08,descripcion08,valor08,
+            cantidad09,descripcion09,valor09
+            ,folio, fechasolicitud,fecha: new Date()})
+            // Resetear la app
+            setFolio('')
+            setOrden([])
+            setObra('')
+            setNombre('')
+            setCantidad(0)
+            setCantidad01('')
+            setCantidad02('')
+            setCantidad03('')
+            setCantidad04('')
+            setCantidad05('')
+            setCantidad06('')
+            setCantidad07('')
+            setCantidad08('')
+            setCantidad09('')
+            setDescripcion('')
+            setDescripcion01('')
+            setDescripcion02('')
+            setDescripcion03('')
+            setDescripcion04('')
+            setDescripcion05('')
+            setDescripcion06('')
+            setDescripcion07('')
+            setDescripcion08('')
+            setDescripcion09('')
+            setValor('')
+            setValor01('')
+            setValor02('')
+            setValor03('')
+            setValor04('')
+            setValor05('')
+            setValor06('')
+            setValor07('')
+            setValor08('')
+            setValor09('')
+            toast.success('Generando Orden De Compra ⏳')
+            setTimeout(() =>{
+                router.push('/autorizarordengeneraladminprueba')
             },3000)
 
         } catch (error) {
@@ -820,7 +909,9 @@ const CombustibleProvider = ({children}) => {
             handlesetOcpedidos ,
             ocpedidos,
             handlesetOrden,
-            fechasolicitud, setFechasolicitud
+            fechasolicitud, setFechasolicitud,
+            handleAgregarOrdenAdmin,
+            agregarOCAdmin
 
             
             
