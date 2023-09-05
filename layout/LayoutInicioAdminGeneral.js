@@ -44,7 +44,7 @@ export default function AdminLayout({ children, pagina }) {
                     className="m-auto"
                     width={300}
                     height={100}
-                    src="/assets/img/socal.png"
+                    src="/assets/img/Socal.png"
                     alt="imagen logotipo"
                 />      
 

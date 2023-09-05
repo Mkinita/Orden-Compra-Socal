@@ -22,7 +22,7 @@ export default function Solicitud() {
   return (
     <LayoutInicioAdminGeneral pagina={`Orden-De-Compra`}>
     
-      <h1 className="text-2xl font-black text-center p-5"> Autorizar Orden De Compra</h1>
+      <h1 className="py-2 text-center font-bold text-lg"> Autorizar Orden De Compra</h1>
       <p className="text-2xl my-5"></p>
 
       <div className='grid gap-4 grid-cols-1 md:grid-cols-2 2xl:grid-cols-4'>  

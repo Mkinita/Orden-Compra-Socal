@@ -19,12 +19,12 @@ export default function Admin() {
 
     
 
-    const exportTo = (orden) => {
-        const ws = XLSX.utils.json_to_sheet(orden)
-        const wb = XLSX.utils.book_new()
-        XLSX.utils.book_append_sheet(wb, ws, 'Sheet1')
-        XLSX.writeFile(wb, 'table-data.xlsx')
-    }
+    // const exportTo = (orden) => {
+    //     const ws = XLSX.utils.json_to_sheet(orden)
+    //     const wb = XLSX.utils.book_new()
+    //     XLSX.utils.book_append_sheet(wb, ws, 'Sheet1')
+    //     XLSX.writeFile(wb, 'table-data.xlsx')
+    // }
 
     const [ datos, setDatos ] = useState([])
     const [ buscar, setBuscar ] = useState("")
@@ -84,10 +84,10 @@ export default function Admin() {
     return(
         <LayoutinicioadminGeneral pagina={'Listado-OC'}>
 
-            <h1 className="text-2xl font-black text-center"> Filtra Ordenes De Compra Por N° OC</h1>
+            <h1 className='py-2 text-center font-bold text-lg'>Ordenes De Compras Autorizadas</h1>
             <p className="text-2xl my-10"></p>
             <div className='mt-auto'>
-                <input value={buscar} onChange={buscador} type="text" placeholder='Filtra Por Nº O.C.' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
+                <input value={buscar} onChange={buscador} type="text" placeholder='Filtra Por Nº O.C.' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse  rounded-lg shadow'/> 🔍
             </div>
             <TablaGeneral/>
             {data && data.length ? results.map(ocpedidos =>
@@ -101,9 +101,9 @@ export default function Admin() {
                 <p>No Hay Ordenes Pendientes</p>
             }
 
-            <div  className="text-center m-10">
+            {/* <div  className="text-center m-10">
                 <button onClick={() => exportTo(data)}>📥 Exportar a Excel</button>
-            </div>
+            </div> */}
 
         </LayoutinicioadminGeneral>
 

@@ -9,9 +9,11 @@ export default async function handler(req, res) {
     anular:false,
     estado01:true
     },
+   
     orderBy: {
-      id: "desc",
+      id: "asc",
     },
+    take: 4,
   })
 
   res.status(200).json(ordenesGenerales);

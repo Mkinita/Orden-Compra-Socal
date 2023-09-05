@@ -135,7 +135,7 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
       <div role="status" className="space-y-8 md:space-y-0 md:space-x-8 md:items-center p-2 m-5">
             <div className="flex">
               <div className="flex items-center justify-center w-full h-48">
-              <Image width={200} height={100} src="/assets/img/SOCALIPR.png" alt="logo" className=""/>
+              <Image width={300} height={100} src="/assets/img/AGRF.png" alt="logo" className=""/>
               </div>
               <div className="w-full m-auto">
               <div className="text-center"><h3 className="text-lg font-bold inline-block align-baseline ">ORDEN DE COMPRA</h3></div>

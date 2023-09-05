@@ -690,9 +690,16 @@ const CombustibleProvider = ({children}) => {
             setComuna('')
             toast.success('Agregando Nuevo Proveedor⏳')
 
-            setTimeout(() =>{
-                router.push('/listadoproveedores')
-            },3000)
+            setTimeout(() => {
+                // Mostrar la notificación después de 3 segundos
+                toast.success('El Proveedor se agregó correctamente');
+                
+                // Recargar la página después de 3 segundos
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);
+                }, 3000);
+
 
         } catch (error) {
             console.log(error)
@@ -738,11 +745,17 @@ const CombustibleProvider = ({children}) => {
            await axios.post('/api/generarfaena',{nombre})
             // Resetear la app
             setNombre('')
-            toast.success('Agregando Nueva⏳')
+            toast.success('Agregando Nueva Faena ⏳');
 
-            setTimeout(() =>{
-                router.push('/agregarobra')
-            },3000)
+            setTimeout(() => {
+            // Mostrar la notificación después de 3 segundos
+            toast.success('La faena se agregó correctamente');
+            
+            // Recargar la página después de 3 segundos
+            setTimeout(() => {
+                window.location.reload();
+            }, 3000);
+            }, 3000);
 
         } catch (error) {
             console.log(error)
@@ -765,9 +778,15 @@ const CombustibleProvider = ({children}) => {
             setPassword('')
             toast.success('Agregando Nuevo Usuario⏳')
 
-            setTimeout(() =>{
-                router.push('/listadousuarios')
-            },3000)
+            setTimeout(() => {
+                // Mostrar la notificación después de 3 segundos
+                toast.success('El Usuario se agregó correctamente');
+                
+                // Recargar la página después de 3 segundos
+                setTimeout(() => {
+                    window.location.reload();
+                }, 3000);
+                }, 3000);
 
         } catch (error) {
             console.log(error)

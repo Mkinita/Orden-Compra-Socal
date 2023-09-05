@@ -17,6 +17,7 @@ const TablaGeneral = ({orden}) => {
         <th class=" px-4 py-2 hidden md:table-cell w-1/6">Obra</th>
         <th class=" px-4 py-2 hidden md:table-cell w-1/6">Total</th>
         <th class=" px-4 py-2 hidden md:table-cell w-1/12">Detalle</th>
+        <th class=" px-4 py-2 hidden md:table-cell w-1/12">Anular</th>
       </tr>
     </thead>
     

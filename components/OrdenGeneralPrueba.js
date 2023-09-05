@@ -32,7 +32,7 @@ const Proveedor = ({ocpedidos}) => {
            await axios.post(`/api/admingeneral/${id}`)
             toast.success('Orden Autorizada 🔓')
             setTimeout(() =>{
-              router.push('/orden-compra-general-autorizada')
+              router.push('/pdf-orden-autorizada')
           },1000)
         } catch (error) {
             toast.error('Hubo un error')

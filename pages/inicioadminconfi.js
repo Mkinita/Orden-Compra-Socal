@@ -50,7 +50,7 @@ export default function Solicitud() {
         <div className="p-1 w-full h-full hover:scale-110">
       <div className='p-2 text-center'>
         
-            <Link href="/autorizarordengeneraladminprueba" className="w-full mt-5 p-3 text-7xl ">📝</Link>
+            <Link href="/tablero-admin" className="w-full mt-5 p-3 text-7xl ">📝</Link>
             
             <p className='p-5'></p>
             <h3 className='text-sm font-bold'>Orden De Compra</h3>
