@@ -35,7 +35,7 @@ export default function AdminLayout({ children, pagina }) {
     <>
       <Head>
         <title>Socal - {pagina}</title>
-        <meta name="description" content="RestoApp" />
+        <meta name="description" content="socal" />
       </Head>
 
       <div className="md:flex">
@@ -44,7 +44,7 @@ export default function AdminLayout({ children, pagina }) {
                     className="m-auto"
                     width={300}
                     height={100}
-                    src="/assets/img/Socal.png"
+                    src="/assets/img/socal.png"
                     alt="imagen logotipo"
                 />      
 
