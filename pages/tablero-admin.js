@@ -33,7 +33,7 @@ const tablero = () => {
     <LayoutInicioAdminGeneral pagina={`Inicio - Inicio`}>
       <Head>
         <meta name="description" content="Carlos Jerez" />
-        <link rel="icon" href="/AGRF.png"/>
+        <link rel="icon" href="/socal.png"/>
         <title>Inicio</title>
       </Head>
       <div>
