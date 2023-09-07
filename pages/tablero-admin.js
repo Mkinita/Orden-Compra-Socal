@@ -45,7 +45,7 @@ const tablero = () => {
           
         <div class="mt-8 bg-white p-4 shadow rounded-lg">
               <div class="bg-white ">
-                <h2 className="text-gray-500 text-lg font-semibold pb-2">Informe Por Faena</h2>
+                <h2 className="text-gray-500 text-lg font-semibold pb-2">Movimientos Por Obra</h2>
                 <div class="bg-gradient-to-r from-cyan-300 to-cyan-500 h-px mb-6"></div>
                   <div class="">
                     <table class="w-full table-auto text-sm">
@@ -64,7 +64,7 @@ const tablero = () => {
                       />
                     ):<p>No Hay Ordenes Pendientes</p>}
                     <div class="text-right mt-4">
-                      <Link href="/construyendo" class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
+                      <Link href="/informe-obra-septiembre" class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-2 px-4 rounded">
                         Ver más
                       </Link>
                     </div>

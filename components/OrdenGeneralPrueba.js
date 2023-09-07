@@ -48,6 +48,9 @@ const Proveedor = ({ocpedidos}) => {
 
          await axios.post(`/api/anularocgeneral/${id}`)
           toast.success('Orden Anulada 🔓')
+          setTimeout(() =>{
+            router.push('/listado-oc-general-admin')
+        },1000)
       } catch (error) {
           toast.error('Hubo un error')
       }

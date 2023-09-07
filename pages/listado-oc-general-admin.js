@@ -60,19 +60,21 @@ export default function Admin() {
     return(
         <LayoutInicioAdminGeneral pagina={'Listado-OC'}>
 
-            <h1 className="text-2xl font-black text-center"> Listado Ordenes De Compra Anuladas</h1>
+            <h1 className="text-lg font-semibold pb-2 text-center"> Listado Ordenes De Compra Anuladas</h1>
             <p className="text-2xl my-10"></p>
-            <div className='mt-auto'>
-                <input value={buscar} onChange={buscador} type="text" placeholder='Filtra Por Nº O.C.' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
+            <div className='mt-auto '>
+                <input value={buscar} onChange={buscador} type="text" placeholder='Filtra Por Nº O.C.' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400 shadow rounded-lg'/> 🔍
             </div>
             {/* <TablaGeneral/> */}
             <table class="table-auto w-full text-center">
     <thead>
-      <tr class="bg-white text-gray-700 uppercase text-sm leading-normal">
-        <th class=" px-4 py-2 hidden md:table-cell w-1/12">N° OC</th>
-        <th class=" px-4 py-2 hidden md:table-cell w-1/12">Fecha</th>
+      <tr class="bg-white text-gray-700 text-sm font-semibold">
+        <th class=" px-4 py-2 hidden md:table-cell w-1/6">N° OC</th>
+        <th class=" px-4 py-2 hidden md:table-cell w-1/6">Fecha</th>
         <th class=" px-4 py-2 hidden md:table-cell w-1/6">Emisor</th>
         <th class=" px-4 py-2 hidden md:table-cell w-1/6">Solicitante</th>
+        <th class=" px-4 py-2 hidden md:table-cell w-1/6">Pdf</th>
+        <th class=" px-4 py-2 hidden md:table-cell w-1/6">Autorizar</th>
       </tr>
     </thead>
     

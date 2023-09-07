@@ -42,16 +42,11 @@ export default function Admin() {
     const buscador = (e) => {
         setBuscar(e.target.value)   
     }
-    //  metodo de filtrado 2   
-    //  const results = !buscar ? datos : datos.filter((dato) => dato.pedido.some((pedido) => pedido.patente.toLowerCase().includes(buscar.toLowerCase())))
+    
      const results = !buscar ? datos : datos.filter((dato)=> dato.obra.toLowerCase().includes(buscar.toLocaleLowerCase()))
 
 
-    // const results = !buscar ? datos : datos.filter((dato) => {
-    //     const id = typeof dato.id === 'string' ? dato.id : String(dato.id);
-    //     return id.toLowerCase().includes(buscar.toLowerCase());
-    //   });
-      
+    
       
 
 

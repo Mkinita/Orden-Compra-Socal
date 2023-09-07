@@ -10,7 +10,7 @@ const TablaGeneral = ({orden}) => {
           
   <table class="table-auto w-full text-center">
     <thead>
-      <tr class="bg-white text-gray-700 uppercase text-sm leading-normal">
+      <tr class="bg-white text-gray-700 font-semibold text-sm">
         <th class=" px-4 py-2 hidden md:table-cell w-1/12">N° OC</th>
         <th class=" px-4 py-2 hidden md:table-cell w-1/6">Fecha</th>
         <th class=" px-4 py-2 hidden md:table-cell w-1/6">Solicitante</th>
