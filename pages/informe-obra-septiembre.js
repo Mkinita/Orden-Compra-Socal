@@ -144,7 +144,7 @@ export default function Admin() {
   }
   return(
     <LayoutInicioAdminGeneral pagina={'Listado-OC'}>
-      <h1 className="text-gray-500 text-lg font-semibold pb-8">Informe De Compras Por Obra</h1>
+      <h1 className="text-gray-500 text-lg font-semibold pb-8">Informe De Compras Por Obra Septiembre</h1>
       <div className='mt-auto hidden'>
         <input value={buscar}  onChange={buscador} type="text" placeholder='Filtra Por Obra' className=''/>
       </div>
