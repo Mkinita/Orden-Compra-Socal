@@ -2,7 +2,7 @@ import { PrismaClient } from "@prisma/client";
 
 export default async function handler(req, res) {
   const prisma = new PrismaClient();
-  const fechaInicio = new Date('2023-05-01');
+  const fechaInicio = new Date('2023-04-31');
   const fechaFin = new Date('2023-05-31');
   //Obtener Ordenes
   const ordenesGenerales = await prisma.ocpedidos.findMany({
@@ -11,12 +11,12 @@ export default async function handler(req, res) {
     anular:false,
     AND: [
         {
-          fecha: {
+          fechasolicitud: {
             gt: fechaInicio
           }
         },
         {
-          fecha: {
+          fechasolicitud: {
             lt: fechaFin
           }
         }

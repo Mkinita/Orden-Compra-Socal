@@ -28,8 +28,8 @@ export default function Admin() {
       
   
 
-  const fetcher = () => axios('/api/listado-ordenes-septiembre').then(datos => datos.data)
-  const { data, error} = useSWR('/api/listado-ordenes-septiembre',fetcher,{refreshInterval: 100} )
+  const fetcher = () => axios('/api/listado-ordenes-julio').then(datos => datos.data)
+  const { data, error} = useSWR('/api/listado-ordenes-julio',fetcher,{refreshInterval: 100} )
 
   useEffect(() => {
     fetch('/api/faenas')
@@ -43,7 +43,7 @@ export default function Admin() {
       setIsLoading(true);
 
     try {
-      let url = '/api/listado-ordenes-septiembre';
+      let url = '/api/listado-ordenes-julio';
       const response = await fetch(url);
       const data = await response.json();
       setDatos(data);
@@ -144,7 +144,7 @@ export default function Admin() {
   }
   return(
     <LayoutInicioAdminGeneral pagina={'Listado-OC'}>
-      <h1 className="text-gray-500 text-lg font-semibold pb-8">Informe De Compras Por Obra Septiembre 2023</h1>
+      <h1 className="text-gray-500 text-lg font-semibold pb-8">Informe De Compras Por Obra Julio 2023</h1>
       <div className='mt-auto hidden'>
         <input value={buscar}  onChange={buscador} type="text" placeholder='Filtra Por Obra' className=''/>
       </div>
@@ -213,5 +213,3 @@ export default function Admin() {
 
     
 }
-
-
