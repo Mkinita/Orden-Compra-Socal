@@ -138,8 +138,8 @@ const Proveedor = ({ocpedidos}) => {
               <div className='p-1 text-center'>
               <h3 className="text-lg font-bold">Proveedor</h3>
                         <p className="text-xs font-bold">Nombre: {oc.nombre} {nombre01}</p>
-                        <p className="text-xs font-bold">Rut: {oc.rut} {rut01}</p>
-                        <p className="text-xs font-bold">-</p>
+                        {/* <p className="text-xs font-bold">Rut: {oc.rut} {rut01}</p> */}
+                        {/* <p className="text-xs font-bold">-</p> */}
                         <p className="text-xs font-bold">{oc.chofer}</p>
 
 
