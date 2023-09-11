@@ -65,7 +65,7 @@ export default function EditUserFormGeneralProveedor({ ocpedidos }) {
           
           <select
           id="area"
-          className="bg-white w-full p-2 rounded-md text-center py-2"
+          className="bg-white w-full p-2 rounded-md text-left py-2"
           value={obra}
           onChange={e => setObra(e.target.value)}
         >
