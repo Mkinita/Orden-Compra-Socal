@@ -95,10 +95,11 @@ model Ocpedidos {
   cantidad09 String ?
   descripcion09 String?
   valor09 String?
+  
 
 
 
-
+  cotizacion String?
   orden Json
   fecha DateTime
   fechasolicitud String

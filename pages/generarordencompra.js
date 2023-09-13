@@ -21,7 +21,7 @@ export default function GenerarOrdenDeCompra() {
     cantidad07, setCantidad07, descripcion07, setDescripcion07, valor07, setValor07,
     cantidad08, setCantidad08, descripcion08, setDescripcion08, valor08, setValor08,
     cantidad09, setCantidad09, descripcion09, setDescripcion09, valor09, setValor09,
-    emisor,setEmisor,pedido01,fechasolicitud, setFechasolicitud
+    emisor,setEmisor,pedido01,fechasolicitud, setFechasolicitud,cotizacion,setCotizacion
 
     
     } = useCombustible()
@@ -33,9 +33,61 @@ export default function GenerarOrdenDeCompra() {
 
     
             
-    const [isHidden, setIsHidden] = useState(true);
+    // const [isHidden, setIsHidden] = useState(true);
               
-    const toggleHidden = () => {setIsHidden(!isHidden);}
+    // const toggleHidden = () => {setIsHidden(!isHidden);}
+
+    const [isVisible, setIsVisible] = useState(false);
+    const [isVisible1, setIsVisible1] = useState(false);
+    const [isVisible2, setIsVisible2] = useState(false);
+    const [isVisible3, setIsVisible3] = useState(false);
+    const [isVisible4, setIsVisible4] = useState(false);
+    const [isVisible5, setIsVisible5] = useState(false);
+    const [isVisible6, setIsVisible6] = useState(false);
+    const [isVisible7, setIsVisible7] = useState(false);
+    const [isVisible8, setIsVisible8] = useState(false);
+    const [isVisible9, setIsVisible9] = useState(false);
+
+
+    const toggleVisibility = () => {
+        setIsVisible(!isVisible);
+    };
+
+    const toggleVisibility1 = () => {
+        setIsVisible1(!isVisible1);
+    };
+
+    const toggleVisibility2 = () => {
+        setIsVisible2(!isVisible2);
+    };
+
+    const toggleVisibility3 = () => {
+        setIsVisible3(!isVisible3);
+    };
+
+    const toggleVisibility4 = () => {
+        setIsVisible4(!isVisible4);
+    };
+
+    const toggleVisibility5 = () => {
+        setIsVisible5(!isVisible5);
+    };
+    
+    const toggleVisibility6 = () => {
+        setIsVisible6(!isVisible6);
+    };
+
+    const toggleVisibility7 = () => {
+        setIsVisible7(!isVisible7);
+    };
+
+    const toggleVisibility8 = () => {
+        setIsVisible8(!isVisible8);
+    };
+
+    const toggleVisibility9 = () => {
+        setIsVisible9(!isVisible9);
+    };
 
 
     const comprobarOrdenDeCompra = useCallback(() => {
@@ -181,15 +233,12 @@ export default function GenerarOrdenDeCompra() {
     return (
         <Layout pagina='GenerarOrdenDeCompra O.C.'>
             {/* <p>{patente}</p> */}
-            <h1 className="text-lg font-black text-center">Generar Orden De Compra</h1>
-            <p className="text-2xl my-10"></p>
+            <h1 className="text-black text-lg font-semibold  text-center">Generar Orden De Compra</h1>
             <form 
                 onSubmit={agregarOC}
-                className="text-center"
+                className="text-center grid grid-cols-1 gap-1"
             >
-                {orden.map(proveedor=>(
-                    <ResumenSolicitusGeneral key={proveedor.id} proveedor={proveedor}/>      
-                ))}
+                
                 
                 <div className="grid grid-cols-1 gap-1" >
                     <div>
@@ -209,32 +258,40 @@ export default function GenerarOrdenDeCompra() {
                 </div>
 
 
-                <div className=" p-2">
-                    <div className="grid gap-4 grid-cols-2 md:grid-cols-4 2xl:grid-cols-4" >
+                <div className="">
+                    <div className="grid gap-2 grid-cols-2 md:grid-cols-3 2xl:grid-cols-3 shadow rounded-lg bg-white mb-3 p-3" >
+                        {orden.map(proveedor=>(
+                            <ResumenSolicitusGeneral key={proveedor.id} proveedor={proveedor}/>      
+                        ))}
 
-
-                    <div>
-                            <label 
-                                htmlFor="fechasolicitud"
-                                className="block uppercase text-slate-800 font-bold text-sm">Fecha</label>
+                        <div className="shadow rounded-lg p-2 bg-white mb-3">
+                            <input
+                                id="emisor"
+                                type="text"
+                                className="bg-gray-200 w-full p-2 rounded-md m-auto my-3"  
+                                placeholder="Nº Cotizacion"
+                                value={cotizacion}
+                                onChange={e => setCotizacion(e.target.value)}
+                            />
+                        
+                        </div>
+                        <div className="shadow rounded-lg p-2 bg-white mb-3">
                             <input
                                 id="fechasolicitud"
                                 type="date"
-                                className="bg-gray-200 w-full p-2 rounded-md"  
+                                className="bg-gray-200 w-full p-2 rounded-md m-auto my-3"  
                                 value={fechasolicitud}
                                 onChange={e => setFechasolicitud(e.target.value)}
                             />
                         
                         </div>
 
-                        <div>
-                            <label 
-                                htmlFor="emisor"
-                                className="block uppercase text-slate-800 font-bold text-sm">Emisor</label>
+                        <div className="shadow rounded-lg p-2 bg-white mb-3">
                             <input
                                 id="emisor"
                                 type="text"
-                                className="bg-gray-200 w-full p-2 rounded-md"  
+                                className="bg-gray-200 w-full p-2 rounded-md m-auto my-3"  
+                                placeholder="Emisor"
                                 value={emisor}
                                 onChange={e => setEmisor(e.target.value)}
                             />
@@ -243,672 +300,294 @@ export default function GenerarOrdenDeCompra() {
 
 
                         
-                        <div>
-                            <label 
-                                htmlFor="nombre"
-                                className="block uppercase text-slate-800 font-bold text-sm">Solicitante</label>
+                        <div className="shadow rounded-lg p-2 bg-white mb-3">
                             <input
                                 id="nombre"
                                 type="text"
-                                className="bg-gray-200 w-full p-2 rounded-md"  
+                                className="bg-gray-200 w-full p-2 rounded-md m-auto my-3"  
+                                placeholder="Solicitante"
                                 value={nombre}
                                 onChange={e => setNombre(e.target.value)}
                             />
                         
                         </div>
 
-
-                        <div>
-                        <label 
-                            htmlFor="obra"
-                            className="block uppercase text-slate-800 font-bold text-sm text-center">Obra</label>
-                            <select value={selectedValueObras} onChange={handleChangeObras} className="bg-gray-200 w-full p-2 rounded-md">
-                                    <option value="">{obra}</option>
-                                    {optionsonbras.map((option) => (
-                                        <option key={option.id} value={option.value}>
-                                        {option.nombre}
-                                        </option>
-                                    ))}
-                                </select>
-                        <input
-                            id="obra"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md hidden"  
-                            value={obra}
-                            onChange={e => setObra(e.target.value)}
-                        />
-                    
-                    </div>
-                    </div>
-                </div>
-
-
-                
-
-                    
-
-                
-
-                
-
-
-                <div className="p-2"></div>
-
-                
-                
-
-                <div className="flex gap-1 p-2" >
-                    <div className="flex-1 w-16">
-
-                        <label 
-                            htmlFor="cantidad"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
-                        <input
-                            id="cantidad"
-                            type="number"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={cantidad}
-                            onChange={e => setCantidad(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="descripcion"
-                            className=""></label>
-                            <select
-                                value={selectedValue}
-                                onChange={handleChange}
-                                className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white"
-                                style={{ width: '100px' 
-                                }} // Agrega un ancho de 200px
-                                >
-                                <option value="">Detalle</option>
-                                {options.map((option) => (
+                        <div className="shadow rounded-lg p-2 bg-white mb-3">
+                            <select value={selectedValueObras} onChange={handleChangeObras} className="bg-gray-200 w-full p-2 rounded-md m-auto my-3">
+                                <option value="">Obra {obra}</option>
+                                {optionsonbras.map((option) => (
                                     <option key={option.id} value={option.value}>
-                                    {option.nombre}
+                                        {option.nombre}
                                     </option>
                                 ))}
                             </select>
-                        <input
-                            id="descripcion"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={descripcion}
-                            onChange={e => setDescripcion(e.target.value )}
-                        />
-                        
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="valor"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
-                        <input
-                            id="valor"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={valor}
-                            onChange={e => setValor(e.target.value)}
-                        />
+                            <input
+                                id="obra"
+                                type="text"
+                                className="bg-gray-200 w-full p-2 rounded-md hidden"  
+                                value={obra}
+                                onChange={e => setObra(e.target.value)}
+                            />
                     
+                        </div>
+
                     </div>
                 </div>
 
 
+                
+
+                    
 
                 
+
+                
+
+
                 <div className="p-2"></div>
-                
-                
-
-                <div className="flex gap-1 p-2" >
-                    <div className="flex-1 w-16">
-
-                        <label 
-                            htmlFor="cantidad"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
-                        <input
-                            id="cantidad"
-                            type="number"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={cantidad01}
-                            onChange={e => setCantidad01(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="descripcion"
-                            className=""></label>
-                            <select value={selectedValue01} onChange={handleChange01} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px'}}>
-                                    <option value="">Detalle</option>
-                                    {options01.map((option) => (
-                                        <option key={option.id} value={option.value}>
-                                        {option.nombre}
-                                        </option>
-                                    ))}
-                                </select>
-                        <input
-                            id="descripcion"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={descripcion01}
-                            onChange={e => setDescripcion01(e.target.value )}
-                        />
-                        
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="valor"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
-                        <input
-                            id="valor"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={valor01}
-                            onChange={e => setValor01(e.target.value)}
-                        />
-                    
-                    </div>
-                </div>
 
                 
+            <div className="shadow rounded-lg p-2 bg-white">
 
-                <div className="flex gap-1 p-2" >
-                    <div className="flex-1 w-16">
+                <table className="table-auto w-full text-center bg-white text-gray-700 ">
+                    <tbody>
+                        <tr>
+                            <td className="px-2 py-4 w-1/6 text-center">Cantidad</td>
+                            <td className="px-2 py-4 w-2/3 text-center">Detalle</td>
+                            <td className="px-2 py-4 w-1/6 text-center">Valor</td>
+                            <td className="px-2 py-4 w-1/12 text-center">➕</td>
+                        </tr>
+                        <tr className="bg-white border border-gray-200 ">
+                            <td className="px-2 py-2 w-1/6 text-center  ">
+                                <input id="ingreso" type="number" class="bg-gray-200 w-full p-1 rounded-md" value={cantidad} onChange={e => setCantidad(e.target.value)}/>
+                            </td>    
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                                <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={descripcion} onChange={e => setDescripcion(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-1/6 text-center  ">
+                                <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={valor} onChange={e => setValor(e.target.value)}/>
+                            </td>
+                            
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <button
+                                    type="button"
+                                    className=""
+                                    onClick={toggleVisibility}         
+                                >
+                                    {isVisible ? '➖':'➕'}
+                                </button>
+                            </td>
+                        </tr>    
+                        {isVisible && (
 
-                        <label 
-                            htmlFor="cantidad"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
-                        <input
-                            id="cantidad"
-                            type="number"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={cantidad02}
-                            onChange={e => setCantidad02(e.target.value)}
-                        />
-                    
-                    </div>
+                            <tr className="bg-white border border-gray-200 ">
+                                <td className="px-2 py-2 w-1/12 text-center  ">
+                                    <input id="ingreso" type="number" class="bg-gray-200 w-full p-1 rounded-md" value={cantidad01} onChange={e => setCantidad01(e.target.value)}/>
+                                </td>
+                                <td className="px-2 py-2 w-2/3 text-center  ">
+                                    <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={descripcion01} onChange={e => setDescripcion01(e.target.value)}/>
+                                </td>
+                                <td className="px-2 py-2 w-2/3 text-center  ">
+                                <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={valor01} onChange={e => setValor01(e.target.value)}/>
+                            </td>
+                                <td className="px-2 py-2 w-1/12 text-center  ">
+                                    <button
+                                        type="button"
+                                        onClick={toggleVisibility1}           
+                                    >                        
+                                    {isVisible1 ? '➖':'➕'}
+                                    </button>
+                                </td>
+                            </tr>    
+                        )}
 
+                        {isVisible1 && (
 
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="descripcion"
-                            className=""></label>
-                            <select value={selectedValue02} onChange={handleChange02} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
-                                    <option value="">Detalle</option>
-                                    {options02.map((option) => (
-                                        <option key={option.id} value={option.value}>
-                                        {option.nombre}
-                                        </option>
-                                    ))}
-                                </select>
-                        <input
-                            id="descripcion"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={descripcion02}
-                            onChange={e => setDescripcion02(e.target.value )}
-                        />
+                        <tr className="bg-white border border-gray-200 ">
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <input id="ingreso" type="number" class="bg-gray-200 w-full p-1 rounded-md" value={cantidad02} onChange={e => setCantidad02(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                                <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={descripcion02} onChange={e => setDescripcion02(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                            <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={valor02} onChange={e => setValor02(e.target.value)}/>
+                        </td>
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <button
+                                    type="button"
+                                    onClick={toggleVisibility2}           
+                                >                        
+                                {isVisible2 ? '➖':'➕'}
+                                </button>
+                            </td>
+                        </tr>    
+                        )}
+
+                        {isVisible2 && (
+
+                        <tr className="bg-white border border-gray-200 ">
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <input id="ingreso" type="number" class="bg-gray-200 w-full p-1 rounded-md" value={cantidad03} onChange={e => setCantidad03(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                                <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={descripcion03} onChange={e => setDescripcion03(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                            <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={valor03} onChange={e => setValor03(e.target.value)}/>
+                        </td>
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <button
+                                    type="button"
+                                    onClick={toggleVisibility3}           
+                                >                        
+                                {isVisible3 ? '➖':'➕'}
+                                </button>
+                            </td>
+                        </tr>    
+                        )}
+
+                        {isVisible3 && (
+
+                        <tr className="bg-white border border-gray-200 ">
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <input id="ingreso" type="number" class="bg-gray-200 w-full p-1 rounded-md" value={cantidad04} onChange={e => setCantidad04(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                                <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={descripcion04} onChange={e => setDescripcion04(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                            <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={valor04} onChange={e => setValor04(e.target.value)}/>
+                        </td>
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <button
+                                    type="button"
+                                    onClick={toggleVisibility4}           
+                                >                        
+                                {isVisible4 ? '➖':'➕'}
+                                </button>
+                            </td>
+                        </tr>    
+                        )}
+
+                        {isVisible4 && (
+
+                        <tr className="bg-white border border-gray-200 ">
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <input id="ingreso" type="number" class="bg-gray-200 w-full p-1 rounded-md" value={cantidad05} onChange={e => setCantidad05(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                                <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={descripcion05} onChange={e => setDescripcion05(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                            <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={valor05} onChange={e => setValor05(e.target.value)}/>
+                        </td>
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <button
+                                    type="button"
+                                    onClick={toggleVisibility5}           
+                                >                        
+                                {isVisible5 ? '➖':'➕'}
+                                </button>
+                            </td>
+                        </tr>    
+                        )}
+
+                        {isVisible5 && (
+
+                        <tr className="bg-white border border-gray-200 ">
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <input id="ingreso" type="number" class="bg-gray-200 w-full p-1 rounded-md" value={cantidad06} onChange={e => setCantidad06(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                                <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={descripcion06} onChange={e => setDescripcion06(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                            <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={valor06} onChange={e => setValor06(e.target.value)}/>
+                        </td>
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <button
+                                    type="button"
+                                    onClick={toggleVisibility6}           
+                                >                        
+                                {isVisible6 ? '➖':'➕'}
+                                </button>
+                            </td>
+                        </tr>    
+                        )}
+
+                        {isVisible6 && (
+
+                        <tr className="bg-white border border-gray-200 ">
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <input id="ingreso" type="number" class="bg-gray-200 w-full p-1 rounded-md" value={cantidad07} onChange={e => setCantidad07(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                                <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={descripcion07} onChange={e => setDescripcion07(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                            <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={valor07} onChange={e => setValor07(e.target.value)}/>
+                        </td>
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <button
+                                    type="button"
+                                    onClick={toggleVisibility7}           
+                                >                        
+                                {isVisible7 ? '➖':'➕'}
+                                </button>
+                            </td>
+                        </tr>    
+                        )}
+
+                        {isVisible7 && (
+
+                        <tr className="bg-white border border-gray-200 ">
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <input id="ingreso" type="number" class="bg-gray-200 w-full p-1 rounded-md" value={cantidad08} onChange={e => setCantidad08(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                                <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={descripcion08} onChange={e => setDescripcion08(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                            <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={valor08} onChange={e => setValor08(e.target.value)}/>
+                        </td>
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <button
+                                    type="button"
+                                    onClick={toggleVisibility8}           
+                                >                        
+                                {isVisible8 ? '➖':'➕'}
+                                </button>
+                            </td>
+                        </tr>    
+                        )}
+
+                        {isVisible8 && (
+
+                        <tr className="bg-white border border-gray-200 ">
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <input id="ingreso" type="number" class="bg-gray-200 w-full p-1 rounded-md" value={cantidad09} onChange={e => setCantidad09(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                                <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={descripcion09} onChange={e => setDescripcion09(e.target.value)}/>
+                            </td>
+                            <td className="px-2 py-2 w-2/3 text-center  ">
+                            <input id="ingreso" type="text" class="bg-gray-200 w-full p-1 rounded-md" value={valor09} onChange={e => setValor09(e.target.value)}/>
+                        </td>
+                            <td className="px-2 py-2 w-1/12 text-center  ">
+                                <button
+                                    type="button"
+                                    onClick={toggleVisibility9}           
+                                >                        
+                                {isVisible9}
+                                </button>
+                            </td>
+                        </tr>    
+                        )}
                         
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="valor"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
-                        <input
-                            id="valor"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={valor02}
-                            onChange={e => setValor02(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    
-                </div>
-
-
-
-                <div className="flex gap-1 p-2" >
-                    <div className="flex-1 w-16">
-
-                        <label 
-                            htmlFor="cantidad"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
-                        <input
-                            id="cantidad"
-                            type="number"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={cantidad03}
-                            onChange={e => setCantidad03(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="descripcion"
-                            className=""></label>
-                            <select value={selectedValue03} onChange={handleChange03} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
-                                    <option value="">Detalle</option>
-                                    {options03.map((option) => (
-                                        <option key={option.id} value={option.value}>
-                                        {option.nombre}
-                                        </option>
-                                    ))}
-                                </select>
-                        <input
-                            id="descripcion"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={descripcion03}
-                            onChange={e => setDescripcion03(e.target.value )}
-                        />
-                        
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="valor"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
-                        <input
-                            id="valor"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={valor03}
-                            onChange={e => setValor03(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    
-                </div>
-                <div className={`${isHidden ? "hidden" : "block"}`}>
-
-
-
-
-                <div className="flex gap-1 p-2" >
-                    <div className="flex-1 w-16">
-
-                        <label 
-                            htmlFor="cantidad"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
-                        <input
-                            id="cantidad"
-                            type="number"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={cantidad04}
-                            onChange={e => setCantidad04(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="descripcion"
-                            className=""></label>
-                            <select value={selectedValue04} onChange={handleChange04} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
-                                    <option value="">Detalle</option>
-                                    {options04.map((option) => (
-                                        <option key={option.id} value={option.value}>
-                                        {option.nombre}
-                                        </option>
-                                    ))}
-                                </select>
-                        <input
-                            id="descripcion"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={descripcion04}
-                            onChange={e => setDescripcion04(e.target.value )}
-                        />
-                        
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="valor"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
-                        <input
-                            id="valor"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={valor04}
-                            onChange={e => setValor04(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    
-                </div>
-
-            
-                <div className="flex gap-1 p-2" >
-                    <div className="flex-1 w-16">
-
-                        <label 
-                            htmlFor="cantidad"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
-                        <input
-                            id="cantidad"
-                            type="number"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={cantidad05}
-                            onChange={e => setCantidad05(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="descripcion"
-                            className=""></label>
-                            <select value={selectedValue05} onChange={handleChange05} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
-                                    <option value="">Detalle</option>
-                                    {options05.map((option) => (
-                                        <option key={option.id} value={option.value}>
-                                        {option.nombre}
-                                        </option>
-                                    ))}
-                                </select>
-                        <input
-                            id="descripcion"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={descripcion05}
-                            onChange={e => setDescripcion05(e.target.value )}
-                        />
-                        
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="valor"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
-                        <input
-                            id="valor"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={valor05}
-                            onChange={e => setValor05(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    
-                </div>
-
-              
-
-
-                <div className="flex gap-1 p-2" >
-                    <div className="flex-1 w-16">
-
-                        <label 
-                            htmlFor="cantidad"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
-                        <input
-                            id="cantidad"
-                            type="number"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={cantidad06}
-                            onChange={e => setCantidad06(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="descripcion"
-                            className=""></label>
-                            <select value={selectedValue06} onChange={handleChange06} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
-                                    <option value="">Detalle</option>
-                                    {options06.map((option) => (
-                                        <option key={option.id} value={option.value}>
-                                        {option.nombre}
-                                        </option>
-                                    ))}
-                                </select>
-                        <input
-                            id="descripcion"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={descripcion06}
-                            onChange={e => setDescripcion06(e.target.value )}
-                        />
-                        
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="valor"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
-                        <input
-                            id="valor"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={valor06}
-                            onChange={e => setValor06(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    
-                </div>
-
-                
-
-                <div className="flex gap-1 p-2" >
-                    <div className="flex-1 w-16">
-
-                        <label 
-                            htmlFor="cantidad"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
-                        <input
-                            id="cantidad"
-                            type="number"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={cantidad07}
-                            onChange={e => setCantidad07(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="descripcion"
-                            className=""></label>
-                            <select value={selectedValue07} onChange={handleChange07} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
-                                    <option value="">Detalle</option>
-                                    {options07.map((option) => (
-                                        <option key={option.id} value={option.value}>
-                                        {option.nombre}
-                                        </option>
-                                    ))}
-                                </select>
-                        <input
-                            id="descripcion"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={descripcion07}
-                            onChange={e => setDescripcion07(e.target.value )}
-                        />
-                        
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="valor"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
-                        <input
-                            id="valor"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={valor07}
-                            onChange={e => setValor07(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    
-                </div>
-
-
-                
-
-                <div className="flex gap-1 p-2" >
-                    <div className="flex-1 w-16">
-
-                        <label 
-                            htmlFor="cantidad"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
-                        <input
-                            id="cantidad"
-                            type="number"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={cantidad08}
-                            onChange={e => setCantidad08(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="descripcion"
-                            className=""></label>
-                            <select value={selectedValue08} onChange={handleChange08} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
-                                    <option value="">Detalle</option>
-                                    {options08.map((option) => (
-                                        <option key={option.id} value={option.value}>
-                                        {option.nombre}
-                                        </option>
-                                    ))}
-                                </select>
-                        <input
-                            id="descripcion"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={descripcion08}
-                            onChange={e => setDescripcion08(e.target.value )}
-                        />
-                        
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="valor"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
-                        <input
-                            id="valor"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={valor08}
-                            onChange={e => setValor08(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    
-                </div>
-
-                
-
-                <div className="flex gap-1 p-2" >
-                    <div className="flex-1 w-16">
-
-                        <label 
-                            htmlFor="cantidad"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Cantidad</label>
-                        <input
-                            id="cantidad"
-                            type="number"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={cantidad09}
-                            onChange={e => setCantidad09(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="descripcion"
-                            className=""></label>
-                            <select value={selectedValue09} onChange={handleChange09} className="block uppercase text-slate-800 font-bold text-sm py-5 bg-white" style={{ width: '100px' }}>
-                                    <option value="">Detalle</option>
-                                    {options09.map((option) => (
-                                        <option key={option.id} value={option.value}>
-                                        {option.nombre}
-                                        </option>
-                                    ))}
-                                </select>
-                        <input
-                            id="descripcion"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={descripcion09}
-                            onChange={e => setDescripcion09(e.target.value )}
-                        />
-                        
-                    </div>
-
-
-                    <div className="flex-1 w-16">
-                        <label 
-                            htmlFor="valor"
-                            className="block uppercase text-slate-800 font-bold text-sm py-5">Valor</label>
-                        <input
-                            id="valor"
-                            type="text"
-                            className="bg-gray-200 w-full p-2 rounded-md"  
-                            value={valor09}
-                            onChange={e => setValor09(e.target.value)}
-                        />
-                    
-                    </div>
-
-
-                    
-                </div>
-
-
-
-                
-
-                
-            </div>
+                        </tbody>
+                        </table>
+                        </div>
 
 
 
@@ -934,12 +613,7 @@ export default function GenerarOrdenDeCompra() {
             </form>
 
 
-            <button
-                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                onClick={toggleHidden}
-                >
-                ➕
-            </button>
+            
 
 
 

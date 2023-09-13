@@ -38,13 +38,13 @@ export default function Solicitud() {
     <LayouytProveedorAdmin pagina={`Proveedores`}>
     
       {/* <h1 className='text-4xl font-black'>{faenaActual?.nombre}</h1> */}
-      <p className='text-2xl mx-5 my-3 font-bold'>
+      <p className='text-gray-500 text-lg font-semibold pb-2'>
         Proveedores
       </p>
       <div className='mt-auto'>
-        <input value={search} onChange={searcher} type="text" placeholder='Buscar' className='text-gray-700 my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
+        <input value={search} onChange={searcher} type="text" placeholder='Buscar' className='text-gray-700 shadow rounded-lg my-5 text-center m-auto flex-wrap-reverse border-yellow-400'/> 🔍
       </div>
-      <div className='grid gap-4 grid-cols-1 md:grid-cols-2 2xl:grid-cols-4'>  
+      <div className='grid gap-2 grid-cols-1 md:grid-cols-3 2xl:grid-cols-4'>  
         {results.map(proveedor=>(
           <Proveedor key={proveedor.id} proveedor={proveedor}/>
         ))}

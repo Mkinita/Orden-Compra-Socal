@@ -32,6 +32,7 @@ const CombustibleProvider = ({children}) => {
     const [obras, setObras] = useState({})
     const [nombre, setNombre] = useState('')
     const [emisor, setEmisor] = useState('')
+    const [cotizacion, setCotizacion] = useState('')
 
     const [nombre01, setNombre01] = useState('')
     const [rut01, setRut01] = useState('')
@@ -462,6 +463,15 @@ const CombustibleProvider = ({children}) => {
         },2000)
     }
 
+    const handleElimanarSolicitudGeneralAdmin = id => {
+        const pedidoActualizadoGeneral = orden.filter( proveedor => proveedor.id !== id)
+        setOrden(pedidoActualizadoGeneral)
+        toast.error('Solicitud Eliminada')
+        setTimeout(() =>{
+            router.push('/proveedores-admin')
+        },2000)
+    }
+
 
 
 
@@ -527,7 +537,7 @@ const CombustibleProvider = ({children}) => {
             cantidad06,descripcion06,valor06,
             cantidad07,descripcion07,valor07,
             cantidad08,descripcion08,valor08,
-            cantidad09,descripcion09,valor09
+            cantidad09,descripcion09,valor09,cotizacion
             ,folio, fechasolicitud,fecha: new Date()})
             // Resetear la app
             setFolio('')
@@ -535,6 +545,7 @@ const CombustibleProvider = ({children}) => {
             setObra('')
             setNombre('')
             setCantidad(0)
+            setCotizacion('')
             setCantidad01('')
             setCantidad02('')
             setCantidad03('')
@@ -592,7 +603,7 @@ const CombustibleProvider = ({children}) => {
             cantidad06,descripcion06,valor06,
             cantidad07,descripcion07,valor07,
             cantidad08,descripcion08,valor08,
-            cantidad09,descripcion09,valor09
+            cantidad09,descripcion09,valor09,cotizacion
             ,folio, fechasolicitud,fecha: new Date()})
             // Resetear la app
             setFolio('')
@@ -600,6 +611,7 @@ const CombustibleProvider = ({children}) => {
             setObra('')
             setNombre('')
             setCantidad(0)
+            setCotizacion('')
             setCantidad01('')
             setCantidad02('')
             setCantidad03('')
@@ -930,7 +942,8 @@ const CombustibleProvider = ({children}) => {
             handlesetOrden,
             fechasolicitud, setFechasolicitud,
             handleAgregarOrdenAdmin,
-            agregarOCAdmin
+            agregarOCAdmin,
+            handleElimanarSolicitudGeneralAdmin,cotizacion,setCotizacion
 
             
             

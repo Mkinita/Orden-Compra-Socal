@@ -69,6 +69,7 @@ export default async function handler(req, res) {
         fecha: req.body.fecha,
         fechasolicitud: req.body.fechasolicitud,
         orden: req.body.orden,
+        cotizacion: req.body.cotizacion
       },
     });
     res.json(ocpedidos);

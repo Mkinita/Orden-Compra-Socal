@@ -7,6 +7,8 @@ import ModalEquipo from "../components/ModalEquipo";
 import ModalProveedorAdmin from "../components/ModalProveedorAdmin";
 import useCombustible from "../hooks/useCombustible";
 import Image from "next/image"
+import React, { useState } from 'react';
+import Link from "next/link"
 
 import 'react-toastify/dist/ReactToastify.css'
 
@@ -27,6 +29,8 @@ Modal.setAppElement('#__next');
 export default function LayoutProveedor({children, pagina}) {
 
     const {modal} = useCombustible()
+    const [sidebarOpen, setSidebarOpen] = useState(true);
+
     return (
       <>
       <Head>
@@ -37,19 +41,51 @@ export default function LayoutProveedor({children, pagina}) {
       </Head>
 
       <div className="md:flex">
-        <aside className="md:w-4/12 xl:w-1/4 2xl:w-1/5">
-        <Image
-                    className="m-auto"
-                    width={300}
-                    height={100}
-                    src="/assets/img/socal.png"
-                    alt="imagen logotipo"
-                />  
-            <SidebarAdminGeneral/>
+        <aside
+          className={`bg-gray-50 ${
+            sidebarOpen
+              ? 'md:w-4/12 xl:w-1/4 2xl:w-1/5 py-5'
+              : 'md:w-1/12 xl:w-1/12 2xl:w-1/12 py-5'
+          }`}
+        >
+          <button
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            className="w-full flex items-center justify-center "
+          >
+            <Image
+              className={`hover:translate-x-2 transition-transform ${sidebarOpen ? '' : 'w-10 h-10'}`}
+              width={150}
+              height={50}
+              src="/assets/img/socal.png"
+              alt="imagen logotipo"
+            />
+          </button>
+          <div className={` ${sidebarOpen ? '' : 'w-54'}`}>
+            {/* <SidebarAdminGeneral /> */}
+            <div className="px-3 py-4 overflow-y-auto rounded">
+        <ul className="space-y-2">
+
+        <li className="group relative">
+          <Link href="/tablero-admin" className="w-full flex items-center justify-center p-2 text-sm uppercase shadow rounded-lg md:rounded-3xl hover:translate-x-2 transition-transform">
+            🏠
+            <span className={`ml-3 ${sidebarOpen ? '' : 'hidden'}`}>Inicio</span>
+          </Link>
+        </li>
+            
+               <li className="group relative">
+                  <Link href="https://socal-production.up.railway.app/auth/login" className="w-full flex items-center justify-center p-2 text-sm uppercase shadow rounded-lg md:rounded-3xl hover:translate-x-2 transition-transform">
+                     ⚠️
+                  <  span className={`ml-3 ${sidebarOpen ? '' : ' hidden'}`}>Cerrar Sesion</span>
+                  </Link>
+               </li>
+           
+        </ul>
+        </div>
+          </div>
         </aside>
 
-        <main className="md:w-8/12 xl:w-3/4 2xl:w-4/5 h-screen overflow-y-scroll">
-            <div className="p-10">
+        <main className="md:w-8/12 xl:w-full 2xl:w-4/5 h-screen overflow-y-scroll">
+            <div className="p-5">
               {/* <Pasos/> */}
               {children}
             </div>
