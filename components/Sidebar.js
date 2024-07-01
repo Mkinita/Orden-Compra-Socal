@@ -2,10 +2,23 @@ import Image from "next/image";
 import useCombustible from "../hooks/useCombustible";
 import Faena from "./Faena";
 import Link from 'next/link';
+import Cookies from 'js-cookie';
 
 
 const Sidebar = () => {
     const {faenas} = useCombustible()
+
+    const handleLogout = () => {
+        // Elimina la cookie 'userEmail' (ajusta el nombre de la cookie según tu implementación)
+        
+        if (Cookies.get('userEmail')) {
+            // Elimina la cookie 'userEmail'
+            Cookies.remove('userEmail');
+          }
+        
+        // Redirige al usuario a la página de inicio de sesión u otra página
+        window.location.href = '/'; // O redirige a la página que desees
+      };
 
     
     return(
@@ -96,12 +109,19 @@ const Sidebar = () => {
                     
 
 
-                    <li>
+                    {/* <li>
                         <Link href="/" className="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
                         ⚠️
                         <span className="ml-3">Cerrar Sesion</span>
                         </Link>
-                    </li>
+                    </li> */}
+
+<li>
+          <button onClick={handleLogout} className="flex items-center p-2 text-base font-black text-black rounded-lg bg-amber-400 dark:text-black hover:bg-gray-100 dark:hover:bg-amber-400 uppercase">
+            ⚠️
+            <span className="ml-3">Cerrar Sesión</span>
+          </button>
+        </li>
 
 
 

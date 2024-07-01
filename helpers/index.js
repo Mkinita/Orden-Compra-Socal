@@ -20,3 +20,15 @@ export const formatearDinero = cantidad => {
     }
   };
   
+
+
+export const formatearDinerouf = (cantidad) => {
+  if (cantidad != null) {
+    return cantidad.toLocaleString('es-CL', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+  } else {
+    return '';
+  }
+};

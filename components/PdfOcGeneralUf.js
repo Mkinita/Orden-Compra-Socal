@@ -2,9 +2,9 @@ import Image from "next/image"
 import axios  from 'axios'
 import { toast } from "react-toastify"
 import {formatiarFecha} from "helpers/fecha"
-import {formatearDinero} from "helpers/index"
+import {formatearDinerouf} from "helpers/index"
 import { useRouter } from 'next/router'
-import {formatoNumero} from "helpers/formato"
+import {formatoNumeronuevo} from "helpers/formato"
 import Link from "next/link"
 
 
@@ -29,9 +29,9 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
 
 
 
-    // const formatoNumero = (num) => {
-    //     return num.toLocaleString('es-CL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
-    //   }
+    const formatoNumero = (num) => {
+        return num.toLocaleString('es-CL', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      }
 
     const router = useRouter()
 
@@ -142,20 +142,10 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
               </div>
               <div className="w-full m-auto">
               <div className="text-center"><h3 className="text-lg font-bold inline-block align-baseline ">ORDEN DE COMPRA</h3></div>
-              <div className="text-center"><h3 className="text-lg font-bold inline-block align-middle">Nº: {formatoNumero(id)}</h3></div>
+              <div className="text-center"><h3 className="text-lg font-bold inline-block align-middle">Nº: {formatoNumeronuevo(id)}</h3></div>
               </div> 
             </div>
-            
       </div>
-      <div className="m-auto hidden md:block w-1/4 text-center hover:scale-110">
-                                <Link href={`/ordenesuf/${id}`} className="">
-                                
-                                <div className="border rounded-lg p-2 shadow-sm font-semibold">
-                                    Transformar UF
-                                </div>
-                                
-                                </Link>
-                            </div>
 
 
         <div><p className="text-sm font-bold text-right">Fecha: {fechasolicitud}</p></div>
@@ -256,45 +246,45 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
               <div className="flex items-center w-full space-x-2 text-center">
                   <div className="h-2.0  w-full">{cantidad}</div>
                   <div className="h-5.0  w-full">{descripcion}</div>
-                  <div className="h-2.0  w-full">{formatearDinero (valor)}</div>
-                  <div className="h-2.0  w-full">${formatearDinero (resultado)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf (valor)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf (resultado)}</div>
               </div>
 
               <div className="flex items-center w-full space-x-2 text-center">
               <div className="h-1.5  w-full">{cantidad01}</div>
                   <div className="h-5.0  w-full">{descripcion01}</div>
-                  <div className="h-2.0  w-full">{formatearDinero(valor01)}</div>
-                  <div className="h-2.0  w-full">{formatearDinero(resultado01)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf(valor01)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf(resultado01)}</div>
               </div>
 
 
               <div className="flex items-center w-full space-x-2 text-center">
               <div className="h-1.5  w-full">{cantidad02}</div>
                   <div className="h-5.0  w-full">{descripcion02}</div>
-                  <div className="h-2.0  w-full">{formatearDinero (valor02)}</div>
-                  <div className="h-2.0  w-full">{formatearDinero (resultado02)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf (valor02)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf (resultado02)}</div>
               </div>
 
               <div className="flex items-center w-full space-x-2 text-center">
               <div className="h-1.5  w-full">{cantidad03}</div>
                   <div className="h-5.0  w-full">{descripcion03}</div>
-                  <div className="h-2.0  w-full">{formatearDinero (valor03)}</div>
-                  <div className="h-2.0  w-full">{formatearDinero (resultado03)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf (valor03)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf (resultado03)}</div>
               </div>
 
               <div className="flex items-center w-full space-x-2 text-center">
               <div className="h-1.5  w-full">{cantidad04}</div>
                   <div className="h-5.0  w-full">{descripcion04}</div>
-                  <div className="h-2.0  w-full">{formatearDinero(valor04)}</div>
-                  <div className="h-2.0  w-full">{formatearDinero (resultado04)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf(valor04)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf (resultado04)}</div>
               </div>
 
 
               <div className="flex items-center w-full space-x-2 text-center">
               <div className="h-1.5  w-full">{cantidad05}</div>
                   <div className="h-5.0  w-full">{descripcion05}</div>
-                  <div className="h-2.0  w-full">{formatearDinero(valor05)}</div>
-                  <div className="h-2.0  w-full">{formatearDinero (resultado05)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf(valor05)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf (resultado05)}</div>
               </div>
 
 
@@ -302,24 +292,24 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
               <div className="flex items-center w-full space-x-2 text-center">
               <div className="h-1.5  w-full">{cantidad06}</div>
                   <div className="h-5.0  w-full">{descripcion06}</div>
-                  <div className="h-2.0  w-full">{formatearDinero(valor06)}</div>
-                  <div className="h-2.0  w-full">{formatearDinero (resultado06)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf(valor06)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf (resultado06)}</div>
               </div>
 
 
               <div className="flex items-center w-full space-x-2 text-center">
               <div className="h-1.5  w-full">{cantidad07}</div>
                   <div className="h-5.0  w-full">{descripcion07}</div>
-                  <div className="h-2.0  w-full">{formatearDinero(valor07)}</div>
-                  <div className="h-2.0  w-full">{formatearDinero (resultado07)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf(valor07)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf (resultado07)}</div>
               </div>
 
 
               <div className="flex items-center w-full space-x-2 text-center">
               <div className="h-1.5  w-full">{cantidad08}</div>
                   <div className="h-5.0  w-full">{descripcion08}</div>
-                  <div className="h-2.0  w-full">{formatearDinero(valor08)}</div>
-                  <div className="h-2.0  w-full">{formatearDinero (resultado08)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf(valor08)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf (resultado08)}</div>
               </div>
 
 
@@ -327,8 +317,8 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
               <div className="flex items-center w-full space-x-2 text-center">
               <div className="h-1.5  w-full">{cantidad09}</div>
                   <div className="h-5.0  w-full">{descripcion09}</div>
-                  <div className="h-2.0  w-full">{formatearDinero(valor09)}</div>
-                  <div className="h-2.0  w-full">{formatearDinero (resultado09)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf(valor09)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf (resultado09)}</div>
               </div>
 
 
@@ -371,7 +361,7 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
               <div className="h-1.5  w-full"></div>
                   <div className="h-5.0  w-full"></div>
                   <div className="h-2.0  w-full text-black font-bold">SUBTOTAL</div>
-                  <div className="h-2.0  w-full">{formatearDinero(subtotal)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf(subtotal)}</div>
               </div>
 
 
@@ -379,7 +369,7 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
               <div className="h-1.5  w-full"></div>
                   <div className="h-5.0  w-full"></div>
                   <div className="h-2.0  w-full text-black font-bold">IVA 19%</div>
-                  <div className="h-2.0  w-full">{formatearDinero(iva)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf(iva)}</div>
               </div>
 
 
@@ -388,7 +378,7 @@ const OrdenCompraAutorizada = ({ocpedidos}) => {
               <div className="h-1.5  w-full"></div>
                   <div className="h-5.0  w-full"></div>
                   <div className="h-2.0  w-full text-black font-bold">TOTAL</div>
-                  <div className="h-2.0  w-full">{formatearDinero(totaldubiva)}</div>
+                  <div className="h-2.0  w-full">{formatearDinerouf(totaldubiva)}</div>
               </div>
 
               

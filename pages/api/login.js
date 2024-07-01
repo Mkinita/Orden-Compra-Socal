@@ -8,7 +8,7 @@ export default async function login(req, res) {
     return res.status(405).json({ message: 'Method not allowed' });
   }
 
-  const { email, password } = req.body;
+  const { email, password, } = req.body;
 
   const user = await prisma.user.findUnique({ where: { email } });
 

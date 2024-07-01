@@ -1,4 +1,3 @@
-import { Inter } from '@next/font/google'
 import LayouytProveedor from '../layout/LayouytProveedor'
 import Proveedor from '../components/Proveedor'
 import useCombustible from '../hooks/useCombustible'
@@ -6,7 +5,7 @@ import {useState, useEffect} from 'react'
 
 
 
-const inter = Inter({ subsets: ['latin'] })
+
 
 export default function Solicitud() {
 

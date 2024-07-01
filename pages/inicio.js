@@ -1,6 +1,9 @@
 import LayouytInicio from '../layout/LayouytInicio'
 import Link from 'next/link'
 import Image from 'next/image'
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Cookies from 'js-cookie';
 
 
 
@@ -9,6 +12,21 @@ import Image from 'next/image'
 
 export default function Solicitud() {
 
+  const [email, setEmail] = useState('');
+  const router = useRouter();
+
+  useEffect(() => {
+    // Obtén el correo electrónico almacenado en la cookie
+    const userEmail = Cookies.get('userEmail');
+
+    // Si el correo electrónico no está presente, redirige al usuario de vuelta a la página de inicio de sesión
+    if (!userEmail) {
+      router.push('/login');
+    } else {
+      setEmail(userEmail);
+    }
+  }, []);
+
   
 
   return (
@@ -16,7 +34,7 @@ export default function Solicitud() {
       
         
       
-<p className='text-2xl mx-5 my-3 font-bold text-center'>
+{/* <p className='text-2xl mx-5 my-3 font-bold text-center'>
       Genera Ordenes De Compra
       </p>
       <p className='p-5'></p>
@@ -67,7 +85,12 @@ export default function Solicitud() {
       
                 
         
-      </div>
+      </div> */}
+
+<div>
+      {email && <p>Hola {email}!</p>}
+      {/* Resto de tu contenido de la página de inicio */}
+    </div>
     </LayouytInicio>
   )
 }
